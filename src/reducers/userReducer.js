@@ -4,5 +4,7 @@
 export default function userReducer(state = {users: []}, action) {
 
    return action.payload
+   // this was just to see that our action was coming in correct
+   // and that store could be properly updated by the reducer
 
 }
