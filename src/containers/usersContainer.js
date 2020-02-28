@@ -3,6 +3,7 @@
 import React from 'react'
 import UserSignup from '../components/UserSignup'
 import UserAlbums from '../components/UserAlbums'
+import Users from '../components/Users'
 import { fetchUsers } from '../actions/fetchUsers'
 
 import { connect } from 'react-redux'
@@ -20,7 +21,7 @@ class UsersContainer extends React.Component {
       return (
          <div>
             <UserSignup />
-            <UserAlbums />
+            <Users users={this.props.users} />
          </div>
       )
    }
@@ -29,7 +30,7 @@ class UsersContainer extends React.Component {
 
 const mapStateToProps = (state) => {
    return {
-      // users: state.users
+      users: state.users
    }
 }
 
