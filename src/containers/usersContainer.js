@@ -1,6 +1,8 @@
 // will render other components, pass them data if they require it, and contain the callback functions etc.
 
 import React from 'react'
+import UserSignup from '../components/UserSignup'
+import UserAlbums from '../components/UserAlbums'
 
 class UsersContainer extends React.Component {
 
@@ -8,7 +10,8 @@ class UsersContainer extends React.Component {
    render() {
       return (
          <div>
-            Users Container
+            <UserSignup />
+            <UserAlbums />
          </div>
       )
    }
