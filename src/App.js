@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import UsersContainer from './containers/usersContainer';
+import UsersContainer from './containers/UsersContainer';
 
 
 class App extends React.Component {
