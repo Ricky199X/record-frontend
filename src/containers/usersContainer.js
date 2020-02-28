@@ -3,10 +3,17 @@
 import React from 'react'
 import UserSignup from '../components/UserSignup'
 import UserAlbums from '../components/UserAlbums'
+import { fetchUsers } from '../actions/fetchUsers'
 
 import { connect } from 'react-redux'
 
 class UsersContainer extends React.Component {
+
+   // fetch call to grab users from DB
+   componentDidMount() {
+      this.props.fetchUsers()
+   }
+
 
 
    render() {
@@ -20,6 +27,11 @@ class UsersContainer extends React.Component {
 
 }
 
+const mapStateToProps = (state) => {
+   return {
+      // users: state.users
+   }
+}
 
 
-export default connect()(UsersContainer)
+export default connect(mapStateToProps, {fetchUsers})(UsersContainer)

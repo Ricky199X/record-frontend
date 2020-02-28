@@ -1,13 +1,14 @@
 // this is the action creator that fetches user information 
 
 export function fetchUsers() {
-
-
-   // fetch('http://localhost:3000/users')
-   //  .then(resp => resp.json())
-   //  .then(data => {
-   //    console.log(data)
-   // })
+   return (dispatch) => {
+      fetch('http://localhost:3000/users')
+      .then(resp => resp.json())
+      .then(users => dispatch({
+         type: 'FETCH_USERS',
+         payload: users
+      }))
+   }
 }
 
 // what we dispatch is an action object -> to the reducer
