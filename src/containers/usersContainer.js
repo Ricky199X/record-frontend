@@ -21,7 +21,10 @@ class UsersContainer extends React.Component {
       return (
          <div>
             <UserSignup />
-            <Users users={this.props.users} />
+            {
+               this.props.users.data && 
+               <Users users={this.props.users.data}/>
+            }
          </div>
       )
    }
