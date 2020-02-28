@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-class usersContainer extends React.Component {
+class UsersContainer extends React.Component {
 
 
    render() {
@@ -15,4 +15,4 @@ class usersContainer extends React.Component {
 
 }
 
-export default usersContainer
+export default UsersContainer
