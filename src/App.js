@@ -6,11 +6,6 @@ import {fetchUsers} from './actions/fetchUsers'
 class App extends React.Component {
 
 
-  componentDidMount() {
-    this.props.fetchUsers({type: 'FETCH_USERS', payload: {name: 'checking'}})
-  }
-
-
   render() {
     return (
       <div className="App">
@@ -21,4 +16,4 @@ class App extends React.Component {
 }
 
 
-export default connect(null, {fetchUsers})(App);
+export default connect()(App);
