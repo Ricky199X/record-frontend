@@ -4,6 +4,8 @@ import React from 'react'
 import UserSignup from '../components/UserSignup'
 import UserAlbums from '../components/UserAlbums'
 
+import { connect } from 'react-redux'
+
 class UsersContainer extends React.Component {
 
 
@@ -18,4 +20,6 @@ class UsersContainer extends React.Component {
 
 }
 
-export default UsersContainer
+
+
+export default connect()(UsersContainer)
