@@ -51,9 +51,7 @@ class UserSignup extends React.Component {
       // sends the state to the createUser action creator -> 
       // data will be coming from the state
       event.preventDefault()
-      this.props.createUser()
-   
-      // Line 46:7:  Expected an assignment or function call and instead saw an expression
+      this.props.createUser(this.state)
 
 
    }

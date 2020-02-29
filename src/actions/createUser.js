@@ -1,8 +1,9 @@
 // this is the action creator that CREATES user information, sends it to DB
 
 export const createUser = (data) => {
+   // debugger
    return (dispatch) => {
-      debugger
+      
    }
 
 
