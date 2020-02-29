@@ -51,6 +51,8 @@ class UserSignup extends React.Component {
                <label>Password:</label>
                <input onChange={this.handlePasswordChange} type='text' name='password' placeholder='Enter password' value={this.state.password}/>
             </form> 
+
+            <input type="submit" />
          </div>
       )
    }
