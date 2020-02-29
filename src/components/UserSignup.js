@@ -39,11 +39,20 @@ class UserSignup extends React.Component {
    }
 
    // handle submit
+
+   handleSubmit = (event) => {
+      event.preventDefault()
+
+      // needs to be a post request to the server - create action in users controller
+
+      
+
+   }
    
    render() {
       return (
          <div className="signup-form" >
-            <form className="col s12">
+            <form className="col s12" onSubmit={this.handleSubmit}>
                <label>Username:</label>
                <input onChange={this.handleUsernameChange} type='text' name='username' placeholder='Enter your Username' value={this.state.username}/>
                <label>Email Address:</label>
