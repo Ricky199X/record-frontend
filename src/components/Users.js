@@ -11,10 +11,16 @@ const Users = (props) => {
 
    return (
       <div>
-         {props.users.map(user => <li>{user.attributes.email}</li>)}
+         {props.users.map(user => 
+            <div>
+               <li key={user.id}> Email: {user.attributes.email}</li>
+               {/* <li key={user.attributes.username.toString()}> Username: {user.attributes.username}</li>  */}
+            </div>
+         )}
       </div>
    )
 }
 
 
 export default Users
+
