@@ -12,17 +12,10 @@ export const createUser = (data) => {
          method: 'POST',
          body: JSON.stringify({user: data})
       })
+      .then(resp => resp.json())
+      .then(user => dispatch({type: 'ADD_USER', payload: user}))
+      // debugger
    }
 
 
-
-
-   // return (dispatch) => {
-   //    fetch('http://localhost:3000/users')
-   //    .then(resp => resp.json())
-   //    .then(users => dispatch({
-   //       type: 'FETCH_USERS',
-   //       payload: users
-   //    }))
-   // }
 }
