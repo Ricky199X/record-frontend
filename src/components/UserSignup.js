@@ -69,4 +69,4 @@ class UserSignup extends React.Component {
    }
 }
 
-export default UserSignup
+export default connect(null, {createUser})(UserSignup)
