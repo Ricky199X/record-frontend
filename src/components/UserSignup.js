@@ -1,7 +1,7 @@
 // this is a form component, used for setting up new user account
 import React from 'react'
 import { connect } from 'react-redux'
-
+import { createUser } from '../actions/createUser'
 
 class UserSignup extends React.Component {
    constructor(props) {
@@ -42,11 +42,12 @@ class UserSignup extends React.Component {
    // handle submit
 
    handleSubmit = (event) => {
-      event.preventDefault()
-
       // sends the state to the createUser action creator -> 
       // data will be coming from the state
-
+      event.preventDefault()
+      this.props.createUser
+   
+      // Line 46:7:  Expected an assignment or function call and instead saw an expression
 
 
    }
