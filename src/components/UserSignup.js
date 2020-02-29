@@ -14,6 +14,12 @@ class UserSignup extends React.Component {
       };
     }
 
+
+   // state = {
+   //    username: "",
+   //    email: "",
+   //    password: ""
+   // }
    // this is an UNCONTROLLED FORM - the form itself is controlling the value atm
    // we need to turn the uncontrolled from to a controlled form by adding a value 
    
@@ -45,7 +51,7 @@ class UserSignup extends React.Component {
       // sends the state to the createUser action creator -> 
       // data will be coming from the state
       event.preventDefault()
-      this.props.createUser
+      this.props.createUser()
    
       // Line 46:7:  Expected an assignment or function call and instead saw an expression
 
@@ -54,8 +60,8 @@ class UserSignup extends React.Component {
    
    render() {
       return (
-         <div className="signup-form" >
-            <form className="col s12" onSubmit={this.handleSubmit}>
+         <div>
+            <form onSubmit={this.handleSubmit} >
                <label>Username:</label>
                <input onChange={this.handleUsernameChange} type='text' name='username' placeholder='Enter your Username' value={this.state.username}/>
                <label>Email Address:</label>
@@ -64,10 +70,12 @@ class UserSignup extends React.Component {
                <input onChange={this.handlePasswordChange} type='text' name='password' placeholder='Enter password' value={this.state.password}/>
             </form> 
 
-            <input type="submit" />
+            <button onClick={this.handleSubmit}>Sign Up!</button>
          </div>
       )
    }
 }
 
 export default connect(null, {createUser})(UserSignup)
+
+// className="col s12" 
