@@ -1,6 +1,7 @@
-// this is a form component, could be used for both setting up account
-
+// this is a form component, used for setting up new user account
 import React from 'react'
+import { connect } from 'react-redux'
+
 
 class UserSignup extends React.Component {
    constructor(props) {
@@ -43,9 +44,10 @@ class UserSignup extends React.Component {
    handleSubmit = (event) => {
       event.preventDefault()
 
-      // needs to be a post request to the server - create action in users controller
+      // sends the state to the createUser action creator -> 
+      // data will be coming from the state
 
-      
+
 
    }
    
