@@ -11,8 +11,7 @@ const Users = (props) => {
 
    return (
       <div>
-         {props.users.map((user) => <li key={user.id}> Email: {user.attributes.email}</li>
-         )}
+         {props.users.map((user) => <li key={user.id}> Email: {user.attributes.email}</li>)}
       </div>
    )
 }
