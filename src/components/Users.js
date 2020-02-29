@@ -7,7 +7,7 @@ const Users = (props) => {
    // when I try to map over the users array, there's no data yet, so it throws error
    // need to find a way to only run map once the users array is populated with data
 
-   console.log(props.users)
+   // console.log(props.users)
 
    return (
       <div>
