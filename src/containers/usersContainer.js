@@ -10,8 +10,6 @@ import { connect } from 'react-redux'
 
 class UsersContainer extends React.Component {
 
-
-
    render() {
 
       if (this.props.user.loading) {
