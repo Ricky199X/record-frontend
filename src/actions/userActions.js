@@ -1,9 +1,15 @@
 // this is the action creator that CREATES user information, sends it to DB
 // thunk is the reason why we have access to the dispatch function
 
+// before every fetch, dispatch an action to the appropriate reducer 
+// the reducer will use that to set loading to either true or false
+// be very clear on what what's happening - visualize the store 
+// both have a data 
+
 export const createUser = (data) => {
    // debugger
    return (dispatch) => {
+      dispatch({type: 'LOADING_USER'})
       fetch('http://localhost:3000/users', {
          headers: {
             'Content-Type': 'application/json',
@@ -20,16 +26,7 @@ export const createUser = (data) => {
 
 // this is the action creator that fetches user information 
 
-export function fetchUsers() {
-   return (dispatch) => {
-      fetch('http://localhost:3000/users')
-      .then(resp => resp.json())
-      .then(users => dispatch({
-         type: 'FETCH_USERS',
-         payload: users
-      }))
-   }
-}
+
 
 
 // what we dispatch is an action object -> to the reducer

@@ -4,38 +4,38 @@ import React from 'react'
 import UserSignup from '../components/UserSignup'
 import UserAlbums from '../components/UserAlbums'
 import Users from '../components/Users'
-import { fetchUsers } from '../actions/userActions'
+// import { fetchUsers } from '../actions/userActions'
 
 import { connect } from 'react-redux'
 
 class UsersContainer extends React.Component {
 
-   // fetch call to grab users from DB
-   componentDidMount() {
-      this.props.fetchUsers()
-   }
-
 
 
    render() {
-      return (
-         <div>
-            <UserSignup />
-            {
-               this.props.users.data && 
-               <Users users={this.props.users.data}/>
-            }
-         </div>
-      )
+
+      if (this.props.user.loading) {
+         return (
+            <h1>This is loading</h1>
+         )
+      } else {
+         return (
+            <div>
+               <UserSignup />
+               {this.props.user.data.data ? this.props.user.data.data.attributes.username : 'no user is logged in'}
+            </div>
+         )
+      }
+      
    }
 
 }
 
 const mapStateToProps = (state) => {
    return {
-      users: state.users
+      user: state.user
    }
 }
 
 
-export default connect(mapStateToProps, {fetchUsers})(UsersContainer)
+export default connect(mapStateToProps)(UsersContainer)
