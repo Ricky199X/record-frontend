@@ -11,6 +11,7 @@ class NavBar extends React.Component {
             <div className="nav-wrapper container">
                <Link to='#' className="brand-logo">Record Collector</Link>
                <ul className = "right">
+                  <li><Link to="/signup">Sign Up</Link></li>
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/albums">Albums</Link></li>
                   <li><Link to="/user_albums">Your Albums</Link></li>
