@@ -20,7 +20,12 @@ class AlbumsContainer extends React.Component {
       }
    } 
 
-
-
-
 }
+
+const mapStateToProps = (state) => {
+   return {
+      albums: state.albums
+   }
+}
+
+export default connect(mapStateToProps)(AlbumsContainer)

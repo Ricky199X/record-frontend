@@ -1,18 +1,17 @@
 import React from 'react'
 
 
-class Albums extends React.Component {
+const Albums = (props) => {
 
-
-   
-
-
-   render() {
-      console.log(this.props.albums)
-      return (
-         <h4>This is the albums page</h4>
-      )
-   }
+   return (
+      <div className = "container">
+         <div className="row">
+            <div className="col s12">
+               This is the albums component
+            </div>
+         </div>
+      </div>
+   )
 } 
 
 export default Albums

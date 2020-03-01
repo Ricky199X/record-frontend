@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch , Route } from 'react-router-dom'
 
 // components 
 import UsersContainer from './containers/UsersContainer';
+import AlbumsContainer from './containers/AlbumsContainer'
 import NavBar from './components/NavBar';
 import LandingPage from './components/LandingPage'
 import Albums from './components/Albums'
@@ -21,7 +22,7 @@ class App extends React.Component {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/albums" exact component={Albums} albums={["Album 1", "Album 2", "Album 3"]}/>
+            <Route path="/albums" exact component={Albums}/>
             <Route path="/user_albums" exact component={UserAlbums} />
             <Route path="/" exact component={Home} />
           </Switch>
