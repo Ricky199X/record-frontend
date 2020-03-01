@@ -7,6 +7,7 @@ import UserAlbums from './components/UserAlbums'
 import Home from './components/Home'
 import AlbumCard from './components/AlbumCard'
 import LandingPage from './components/LandingPage'
+import Albums from './components/Albums'
 
 
 class App extends React.Component {
@@ -46,6 +47,15 @@ class App extends React.Component {
             <Route path="/home">
               <Home />
             </Route>
+
+            <Route path='/albums'>
+              <AlbumsContainer />
+            </Route>
+
+            <Route path='/useralbums'>
+              <UserAlbums />
+            </Route>
+
           </Switch>
 
         </div>
