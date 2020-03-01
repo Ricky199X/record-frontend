@@ -5,7 +5,7 @@ import Albums from '../components/Albums'
 
 class AlbumsContainer extends React.Component {
 
-   componentDidMount() {
+   componentWillMount() {
       this.props.fetchAlbums()
    }
 
@@ -29,7 +29,7 @@ class AlbumsContainer extends React.Component {
 const mapStateToProps = (state) => {
    return {
       albums: state.albums.data,
-      loading: state.albums.loading,
+      loading: state.albums.loading
    }
 }
 
