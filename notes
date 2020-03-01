@@ -1,10 +1,20 @@
 
 Immediate Build:
-1. Navbar
-2. Homepage 
-3. Rails Routes
+1. Landing Page 
+   - What should this page do?
+   1. Provide the option to login or sign up 
+
+   - If i click login in, I want it to render the login form component 
+   - If i click sign up, i want it to render the sign up form component
+
+
+
+2. 
+3. Routes
 
 
 
 WHAT WORKS
-- Sign up form 
+Sign up form 
+Navbar - COMPONENT BUILT
+Landing Page - Built
