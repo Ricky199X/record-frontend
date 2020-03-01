@@ -21,8 +21,8 @@ class App extends React.Component {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/albums" exact component={Albums}/>
-            <Route path="/user_albums" exact component={UserAlbums}/>
+            <Route path="/albums" exact component={Albums} albums={["Album 1", "Album 2", "Album 3"]}/>
+            <Route path="/user_albums" exact component={UserAlbums} />
             <Route path="/" exact component={Home} />
           </Switch>
         </div>

@@ -13,6 +13,10 @@ Immediate Build:
 3. RENDER ALBUMS TO ALBUMS COMPONENT
 
 
+Albums Page
+- Will render a bunch of album thumbnails (will map albums, then render each individually on a grid)
+- Can click an album to render the individual album's card 
+
 
 WHAT WORKS
 Sign up form 
