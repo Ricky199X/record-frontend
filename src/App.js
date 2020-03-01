@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch , Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch , Route, Link } from 'react-router-dom'
 
 import AlbumsContainer from './containers/AlbumsContainer'
 import NavBar from './components/NavBar';
 import UserAlbums from './components/UserAlbums'
 import Home from './components/Home'
 import AlbumCard from './components/AlbumCard'
+import LandingPage from './components/LandingPage'
 
 
 class App extends React.Component {
@@ -13,15 +14,40 @@ class App extends React.Component {
 
   render() {
     return (
+      // <Router>
+      //   <div className="App">
+      //     <NavBar />
+      //     <LandingPage />
+      //     <Switch>
+      //       {/* <Route path="/landing_page" exact component={LandingPage} /> */}
+      //       <Route path="/albums" exact component={AlbumsContainer}/>
+      //       <Route path="/user_albums" exact component={UserAlbums} />
+      //       {/* <Route path="/" exact component={Home} /> */}
+      //       <Route path="/albums/:id" exact component={AlbumCard} />
+      //     </Switch>
+      //   </div>
+      // </Router>
+
       <Router>
-        <div className="App">
-          <NavBar />
+        <div>
+          <ul>
+            <li>
+              <Link to="/landingpage">Landing Page</Link>
+            </li>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+          </ul>
+
           <Switch>
-            <Route path="/albums" exact component={AlbumsContainer}/>
-            <Route path="/user_albums" exact component={UserAlbums} />
-            <Route path="/" exact component={Home} />
-            <Route path="/albums/:id" exact component={AlbumCard} />
+            <Route path="/landingpage">
+              <LandingPage />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
           </Switch>
+
         </div>
       </Router>
     );
