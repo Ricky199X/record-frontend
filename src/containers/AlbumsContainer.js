@@ -5,7 +5,7 @@ import Albums from '../components/Albums'
 
 class AlbumsContainer extends React.Component {
 
-   componentWillMount() {
+   componentDidMount() {
       this.props.fetchAlbums()
    }
 
