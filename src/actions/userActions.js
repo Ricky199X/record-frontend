@@ -19,12 +19,24 @@ export const createUser = (data) => {
          body: JSON.stringify({user: data})
       })
       .then(resp => resp.json())
-      .then(user => dispatch({type: 'ADD_USER', payload: user}))
-      // debugger
+      .then(data => {
+         if (data.message) {
+
+         } else {
+            localStorage.setItem("token", data.jwt)
+            dispatch(loginUser(data.user))
+         }
+      })
+      // .then(user => dispatch({type: 'ADD_USER', payload: user}))
+      debugger
    }
 }
 
-// this is the action creator that fetches user information 
+// will accept a user object 
+const loginUser = (userObj) => ({
+   type: 'LOGIN_USER',
+   payload: userObj
+})
 
 
 
