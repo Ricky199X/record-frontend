@@ -9,8 +9,8 @@ Immediate Build:
 
 
 
-2. 
-3. Routes
+2. Want to fetch from Spotify API for Albums Page - NEED TO SET UP ON BACKEND
+3. RENDER ALBUMS TO ALBUMS COMPONENT
 
 
 
@@ -18,3 +18,4 @@ WHAT WORKS
 Sign up form 
 Navbar - COMPONENT BUILT
 Landing Page - Built
+Routes - NavBar Links all working
