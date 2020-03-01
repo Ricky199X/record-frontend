@@ -4,7 +4,7 @@ import React from 'react'
 import UserSignup from '../components/UserSignup'
 import UserAlbums from '../components/UserAlbums'
 import Users from '../components/Users'
-import { fetchUsers } from '../actions/fetchUsers'
+import { fetchUsers } from '../actions/userActions'
 
 import { connect } from 'react-redux'
 

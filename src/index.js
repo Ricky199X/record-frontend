@@ -8,10 +8,15 @@ import userReducer from './reducers/userReducer'
 
 
 // set up devtools
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancer = typeof window === 'object' && 
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? 
+   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
 
+}) : compose;
+
+const enhancer = composeEnhancer(applyMiddleware(thunk))
 // set up store
-let store = createStore(userReducer, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(userReducer, enhancer)
 
 ReactDOM.render(
    <Provider store={store}> 

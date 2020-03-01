@@ -1,7 +1,7 @@
 // this is a form component, used for setting up new user account
 import React from 'react'
 import { connect } from 'react-redux'
-import { createUser } from '../actions/createUser'
+import { createUser } from '../actions/userActions'
 
 class UserSignup extends React.Component {
    constructor(props) {
