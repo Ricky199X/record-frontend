@@ -9,7 +9,7 @@ class NavBar extends React.Component {
       return (
          <nav>
             <div className="nav-wrapper container">
-               <a className="brand-logo">Record Collector</a>
+               <Link to='#' className="brand-logo">Record Collector</Link>
                <ul className = "right">
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/albums">Albums</Link></li>
