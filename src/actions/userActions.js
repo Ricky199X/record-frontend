@@ -19,16 +19,8 @@ export const createUser = (data) => {
          body: JSON.stringify({user: data})
       })
       .then(resp => resp.json())
-      .then(data => {
-         if (data.message) {
-
-         } else {
-            localStorage.setItem("token", data.jwt)
-            dispatch(loginUser(data.user))
-         }
-      })
-      // .then(user => dispatch({type: 'ADD_USER', payload: user}))
-      debugger
+      .then(user => dispatch({type: 'ADD_USER', payload: user}))
+      // debugger
    }
 }
 
