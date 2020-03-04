@@ -22,6 +22,23 @@ class App extends React.Component {
      };
   }
 
+  // handle login - set isLoggedIn to true
+  handleLogin = () => {
+    this.setState({
+      isLoggedIn: true,
+      user: data.user
+    })
+  }
+
+  // handle logout - set isLoggedIn to false
+  handleLogout = () => {
+    this.setState({
+      isLoggedIn: false,
+      user: {}
+    })
+  }
+  
+
 
   render() {
     return (
