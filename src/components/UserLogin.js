@@ -1,9 +1,8 @@
-// this is a form component, used for setting up new user account
 import React from 'react'
 import { connect } from 'react-redux'
-import { createUser } from '../actions/userActions'
+import { loginUser } from '../actions/userActions'
 
-class UserSignup extends React.Component {
+class UserLogin extends React.Component {
    constructor(props) {
       super(props);
   
@@ -46,8 +45,7 @@ class UserSignup extends React.Component {
       // sends the state to the createUser action creator -> 
       // data will be coming from the state
       event.preventDefault()
-      console.log(this.props.createUser)
-      this.props.createUser(this.state) // === function(){}
+      this.props.loginUser(this.state)
    }
    
    render() {
@@ -68,6 +66,4 @@ class UserSignup extends React.Component {
    }
 }
 
-export default connect(null, {createUser})(UserSignup)
-
-// className="col s12" 
+export default connect(null, {loginUser})(UserLogin)

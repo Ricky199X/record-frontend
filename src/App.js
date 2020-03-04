@@ -11,7 +11,7 @@ import AlbumCard from './components/AlbumCard'
 import LandingPage from './components/LandingPage'
 import Albums from './components/Albums'
 import UserSignup from './components/UserSignup';
-
+import UserLogin from './components/UserLogin'
 
 
 class App extends React.Component {
@@ -23,21 +23,21 @@ class App extends React.Component {
      };
   }
 
-  // handle login - set isLoggedIn to true
-  handleLogin = () => {
-    this.setState({
-      isLoggedIn: true,
-      user: data.user
-    })
-  }
+  // // handle login - set isLoggedIn to true
+  // handleLogin = () => {
+  //   this.setState({
+  //     isLoggedIn: true,
+  //     user: data.user
+  //   })
+  // }
 
-  // handle logout - set isLoggedIn to false
-  handleLogout = () => {
-    this.setState({
-      isLoggedIn: false,
-      user: {}
-    })
-  }
+  // // handle logout - set isLoggedIn to false
+  // handleLogout = () => {
+  //   this.setState({
+  //     isLoggedIn: false,
+  //     user: {}
+  //   })
+  // }
   
 
   // {withCredentials: true};  This allows our Rails server to set and read the cookie on the front-end’s browser.
@@ -62,13 +62,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-         <BrowserRouter>
+         <Router>
           <Switch>
-            <Route exact path='/' component={}/>
-            <Route exact path='/login' component={}/>
-            <Route exact path='/signup' component={}/>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/login' component={UserLogin}/>
+            <Route exact path='/signup' component={UserSignup}/>
           </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }
