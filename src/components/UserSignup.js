@@ -11,7 +11,7 @@ class UserSignup extends React.Component {
         username: "",
         email: "",
         password: "",
-        shouldRedirect: false
+      //   shouldRedirect: false
       };
     }
 

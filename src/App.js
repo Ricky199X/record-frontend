@@ -15,6 +15,15 @@ import UserSignup from './components/UserSignup';
 
 class App extends React.Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isLoggedIn: false,
+      user: {}
+    }
+  }
+
 
   render() {
     return (
