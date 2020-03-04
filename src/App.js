@@ -54,6 +54,10 @@ class App extends React.Component {
     })
   }
  
+  // checks the login status everytime the component mounts
+  componentDidMount() {
+    this.loginStatus()
+  }
 
   render() {
     return (
