@@ -10,7 +10,6 @@ export const createUser = (data) => {
    debugger
    return (dispatch) => {
       dispatch({type: 'LOADING_USER'})
-      console.log("fuck")
       fetch('http://localhost:3000/users', {
          headers: {
             'Content-Type': 'application/json',

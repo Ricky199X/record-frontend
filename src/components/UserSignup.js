@@ -11,7 +11,6 @@ class UserSignup extends React.Component {
         username: "",
         email: "",
         password: "",
-      //   shouldRedirect: false
       };
     }
 
@@ -46,7 +45,6 @@ class UserSignup extends React.Component {
       // sends the state to the createUser action creator -> 
       // data will be coming from the state
       event.preventDefault()
-      console.log(this.props.createUser)
       this.props.createUser(this.state) // === function(){}
    }
    
