@@ -7,7 +7,7 @@
 // both have a data 
 
 export const createUser = (data) => {
-   // debugger
+   debugger
    return (dispatch) => {
       dispatch({type: 'LOADING_USER'})
       fetch('http://localhost:3000/users', {

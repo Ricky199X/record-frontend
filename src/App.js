@@ -39,7 +39,7 @@ class App extends React.Component {
               <Link to="/landingpage">Landing Page</Link>
             </li>
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
           </ul>
 

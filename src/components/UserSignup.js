@@ -10,16 +10,11 @@ class UserSignup extends React.Component {
       this.state = {
         username: "",
         email: "",
-        password: ""
+        password: "",
+        shouldRedirect: false
       };
     }
 
-
-   // state = {
-   //    username: "",
-   //    email: "",
-   //    password: ""
-   // }
    // this is an UNCONTROLLED FORM - the form itself is controlling the value atm
    // we need to turn the uncontrolled from to a controlled form by adding a value 
    
@@ -52,8 +47,6 @@ class UserSignup extends React.Component {
       // data will be coming from the state
       event.preventDefault()
       this.props.createUser(this.state)
-
-
    }
    
    render() {

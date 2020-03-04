@@ -1,5 +1,9 @@
 // this will handle everything related to updating parts of the store that have to do with the user account
 
+const initialState = {
+   currentUser: {}
+}
+
 // set the default state first, action is second argument
 export default function userReducer(state = {data: {}, loading: false}, action) {
    switch (action.type) {
@@ -10,9 +14,5 @@ export default function userReducer(state = {data: {}, loading: false}, action) 
       default:
          return state
    }
-
-   // gonna need to checked if I'm logged in 
-   // save a token to local storage (google save to local storage, when I get a JWT, if user's not authenticated, make site go to login page )
-
 
 }
