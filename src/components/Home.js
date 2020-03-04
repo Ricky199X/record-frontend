@@ -1,12 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Home = (props) => {
-   console.log(props)
+const Home = () => {
    return (
-      <div className = 'container'>
-         <h4 className="center">
-            This is the home page
-         </h4>
+      <div>
+         <Link to='/login'>Log In</Link>
+         <br></br>
+         <Link to='/signup'>Sign Up</Link>
       </div>
    )
 
