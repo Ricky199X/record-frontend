@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch , Route, Link } from 'react-router-dom'
+import axios from 'axios'
 
 import AlbumsContainer from './containers/AlbumsContainer'
 import UsersContainer from './containers/UsersContainer'
@@ -39,6 +40,20 @@ class App extends React.Component {
   }
   
 
+  // {withCredentials: true};  This allows our Rails server to set and read the cookie on the front-end’s browser.
+  loginStatus = () => {
+    axios.get('http://localhost:3000/logged_in',
+    {withCredentials: true})
+
+    .then(response => {
+      if (response.data.logged_in) {
+        this.handleLogin(response)
+      } else {
+        this.handleLogout()
+      }
+    })
+  }
+ 
 
   render() {
     return (
