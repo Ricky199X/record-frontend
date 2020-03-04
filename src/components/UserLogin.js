@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../actions/userActions'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 class UserLogin extends React.Component {
    constructor(props) {
@@ -11,7 +12,7 @@ class UserLogin extends React.Component {
         username: "",
         email: "",
         password: "",
-      //   shouldRedirect: false
+        errors: ""
       };
     }
 
@@ -43,10 +44,30 @@ class UserLogin extends React.Component {
    // handle submit
 
    handleSubmit = (event) => {
-      // sends the state to the loginUser action creator -> 
-      // data will be coming from the state
       event.preventDefault()
-      this.props.loginUser(this.state)
+      const {username, email, password} = this.state
+      let user = {
+         username: username,
+         email: email,
+         password: password
+      }
+            
+      axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
+         .then(response => {
+         if (response.data.logged_in) {
+            this.props.handleLogin(response.data)
+            this.redirect()
+               } else {
+               this.setState({
+                  errors: response.data.errors
+               })
+            }
+         })
+      .catch(error => console.log('api errors:', error))
+   }
+
+   redirect = () => {
+      this.props.history.push('/')
    }
    
    render() {
