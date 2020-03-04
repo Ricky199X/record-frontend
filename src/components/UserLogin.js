@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../actions/userActions'
+import { Link } from 'react-router-dom'
 
 class UserLogin extends React.Component {
    constructor(props) {
@@ -42,7 +43,7 @@ class UserLogin extends React.Component {
    // handle submit
 
    handleSubmit = (event) => {
-      // sends the state to the createUser action creator -> 
+      // sends the state to the loginUser action creator -> 
       // data will be coming from the state
       event.preventDefault()
       this.props.loginUser(this.state)
@@ -60,7 +61,12 @@ class UserLogin extends React.Component {
                <input onChange={this.handlePasswordChange} type='text' name='password' placeholder='Enter password' value={this.state.password}/>
             </form> 
 
-            <button onClick={this.handleSubmit}>Sign Up!</button>
+            <button placeholder="submit" type="submit">
+               Log In
+            </button>
+            <div>
+               or <Link to='/signup'>sign up</Link>
+            </div>
          </div>
       )
    }
