@@ -14,73 +14,69 @@ import UserSignup from './components/UserSignup';
 
 
 class App extends React.Component {
-
   constructor(props) {
-    super(props)
-
-    this.state = {
+    super(props);
+    this.state = { 
       isLoggedIn: false,
       user: {}
-    }
+     };
   }
 
 
   render() {
     return (
-      // <Router>
-      //   <div className="App">
-      //     <NavBar />
-      //     <LandingPage />
-      //     <Switch>
-      //       {/* <Route path="/landing_page" exact component={LandingPage} /> */}
-      //       <Route path="/albums" exact component={AlbumsContainer}/>
-      //       <Route path="/user_albums" exact component={UserAlbums} />
-      //       {/* <Route path="/" exact component={Home} /> */}
-      //       <Route path="/albums/:id" exact component={AlbumCard} />
-      //     </Switch>
-      //   </div>
-      // </Router>
-
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="/landingpage">Landing Page</Link>
-            </li>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-
-          <NavBar />
+      <div>
+         <BrowserRouter>
           <Switch>
-            <Route path="/signup">
-              <UserSignup />
-            </Route>
-
-            <Route path="/landingpage">
-              <LandingPage />
-            </Route>
-
-            <Route path="/home">
-              <Home />
-            </Route>
-
-            <Route path='/albums'>
-              <AlbumsContainer />
-            </Route>
-
-            <Route path='/useralbums'>
-              <UserAlbums />
-            </Route>
-
+            <Route exact path='/' component={}/>
+            <Route exact path='/login' component={}/>
+            <Route exact path='/signup' component={}/>
           </Switch>
-
-        </div>
-      </Router>
+        </BrowserRouter>
+      </div>
     );
   }
 }
 
 
 export default App;
+
+
+
+// <Router>
+      //   <div>
+      //     <ul>
+      //       <li>
+      //         <Link to="/landingpage">Landing Page</Link>
+      //       </li>
+      //       <li>
+      //         <Link to="/">Home</Link>
+      //       </li>
+      //     </ul>
+
+      //     <NavBar />
+      //     <Switch>
+      //       <Route path="/signup">
+      //         <UserSignup />
+      //       </Route>
+
+      //       <Route path="/landingpage">
+      //         <LandingPage />
+      //       </Route>
+
+      //       <Route path="/home">
+      //         <Home />
+      //       </Route>
+
+      //       <Route path='/albums'>
+      //         <AlbumsContainer />
+      //       </Route>
+
+      //       <Route path='/useralbums'>
+      //         <UserAlbums />
+      //       </Route>
+
+      //     </Switch>
+
+      //   </div>
+      // </Router>
