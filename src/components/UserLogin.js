@@ -11,8 +11,7 @@ class UserLogin extends React.Component {
       this.state = {
         username: "",
         email: "",
-        password: "",
-        errors: ""
+        password: ""
       };
     }
 
@@ -45,6 +44,7 @@ class UserLogin extends React.Component {
 
    handleSubmit = (event) => {
       event.preventDefault()
+      this.props.loginUser(this.state)
    }
             
 
@@ -64,9 +64,7 @@ class UserLogin extends React.Component {
                <input onChange={this.handlePasswordChange} type='text' name='password' placeholder='Enter password' value={this.state.password}/>
             </form> 
 
-            <button placeholder="submit" type="submit">
-               Log In
-            </button>
+            <button onClick={this.handleSubmit}>Log In!</button>
             <div>
                or <Link to='/signup'>sign up</Link>
             </div>

@@ -20,16 +20,22 @@ export const createUser = (data) => {
       })
       .then(resp => console.log(resp.json()))
       .then(user => dispatch({type: 'ADD_USER', payload: user}))
-      .then(user => dispatch({type: 'LOGIN_USER', payload: user}))
       // debugger
    }
 }
 
 // will accept a user object 
-export const loginUser = (userObj) => ({
-   type: 'LOGIN_USER',
-   payload: userObj
-})
+export const loginUser = (userObj) => {
+   // debugger
+   fetch('http://localhost:3000/login', {
+      headers: {
+         'Content-Type': 'application/json',
+         'Accept': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({user: userObj})
+   })
+}
 
 
 
