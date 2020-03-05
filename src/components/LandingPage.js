@@ -1,14 +1,14 @@
 import React from 'react'
 
-class LandingPage extends React.Component {
+class Dashboard extends React.Component {
 
    render() {
       return (
-         <h4>This is the landing page</h4>
+         <h4>This is the dashboard</h4>
       )
    }
 
 }
 
 
-export default LandingPage
+export default Dashboard

@@ -13,7 +13,6 @@ export default function userReducer(state = initialState, action) {
          return {...state, loading: true}
       case 'ADD_USER':
          return {loading: false, data: action.payload}
-         debugger
       case 'LOGIN_USER':
          return {...state, currentUser: action.payload}
       default:

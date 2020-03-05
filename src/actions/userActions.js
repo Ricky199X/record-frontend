@@ -18,7 +18,7 @@ export const createUser = (data) => {
          method: 'POST',
          body: JSON.stringify({user: data})
       })
-      .then(resp => resp.json())
+      .then(resp => console.log(resp.json()))
       .then(user => dispatch({type: 'ADD_USER', payload: user}))
       // debugger
    }
