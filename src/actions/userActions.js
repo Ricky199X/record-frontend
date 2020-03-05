@@ -20,6 +20,7 @@ export const createUser = (data) => {
       })
       .then(resp => console.log(resp.json()))
       .then(user => dispatch({type: 'ADD_USER', payload: user}))
+      .then(user => dispatch({type: 'LOGIN_USER', payload: user}))
       // debugger
    }
 }

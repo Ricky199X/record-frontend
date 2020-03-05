@@ -29,19 +29,6 @@ class App extends React.Component {
 
   render() {
     return (
-      // <Router>
-      //   <div className="App">
-      //     <NavBar />
-      //     <LandingPage />
-      //     <Switch>
-      //       {/* <Route path="/landing_page" exact component={LandingPage} /> */}
-      //       <Route path="/albums" exact component={AlbumsContainer}/>
-      //       <Route path="/user_albums" exact component={UserAlbums} />
-      //       {/* <Route path="/" exact component={Home} /> */}
-      //       <Route path="/albums/:id" exact component={AlbumCard} />
-      //     </Switch>
-      //   </div>
-      // </Router>
 
       <Router>
         <div>
