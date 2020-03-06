@@ -1,8 +1,8 @@
 // this will handle everything related to updating parts of the store that have to do with the user account
 
+// NEVER EVER EVER CHANGE THE DATA TYPES HERE
 const initialState = {
    data: {},
-   currentUser: {},
    loading: false
 }
 
@@ -14,7 +14,7 @@ export default function userReducer(state = initialState, action) {
       case 'ADD_USER':
          return {loading: false, data: action.payload}
       case 'LOGIN_USER':
-         return {...state, currentUser: action.payload}
+         return {...state, data: action.payload}
       default:
          return state
    }

@@ -7,25 +7,20 @@ import NavBar from './components/NavBar';
 import UserAlbums from './components/UserAlbums'
 import Home from './components/Home'
 import AlbumCard from './components/AlbumCard'
-import LandingPage from './components/LandingPage'
+// import LandingPage from './components/LandingPage'
 import Albums from './components/Albums'
 import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin'
-import Dashboard from './components/LandingPage';
+import Dashboard from './components/Dashboard';
 
 
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      isLoggedIn: false,
-      user: {}
-    }
-  }
-
+  // componentDidMount() {
+    // hit an end point that gets you a user or gets you nothing
+    // check if a user is currentlyLoggedIn 
+  // }
 
   render() {
     return (
