@@ -28,17 +28,21 @@ export const createUser = (data) => {
 
 // will accept a user object 
 export const loginUser = (data) => {
-   // debugger
-   fetch('http://localhost:3000/login', {
+   debugger
+   return (dispatch) => {
+      fetch('http://localhost:3000/login', {
       headers: {
          'Content-Type': 'application/json',
          'Accept': 'application/json'
       },
-      mode:'cors',
-      method: 'POST',
-      credentials: 'include',
-      body: JSON.stringify({user: data})
-   })
+         mode:'cors',
+         method: 'POST',
+         credentials: 'include',
+         body: JSON.stringify({user: data})
+      })
+      .then(resp => resp.json())
+      .then(user => dispatch({type: 'LOGIN_USER', payload: user}))
+   }
 }
 
 
