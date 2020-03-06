@@ -3,18 +3,19 @@
 // NEVER EVER EVER CHANGE THE DATA TYPES HERE
 const initialState = {
    data: {},
-   loading: false
+   loading: false,
+   loggedIn: false
 }
 
 // set the default state first, action is second argument
 export default function userReducer(state = initialState, action) {
    switch (action.type) {
       case 'LOADING_USER':
-         return {...state, loading: true}
+         return {...state, loading: true, loggedIn: false}
       case 'ADD_USER':
-         return {loading: false, data: action.payload}
+         return {data: action.payload, loading: false, loggedIn: false}
       case 'LOGIN_USER':
-         return {...state, data: action.payload}
+         return {...state, data: action.payload, loading: false, loggedIn: true}
       default:
          return state
    }
