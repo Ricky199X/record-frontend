@@ -26,13 +26,6 @@ class UserLogin extends React.Component {
       }
    }
 
-
-
-
-   // this is an UNCONTROLLED FORM - the form itself is controlling the value atm
-   // we need to turn the uncontrolled from to a controlled form by adding a value 
-   
-
    // handle user name changes
    handleUsernameChange = (event) => {
       this.setState({
@@ -55,7 +48,6 @@ class UserLogin extends React.Component {
    }
 
    // handle submit
-
    handleSubmit = (event) => {
       event.preventDefault()
       this.props.loginUser(this.state)
@@ -86,4 +78,8 @@ class UserLogin extends React.Component {
    }
 }
 
-export default connect(null, {loginUser})(UserLogin)
+const mapStateToProps = ({user}) => {
+   return { user }
+}
+
+export default connect(mapStateToProps, {loginUser})(UserLogin)
