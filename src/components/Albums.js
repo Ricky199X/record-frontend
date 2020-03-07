@@ -8,66 +8,79 @@ import { Redirect } from 'react-router-dom'
 // when you click the album, it will render an album card
 
 class Albums extends React.Component {
+   
 
    state = {
       displayDetails: false
    }
-  
 
-   selectAlbum = (event) => {
-      event.preventDefault()
-      // debugger
-      this.props.setAlbum(this.props.album)
-      this.setState({
-         displayDetails: true
-      })
-   }
+   // selectAlbum = (event) => {
+   //    event.preventDefault()
+   //    this.props.setAlbum(this.props.album)
+   //    this.setState({
+   //       displayDetails: true
+   //    })
+   // }
+
+   // renderAlbums = () => {
+   //    const albums = this.props.albums
+      
+   //    return albums.map(album => {
+   //       return (
+   //          <div className="row s19" key={Math.random()}>
+   //             <div key={album.attributes.name} className="col s6" >
+   //                   <img alt={album.id} src={album.attributes.cover_url} onClick={this.selectAlbum}/>
+   //                   {this.state.displayDetails ? <AlbumCard album={album}/> : null}
+   //             </div>
+   //          </div>
+   //       )
+   //    })
+   // }
 
    renderAlbums = () => {
       const albums = this.props.albums
-      
+      // console.log(albums)
       return albums.map(album => {
-         return (
-            <div className="row s19" key={Math.random()}>
-               <div key={album.attributes.name} className="col s6" >
-                     <img alt={album.id} src={album.attributes.cover_url} onClick={this.selectAlbum}/>
-                     {this.state.displayDetails ? <AlbumCard album={album}/> : null}
-               </div>
-            </div>
-         )
+         return <AlbumCard 
+            name={album.attributes.name}
+            img={<img alt={album.id} src={album.attributes.cover_url} onClick={this.selectAlbum} />}
+            src={album.attributes.cover_url} 
+            key={album.attributes.name} 
+         />
       })
    }
 
-   render() {
-      // console.log(this.props)
-      // const id = this.props.album.id
-
-     
-      // console.log(id)
-
-      return this.props.album ? (<Redirect to={`/albums/${this.props.album.id}`} />) 
-      : (
+   // render() {
+   //    return this.props.album ? (<Redirect to={`/albums/${this.props.album.id}`} />) 
+   //    : (
       
-         <div key={Math.random()}>
+   //       <div key={Math.random()}>
+   //          {this.renderAlbums()}
+   //       </div>
+      
+   //    )
+   // }
+
+
+   render() {
+      return (
+         <div>
             {this.renderAlbums()}
          </div>
-      
       )
    }
 
 }
 
 
-const mapStateToProps = (state) => {
-   return {
-      albums: state.albums.data,
-      album: state.albums.selectedAlbum,
-      loading: state.albums.loading
-   }
-}
+// const mapStateToProps = ({state}) => {
+//    return {
+//       state
+//    }
+// }
 
 
-export default connect(mapStateToProps, { setAlbum } )(Albums)
+export default Albums //connect(mapStateToProps, { setAlbum } ) (Albums)
 
 
 

@@ -17,11 +17,6 @@ import Dashboard from './components/Dashboard';
 
 class App extends React.Component {
 
-  // componentDidMount() {
-    // hit an end point that gets you a user or gets you nothing
-    // check if a user is currentlyLoggedIn 
-  // }
-
   render() {
     return (
 
@@ -32,7 +27,7 @@ class App extends React.Component {
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={UserLogin}/>
             <Route exact path='/signup' component={UserSignup}/>
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/dashboard' component={Dashboard}/>
             <Route exact path='/albums' component={AlbumsContainer} />
           </Switch>
 

@@ -55,7 +55,7 @@ class UserLogin extends React.Component {
    
    render() {
       if (this.state.shouldRedirect) {
-         return <Redirect to='/dashboard' />
+         return <Redirect to='/dashboard'/>
       } else {
          return (
             <div>

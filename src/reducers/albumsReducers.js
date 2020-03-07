@@ -1,4 +1,11 @@
-export default function albumsReducer(state = {data: [], selectedAlbum: null, loading: false}, action) {
+
+const initialState = {
+   data: [],
+   loading: false,
+   selectedAlbum: {}
+}
+
+export default function albumsReducer(state = initialState, action) {
    switch (action.type) {
       case 'SET_ALBUMS':
          return {loading: false, data: action.payload}
@@ -7,7 +14,7 @@ export default function albumsReducer(state = {data: [], selectedAlbum: null, lo
       case 'LOADING_ALBUM':
          return {...state, loading: true}
       case 'SELECT_ALBUM':
-         return {loading: false, selectedAlbum: action.payload} 
+         return {...state, loading: false, selectedAlbum: action.payload} 
       default:
          return state
    }
