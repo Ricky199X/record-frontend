@@ -15,7 +15,19 @@ class UserLogin extends React.Component {
         password: "",
         shouldRedirect: false
       };
-    }
+   }
+
+   // check for if redirect should occur
+   componentDidUpdate(prevProps) {
+      if (!prevProps.user.loggedIn && this.props.user.loggedIn) {
+         this.setState({
+            shouldRedirect: true
+         })
+      }
+   }
+
+
+
 
    // this is an UNCONTROLLED FORM - the form itself is controlling the value atm
    // we need to turn the uncontrolled from to a controlled form by adding a value 
@@ -48,30 +60,29 @@ class UserLogin extends React.Component {
       event.preventDefault()
       this.props.loginUser(this.state)
    }
-            
-
-   redirect = () => {
-      this.props.history.push('/')
-   }
    
    render() {
-      return (
-         <div>
-            <form onSubmit={this.handleSubmit} >
-               <label>Username:</label>
-               <input onChange={this.handleUsernameChange} type='text' name='username' placeholder='Enter your Username' value={this.state.username}/>
-               <label>Email Address:</label>
-               <input onChange={this.handleEmailChange} type='text' name='email' placeholder='Email address' value={this.state.email}/>
-               <label>Password:</label>
-               <input onChange={this.handlePasswordChange} type='text' name='password' placeholder='Enter password' value={this.state.password}/>
-            </form> 
-
-            <button onClick={this.handleSubmit}>Log In!</button>
+      if (this.state.shouldRedirect) {
+         return <Redirect to='/dashboard' />
+      } else {
+         return (
             <div>
-               or <Link to='/signup'>sign up</Link>
+               <form onSubmit={this.handleSubmit} >
+                  <label>Username:</label>
+                  <input onChange={this.handleUsernameChange} type='text' name='username' placeholder='Enter your Username' value={this.state.username}/>
+                  <label>Email Address:</label>
+                  <input onChange={this.handleEmailChange} type='text' name='email' placeholder='Email address' value={this.state.email}/>
+                  <label>Password:</label>
+                  <input onChange={this.handlePasswordChange} type='text' name='password' placeholder='Enter password' value={this.state.password}/>
+               </form> 
+   
+               <button onClick={this.handleSubmit}>Log In!</button>
+               <div>
+                  or <Link to='/signup'>sign up</Link>
+               </div>
             </div>
-         </div>
-      )
+         )
+      }
    }
 }
 

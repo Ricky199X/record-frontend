@@ -18,8 +18,8 @@ class UserSignup extends React.Component {
 
    // handles whether or not redirect should occur - checks the logged in prop
    componentDidUpdate(prevProps) {
-      console.log(prevProps)
-      console.log(this.props)
+      // console.log(prevProps)
+      // console.log(this.props)
       if (!prevProps.user.loggedIn && this.props.user.loggedIn) {
          this.setState({
             shouldRedirect: true
@@ -62,7 +62,7 @@ class UserSignup extends React.Component {
    }
    
    render() {
-      console.log(this.state.shouldRedirect)
+      // console.log(this.state.shouldRedirect)
       if (this.state.shouldRedirect) {
          return <Redirect to='/dashboard'/>
       } else {
