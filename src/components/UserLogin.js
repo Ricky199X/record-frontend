@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../actions/userActions'
 import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 class UserLogin extends React.Component {
@@ -11,7 +12,8 @@ class UserLogin extends React.Component {
       this.state = {
         username: "",
         email: "",
-        password: ""
+        password: "",
+        shouldRedirect: false
       };
     }
 
