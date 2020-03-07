@@ -24,21 +24,6 @@ class Albums extends React.Component {
    //    // })
    // }
 
-   // renderAlbums = () => {
-   //    const albums = this.props.albums
-      
-   //    return albums.map(album => {
-   //       return (
-   //          <div className="row s19" key={Math.random()}>
-   //             <div key={album.attributes.name} className="col s6" >
-   //                   <img alt={album.id} src={album.attributes.cover_url} onClick={this.selectAlbum}/>
-   //                   {this.state.displayDetails ? <AlbumCard album={album}/> : null}
-   //             </div>
-   //          </div>
-   //       )
-   //    })
-   // }
-
    // onClick={() => this.selectAlbum(album.id)}
 
    renderAlbumThumbnails = () => {
@@ -80,32 +65,6 @@ class Albums extends React.Component {
 }
 
 
-// const mapStateToProps = ({state}) => {
-//    return {
-//       state
-//    }
-// }
 
 
 export default Albums //connect(mapStateToProps, { setAlbum } ) (Albums)
-
-
-
-// const Albums = ({ albums }) => {
-
-//    return (
-      // <div className="container">
-      //    <div className="row s12" >
-      //       {albums.map(({ id, attributes: { name, release_date, label, cover_url } }) => (
-      //          <div key={id} className="col s4" >
-      //             <img alt={name} src={cover_url} onClick={selectAlbum}/>
-      //             {/* <p>Name: {name}</p>
-      //             <p>Label: {label}</p>
-      //             <p>Release Data: {release_date}</p> */}
-      //          </div>
-      //       ))}
-      //    </div>
-      // </div>
-//    )
-  
-// }
