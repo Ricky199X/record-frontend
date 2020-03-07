@@ -5,6 +5,12 @@ import Albums from '../components/Albums'
 
 class AlbumsContainer extends React.Component {
 
+   state ={
+      data: [],
+      loading: false,
+      selectedAlbum: {}
+   }
+
    componentDidMount() {
       this.props.fetchAlbums()
    }

@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import AlbumCard from './AlbumCard'
+import AlbumThumbnail from './AlbumThumbnail'
 import { setAlbum } from '../actions/albumActions'
 import { Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch , Route, Link } from 'react-router-dom'
 
 // will render all albums in db
 // when you click the album, it will render an album card
@@ -14,12 +15,13 @@ class Albums extends React.Component {
       displayDetails: false
    }
 
-   // selectAlbum = (event) => {
-   //    event.preventDefault()
-   //    this.props.setAlbum(this.props.album)
-   //    this.setState({
-   //       displayDetails: true
-   //    })
+   // selectAlbum = (id) => {
+   //    // event.preventDefault()
+   //    // console.log(id)
+   //    // this.props.setAlbum(this.props.album)
+   //    // this.setState({
+   //    //    displayDetails: true
+   //    // })
    // }
 
    // renderAlbums = () => {
@@ -37,16 +39,21 @@ class Albums extends React.Component {
    //    })
    // }
 
-   renderAlbums = () => {
+   // onClick={() => this.selectAlbum(album.id)}
+
+   renderAlbumThumbnails = () => {
       const albums = this.props.albums
-      // console.log(albums)
       return albums.map(album => {
-         return <AlbumCard 
-            name={album.attributes.name}
-            img={<img alt={album.id} src={album.attributes.cover_url} onClick={this.selectAlbum} />}
-            src={album.attributes.cover_url} 
-            key={album.attributes.name} 
-         />
+         return (
+            <Link to={`/albums/${album.id}`}>
+            <AlbumThumbnail 
+               name={album.attributes.name}
+               img={<img alt={album.id} src={album.attributes.cover_url}  />}
+               src={album.attributes.cover_url} 
+               key={album.attributes.name} 
+            />
+         </Link>
+         )
       })
    }
 
@@ -65,7 +72,7 @@ class Albums extends React.Component {
    render() {
       return (
          <div>
-            {this.renderAlbums()}
+            {this.renderAlbumThumbnails()}
          </div>
       )
    }

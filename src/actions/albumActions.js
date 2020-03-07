@@ -18,9 +18,9 @@ export const fetchAlbums = () => {
 //    }
 // }
 
-export function setAlbum(album) {
-   return {
-      type: "SELECT_ALBUMS",
-      payload: album
-   }
-}
+// export function setAlbum(album) {
+//    return {
+//       type: "SELECT_ALBUMS",
+//       payload: album
+//    }
+// }

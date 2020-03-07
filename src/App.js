@@ -6,7 +6,7 @@ import UsersContainer from './containers/UsersContainer'
 import NavBar from './components/NavBar';
 import UserAlbums from './components/UserAlbums'
 import Home from './components/Home'
-import AlbumCard from './components/AlbumCard'
+import AlbumCard from './components/AlbumThumbnail'
 // import LandingPage from './components/LandingPage'
 import Albums from './components/Albums'
 import UserSignup from './components/UserSignup';
