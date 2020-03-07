@@ -1,17 +1,24 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { fetchAlbums } from '../actions/albumActions'
 
-class AlbumDetails extends React.Component {
+const AlbumDetails = () => {
+
+   // get the url params
+   let {id} = useParams()
 
 
 
-
-   render() {
+   return (
       <div>
-         <h1>These are the album details</h1> 
+         <h1>Now looking at {id}</h1> 
       </div>
-   }
+   )
 }
 
+const mapStateToProps = ({album}) => {
+   return { album }
+}
 
-export default AlbumDetails
+export default connect(mapStateToProps)(AlbumDetails)

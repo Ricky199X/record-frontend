@@ -1,17 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch , Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch , Route, Link, useParams } from 'react-router-dom'
 
 import AlbumsContainer from './containers/AlbumsContainer'
 import UsersContainer from './containers/UsersContainer'
 import NavBar from './components/NavBar';
 import UserAlbums from './components/UserAlbums'
 import Home from './components/Home'
-import AlbumCard from './components/AlbumThumbnail'
+import AlbumThumbnail from './components/AlbumThumbnail'
 // import LandingPage from './components/LandingPage'
 import Albums from './components/Albums'
 import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin'
 import Dashboard from './components/Dashboard';
+import AlbumDetails from './components/AlbumDetails'
 
 
 
@@ -29,6 +30,9 @@ class App extends React.Component {
             <Route exact path='/signup' component={UserSignup}/>
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route exact path='/albums' component={AlbumsContainer} />
+            {/* <Route path={`/albums/${id}`}>
+            <AlbumDetails />
+            </Route> */}
           </Switch>
 
         </div>

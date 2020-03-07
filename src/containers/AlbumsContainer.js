@@ -35,7 +35,9 @@ class AlbumsContainer extends React.Component {
 const mapStateToProps = (state) => {
    return {
       albums: state.albums.data,
-      loading: state.albums.loading
+      loading: state.albums.loading,
+      selectedAlbum: state.albums.selectedAlbum
+
    }
 }
 
