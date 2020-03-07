@@ -11,8 +11,18 @@ class UserSignup extends React.Component {
         username: "",
         email: "",
         password: "",
+        shouldRedirect: false
       };
-    }
+   }
+
+   // handles whether or not redirect should occur - checks the logged in prop
+   componentDidUpdate(prevProps) {
+      if (!prevProps.user.loggedIn && this.props.user.loggedIn) {
+         this.setState({
+            shouldRedirect: true
+         })
+      }
+   }
 
    // this is an UNCONTROLLED FORM - the form itself is controlling the value atm
    // we need to turn the uncontrolled from to a controlled form by adding a value 
@@ -40,13 +50,10 @@ class UserSignup extends React.Component {
    }
 
    // handle submit
-
    handleSubmit = (event) => {
       // sends the state to the createUser action creator -> 
       // data will be coming from the state
       event.preventDefault()
-      console.log(this.props)
-      console.log(this.state)
       this.props.createUser(this.state)
       // this.props.loginUser(this.state)
    }
