@@ -7,7 +7,7 @@
 // both have a data 
 
 export const createUser = (data) => {
-   debugger
+   // debugger
    return (dispatch) => {
       dispatch({type: 'LOADING_USER'})
       fetch('http://localhost:3000/users', {
@@ -25,16 +25,13 @@ export const createUser = (data) => {
          dispatch({type: 'LOGIN_USER', payload: user})
    
       })
-      
-      // debugger
    }
 }
 
 // will accept a user object 
 export const loginUser = (data) => {
-   debugger
    return (dispatch) => {
-      console.log(data)
+      // console.log(data)
       fetch('http://localhost:3000/login', {
       headers: {
          'Content-Type': 'application/json',

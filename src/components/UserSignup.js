@@ -2,6 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createUser, loginUser } from '../actions/userActions'
+import { Redirect } from 'react-router-dom'
 
 class UserSignup extends React.Component {
    constructor(props) {
@@ -17,6 +18,8 @@ class UserSignup extends React.Component {
 
    // handles whether or not redirect should occur - checks the logged in prop
    componentDidUpdate(prevProps) {
+      console.log(prevProps)
+      console.log(this.props)
       if (!prevProps.user.loggedIn && this.props.user.loggedIn) {
          this.setState({
             shouldRedirect: true
@@ -59,6 +62,10 @@ class UserSignup extends React.Component {
    }
    
    render() {
+      console.log(this.state.shouldRedirect)
+      if (this.state.shouldRedirect) {
+         return <Redirect to='/dashboard'/>
+      } else {
       return (
          <div>
             <form onSubmit={this.handleSubmit} >
@@ -72,11 +79,15 @@ class UserSignup extends React.Component {
 
             <button onClick={this.handleSubmit}>Sign Up!</button>
          </div>
-      )
+         )
+      }
    }
 }
 
+const mapStateToProps = ({user}) => {
+   return { user }
+}
 
-export default connect(null, {createUser, loginUser})(UserSignup)
+export default connect(mapStateToProps, {createUser, loginUser})(UserSignup)
 
 // className="col s12" 

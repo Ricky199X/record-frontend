@@ -3,7 +3,7 @@ import React from 'react'
 
 const AlbumCard = (album) => {
 
-   console.log(album)
+   // console.log(album)
 
    return (
       <div className="container">
