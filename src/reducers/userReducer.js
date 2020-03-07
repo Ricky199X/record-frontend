@@ -12,9 +12,8 @@ export default function userReducer(state = initialState, action) {
    switch (action.type) {
       case 'LOADING_USER':
          return {...state, loading: true, loggedIn: false}
-      case 'ADD_USER':
-         return {data: action.payload, loading: false, loggedIn: false}
       case 'LOGIN_USER':
+         // console.log(action.payload)
          return {...state, data: action.payload, loading: false, loggedIn: true}
       default:
          return state

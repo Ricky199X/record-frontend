@@ -21,7 +21,11 @@ export const createUser = (data) => {
          body: JSON.stringify({user: data})
       })
       .then(resp => resp.json())
-      .then(user => dispatch({type: 'ADD_USER', payload: user}))
+      .then(user => {
+         dispatch({type: 'LOGIN_USER', payload: user})
+   
+      })
+      
       // debugger
    }
 }
@@ -30,6 +34,7 @@ export const createUser = (data) => {
 export const loginUser = (data) => {
    debugger
    return (dispatch) => {
+      console.log(data)
       fetch('http://localhost:3000/login', {
       headers: {
          'Content-Type': 'application/json',
