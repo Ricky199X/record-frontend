@@ -4,7 +4,8 @@
 const initialState = {
    data: {},
    loading: false,
-   loggedIn: false
+   loggedIn: false,
+   user_albums: {}
 }
 
 // set the default state first, action is second argument
@@ -15,6 +16,8 @@ export default function userReducer(state = initialState, action) {
       case 'LOGIN_USER':
          // console.log(action.payload)
          return {...state, data: action.payload, loading: false, loggedIn: true}
+      case 'ADD_USER_ALBUM':
+         return {...state, loading: false, loggedIn: true, user_albums: action.payload}
       default:
          return state
    }
