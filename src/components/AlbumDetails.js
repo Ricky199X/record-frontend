@@ -1,17 +1,20 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchAlbums } from '../actions/albumActions'
+import { addUserAlbum } from '../actions/userActions'
 
 const AlbumDetails = (props) => {
 
+   console.log(props)
    // get the url params
    let {id} = useParams()
 
    let album = props.albums.data.find(a => a.id == id)
-   console.log(props)
+  
+   // defines the current user's ID 
+   let currentUserId = props.user.data.id
 
-   // need to render the songs from each 
+   // renders the songs from the album currently being viewed
    const renderSongsContainer = (album) => {
       let songs = album.attributes.songs
       // console.log(songs)
@@ -25,6 +28,13 @@ const AlbumDetails = (props) => {
       })
    }
 
+   const handleAddUserAlbum = (album, currentUserId) => {
+      // album variable is an album object -> want to dispatch that to ADD_USER_ALBUM
+      console.log(album)
+      console.log(currentUserId)
+      props.addUserAlbum(album, currentUserId)
+   }
+
    return (
       <div>
          <img alt={album.attributes.name} src={album.attributes.cover_url} width="300" height="300"/>
@@ -36,14 +46,18 @@ const AlbumDetails = (props) => {
          {renderSongsContainer(album)}
 
          {/* add album button */}
-         <button>Add Album</button>
+         <button onClick={() => handleAddUserAlbum(album, currentUserId)}>Add Album</button>
          
       </div>
    )
 }
 
-const mapStateToProps = ({albums}) => {
-   return { albums }
+const mapStateToProps = ({albums, user}) => {
+   return { albums, user }
 }
 
-export default connect(mapStateToProps)(AlbumDetails)
+// const mapDispatchToProps = (dispatch) => {
+//    addUserAlbum: info => dispatch()
+// }
+ 
+export default connect(mapStateToProps, {addUserAlbum})(AlbumDetails)

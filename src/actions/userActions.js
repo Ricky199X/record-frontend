@@ -47,6 +47,24 @@ export const loginUser = (data) => {
    }
 }
 
+// action to add an album to user's albums collection - will take an album object and a user id
+export const addUserAlbum = (data, userId) => {
+   debugger
+   return (dispatch) => {
+      fetch(`http://localhost:3000/users/${userId}/albums`, {
+         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+         },
+            mode: 'cors',
+            method: 'POST',
+            credentials: 'include',
+            body: JSON.stringify({user_album: data})
+      })
+      .then(resp => resp.json())
+      // .then()
+   }
+}
 
 
 

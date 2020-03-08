@@ -7,7 +7,6 @@ import NavBar from './components/NavBar';
 import UserAlbums from './components/UserAlbums'
 import Home from './components/Home'
 import AlbumThumbnail from './components/AlbumThumbnail'
-// import LandingPage from './components/LandingPage'
 import Albums from './components/Albums'
 import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin'

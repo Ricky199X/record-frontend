@@ -7,8 +7,7 @@ class AlbumsContainer extends React.Component {
 
    state ={
       data: [],
-      loading: false,
-      selectedAlbum: {}
+      loading: false
    }
 
    componentDidMount() {
@@ -35,9 +34,7 @@ class AlbumsContainer extends React.Component {
 const mapStateToProps = (state) => {
    return {
       albums: state.albums.data,
-      loading: state.albums.loading,
-      selectedAlbum: state.albums.selectedAlbum
-
+      loading: state.albums.loading
    }
 }
 
