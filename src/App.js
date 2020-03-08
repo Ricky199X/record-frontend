@@ -30,9 +30,9 @@ class App extends React.Component {
             <Route exact path='/signup' component={UserSignup}/>
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route exact path='/albums' component={AlbumsContainer} />
-            {/* <Route path={`/albums/${id}`}>
-            <AlbumDetails />
-            </Route> */}
+            <Route path='/albums/:id'>
+              <AlbumDetails />
+            </Route>
           </Switch>
 
         </div>
