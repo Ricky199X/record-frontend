@@ -27,13 +27,16 @@ const AlbumDetails = (props) => {
 
    return (
       <div>
-         <img alt={album.id} src={album.attributes.cover_url} />
-         <h4>Artist: {album.attributes.artist.name}</h4>
-         <h4>Album Name: {album.attributes.name}</h4> 
-         <h4>Release Date: {album.attributes.release_date}</h4> 
-         <h4>Record Label: {album.attributes.label}</h4>
-         <h4>Popularity: {album.attributes.popularity}</h4>
+         <img alt={album.attributes.name} src={album.attributes.cover_url} width="300" height="300"/>
+         <h5>Artist: {album.attributes.artist.name}</h5>
+         <h5>Album Name: {album.attributes.name}</h5> 
+         <h5>Release Date: {album.attributes.release_date}</h5> 
+         <h5>Record Label: {album.attributes.label}</h5>
+         <h5>Popularity: {album.attributes.popularity}</h5>
          {renderSongsContainer(album)}
+
+         {/* add album button */}
+         <button>Add Album</button>
          
       </div>
    )
