@@ -15,17 +15,6 @@ class Albums extends React.Component {
       displayDetails: false
    }
 
-   // selectAlbum = (id) => {
-   //    // event.preventDefault()
-   //    // console.log(id)
-   //    // this.props.setAlbum(this.props.album)
-   //    // this.setState({
-   //    //    displayDetails: true
-   //    // })
-   // }
-
-   // onClick={() => this.selectAlbum(album.id)}
-
    renderAlbumThumbnails = () => {
       const albums = this.props.albums
       return albums.map(album => {
@@ -41,18 +30,6 @@ class Albums extends React.Component {
          )
       })
    }
-
-   // render() {
-   //    return this.props.album ? (<Redirect to={`/albums/${this.props.album.id}`} />) 
-   //    : (
-      
-   //       <div key={Math.random()}>
-   //          {this.renderAlbums()}
-   //       </div>
-      
-   //    )
-   // }
-
 
    render() {
       return (

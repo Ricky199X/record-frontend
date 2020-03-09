@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getUserAlbums } from '../actions/userActions'
+import UserAlbums from './UserAlbums'
 
 class Dashboard extends React.Component {
 
@@ -8,7 +9,8 @@ class Dashboard extends React.Component {
       super(props)
 
       this.state = {
-         currentUserId: this.props.user.data.id
+         currentUserId: this.props.user.data.id,
+         loading: false
       }
 
    }
@@ -18,18 +20,24 @@ class Dashboard extends React.Component {
    // upon sucessful mounting of component, make fetch request to get the user's albums
 
    componentDidMount() {
-      console.log(this.state.currentUserId)
-      console.log(this.state)
-      console.log(this.props)
       this.props.getUserAlbums(this.state.currentUserId)
-
    }
    
    
    render() {
-      return (
-         <h4>This is the dashboard</h4>
-      )
+      const { user_albums, loading } = this.props;
+      if (loading) {
+         return (
+            <h1>Albums Loading</h1>
+         )
+      } else {
+         return (
+            <div>
+               <h4>Welcome Home!</h4>
+               <UserAlbums user_albums={user_albums} />
+            </div>
+         )
+      }
    }
    
 }

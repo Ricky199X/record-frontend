@@ -6,7 +6,7 @@ const UserAlbums = (props) => {
 
    return (
       <div>
-         UserAlbums
+         Connecting to User Albums
       </div>
    )
 }
