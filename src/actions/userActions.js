@@ -49,7 +49,6 @@ export const loginUser = (data) => {
 
 // action to add an album to user's albums collection - will take an album object and a user id
 export const addUserAlbum = (data, userId) => {
-   debugger
    return (dispatch) => {
       fetch(`http://localhost:3000/users/${userId}/user_albums`, {
          headers: {
@@ -63,10 +62,26 @@ export const addUserAlbum = (data, userId) => {
       })
       .then(resp => resp.json())
       .then(user_album => dispatch({type: 'ADD_USER_ALBUM', payload: user_album}))
-      // console.log(user_album)
    }
 }
 
+// action to get the User's user_albums collection upon successful login, update it in state
+export const getUserAlbums = (data, userId) => {
+   return (dispatch) => {
+      fetch(`http://localhost:3000/users/${userId}/user_albums`, {
+         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+         },
+            mode: 'cors',
+            method: 'GET',
+            credentials: 'include',
+            body: JSON.stringify({user_albums: data})
+      })
+      .then(resp => resp.json())
+      // 
+   }
+}
 
 
 // what we dispatch is an action object -> to the reducer

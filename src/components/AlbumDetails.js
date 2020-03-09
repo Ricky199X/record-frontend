@@ -52,9 +52,5 @@ const AlbumDetails = (props) => {
 const mapStateToProps = ({albums, user}) => {
    return { albums, user }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//    addUserAlbum: info => dispatch()
-// }
  
 export default connect(mapStateToProps, {addUserAlbum})(AlbumDetails)
