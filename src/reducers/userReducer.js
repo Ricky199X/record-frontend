@@ -17,6 +17,8 @@ export default function userReducer(state = initialState, action) {
          return {...state, data: action.payload, loading: false, loggedIn: true}
       case 'ADD_USER_ALBUM':
          return {...state, loading: false, loggedIn: true, user_albums: action.payload}
+      case 'SET_USER_ALBUMS':
+         return {...state, loading: false, loggedIn: true, user_albums: action.payload}
       default:
          return state
    }
