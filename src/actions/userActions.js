@@ -68,7 +68,7 @@ export const addUserAlbum = (data, userId) => {
 // action to get the User's user_albums collection upon successful login, update it in state
 export const getUserAlbums = (userId) => {
    return (dispatch) => {
-      fetch(`http://localhost:3000/users/${userId}/user_albums`, {
+      fetch(`http://localhost:3000/users/${userId}/albums`, {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
