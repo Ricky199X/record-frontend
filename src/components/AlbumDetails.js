@@ -29,9 +29,6 @@ const AlbumDetails = (props) => {
    }
 
    const handleAddUserAlbum = (album, currentUserId) => {
-      // album variable is an album object -> want to dispatch that to ADD_USER_ALBUM
-      console.log(album)
-      console.log(currentUserId)
       props.addUserAlbum(album, currentUserId)
    }
 

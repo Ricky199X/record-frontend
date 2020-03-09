@@ -51,7 +51,7 @@ export const loginUser = (data) => {
 export const addUserAlbum = (data, userId) => {
    debugger
    return (dispatch) => {
-      fetch(`http://localhost:3000/users/${userId}/albums`, {
+      fetch(`http://localhost:3000/users/${userId}/user_albums`, {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -59,10 +59,11 @@ export const addUserAlbum = (data, userId) => {
             mode: 'cors',
             method: 'POST',
             credentials: 'include',
-            body: JSON.stringify({user_album: data})
+            body: JSON.stringify({album: data})
       })
       .then(resp => resp.json())
-      // .then()
+      .then(user_album => dispatch({type: 'ADD_USER_ALBUM', payload: user_album}))
+      // console.log(user_album)
    }
 }
 
