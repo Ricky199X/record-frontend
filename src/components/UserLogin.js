@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom'
 class UserLogin extends React.Component {
    constructor(props) {
       super(props);
-  
+
       this.state = {
         username: "",
         email: "",
@@ -16,6 +16,8 @@ class UserLogin extends React.Component {
         shouldRedirect: false
       };
    }
+
+
 
    // check for if redirect should occur
    componentDidUpdate(prevProps) {
@@ -51,6 +53,7 @@ class UserLogin extends React.Component {
    handleSubmit = (event) => {
       event.preventDefault()
       this.props.loginUser(this.state)
+      // this.props.getUserAlbums(this.state)
    }
    
    render() {

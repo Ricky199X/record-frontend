@@ -66,7 +66,7 @@ export const addUserAlbum = (data, userId) => {
 }
 
 // action to get the User's user_albums collection upon successful login, update it in state
-export const getUserAlbums = (data, userId) => {
+export const getUserAlbums = (userId) => {
    return (dispatch) => {
       fetch(`http://localhost:3000/users/${userId}/user_albums`, {
          headers: {
@@ -76,10 +76,10 @@ export const getUserAlbums = (data, userId) => {
             mode: 'cors',
             method: 'GET',
             credentials: 'include',
-            body: JSON.stringify({user_albums: data})
+            // body: JSON.stringify({user_albums: data})
       })
       .then(resp => resp.json())
-      // 
+      .then(user_albums => dispatch({type: 'SET_USER_ALBUMS', payload: user_albums}) )
    }
 }
 
