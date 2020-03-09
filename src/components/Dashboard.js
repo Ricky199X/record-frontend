@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
    
    
    render() {
-      const { user_albums, loading } = this.props;
+      const { albums, loading } = this.props;
       if (loading) {
          return (
             <h1>Albums Loading</h1>
@@ -33,8 +33,7 @@ class Dashboard extends React.Component {
       } else {
          return (
             <div>
-               <h4>Welcome Home!</h4>
-               <UserAlbums user_albums={user_albums} />
+               <UserAlbums />
             </div>
          )
       }
