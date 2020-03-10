@@ -13,7 +13,7 @@ class NavBar extends React.Component {
                <ul className = "right">
                   <li><Link to="/dashboard">Dashboard</Link></li>
                   <li><Link to="/albums">Albums</Link></li>
-                  <li><Link to="/user_albums">Your Albums</Link></li>
+                  <li><Link to="/your-albums">Your Albums</Link></li>
                </ul>
             </div>
          </nav>
