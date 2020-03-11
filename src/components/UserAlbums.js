@@ -24,7 +24,7 @@ const UserAlbums = (props) => {
 
    return (
       <div>
-         Connecting to User Albums
+         <h5>See your album collection below!</h5>
       </div>
    )
 }
