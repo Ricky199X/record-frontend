@@ -7,42 +7,33 @@ class Dashboard extends React.Component {
 
    constructor(props) {
       super(props)
-
-      this.state = {
-         currentUserId: this.props.user.data.id,
-         currentUser: this.props.user.data.username,
-         currentUserAlbums: this.props.user.user_albums,
-         loading: false,
-
-      }
    }
 
    // set variable for the current_user's id, so that the fetch call knows where to get albums
    // upon sucessful mounting of component, make fetch request to get the user's albums
 
    componentDidMount() {
-      this.props.getUserAlbums(this.state.currentUserId)
+      this.props.getUserAlbums(this.props.user.data.id)
    }
    
-   // componentDidUpdate() {
-   //    console.log(this.state)
-   // }
-   
    render() {
-      console.log(this.state.currentUserAlbums)
-      console.log(this.state.currentUser)
+      // console.log(this.props.user.user_albums.data)
+      const currentUser = this.props.user.data.username
+      const currentUserAlbums = this.props.user.user_albums
+
       return (
          <div>
-            <h4>{`Welcome home, ${this.state.currentUser}!`}</h4>
-            <UserAlbums />
+            <h4>{`Welcome home, ${currentUser}!`}</h4>
+            <UserAlbums userAlbums={currentUserAlbums}/>
          </div>
       )
    }
    
 }
 
-const mapStateToProps = ({user, currentUserAlbums}) => {
-   return { user, currentUserAlbums }
+// check if user_albums are undefined prior to rendering anything 
+const mapStateToProps = ({user}) => {
+   return { user }
 }
 
 

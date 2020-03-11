@@ -13,8 +13,7 @@ class UserLogin extends React.Component {
         username: "",
         email: "",
         password: "",
-        shouldRedirect: false,
-        user_albums: this.props.user.data.user_albums
+        shouldRedirect: false
       };
    }
 
