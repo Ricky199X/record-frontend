@@ -5,7 +5,7 @@ const initialState = {
    data: {},
    loading: false,
    loggedIn: false,
-   user_albums: {}
+   user_albums: null
 }
 
 // set the default state first, action is second argument

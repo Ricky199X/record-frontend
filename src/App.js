@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch , Route, Link, useParams } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import AlbumsContainer from './containers/AlbumsContainer'
 import UsersContainer from './containers/UsersContainer'
@@ -17,19 +18,27 @@ import AlbumDetails from './components/AlbumDetails'
 
 class App extends React.Component {
 
+  // to not lose the currentUser on page refresh: 
+  // need a component did mount of getting current user anytime app loads
+  // hits end point everytime the page reloads -> calls to users controller
+
+
   render() {
     return (
 
       <Router>
         <div>
-          <NavBar />
+          <NavBar currentUserId={this.props.currentUserId}/>
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={UserLogin}/>
             <Route exact path='/signup' component={UserSignup}/>
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route exact path='/albums' component={AlbumsContainer} />
-            <Route exact path='/your-albums' component={UserAlbums} />
+            {/* <Route path='/your-albums' component={UserAlbums}/> */}
+            <Route exact path='users/:id/albums'>
+              <UserAlbums albums={this.props.albums} currentUserId={this.props.currentUserId}/>
+            </Route>
             <Route path='/albums/:id'>
               <AlbumDetails />
             </Route>
@@ -41,5 +50,11 @@ class App extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    currentUserId: state.user.data.id,
+    albums: state.user.user_albums
+  }
+}
 
-export default App;
+export default connect(mapStateToProps)(App);

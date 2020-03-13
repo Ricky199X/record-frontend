@@ -5,10 +5,6 @@ import UserAlbums from './UserAlbums'
 
 class Dashboard extends React.Component {
 
-   constructor(props) {
-      super(props)
-   }
-
    // set variable for the current_user's id, so that the fetch call knows where to get albums
    // upon sucessful mounting of component, make fetch request to get the user's albums
 
@@ -17,14 +13,22 @@ class Dashboard extends React.Component {
    }
    
    render() {
-      // console.log(this.props.user.user_albums.data)
       const currentUser = this.props.user.data.username
       const currentUserAlbums = this.props.user.user_albums
+      const isLoggedIn = this.props.user.loggedIn
 
-      return (
+
+      return !isLoggedIn && !currentUserAlbums ?
+      (
+         <div>
+            <h1>You are not logged in yet!</h1>
+         </div>
+      )
+      :
+      (
          <div>
             <h4>{`Welcome home, ${currentUser}!`}</h4>
-            <UserAlbums userAlbums={currentUserAlbums}/>
+            <UserAlbums albums={currentUserAlbums} currentUserId={this.props.user.data.id}/>
          </div>
       )
    }
