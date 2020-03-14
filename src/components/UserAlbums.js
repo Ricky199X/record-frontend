@@ -7,8 +7,12 @@ import AlbumThumbnail from './AlbumThumbnail'
 const UserAlbums = (props) => {
    const albums = props.albums
    const userId = props.currentUserId
+   
+   console.log("inside the user albums component")
+   console.log(props)
 
    return (
+      
       <div>
          <h5>See your album collection below!</h5>
          {albums ? renderUserAlbums(albums, userId) : null}
@@ -20,7 +24,7 @@ const UserAlbums = (props) => {
 const renderUserAlbums = (userAlbumInfo, currentUserId) => {
    return userAlbumInfo.data.map(userAlbum => {
       return (
-         <Link to={`users/${currentUserId}/albums/${userAlbum.id}`} key={Math.random()}>
+         <Link to={`your-albums`} key={Math.random()}>
             <AlbumThumbnail 
                name={userAlbum.attributes.name}
                img={<img alt={userAlbum.id} src={userAlbum.attributes.cover_url}  />}

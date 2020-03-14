@@ -9,14 +9,15 @@ class Dashboard extends React.Component {
    // upon sucessful mounting of component, make fetch request to get the user's albums
 
    componentDidMount() {
-      this.props.getUserAlbums(this.props.user.data.id)
+      console.log(this.props)
+      this.props.getUserAlbums(this.props.currentUserId)
    }
    
    render() {
-      const currentUser = this.props.user.data.username
+      const currentUserName = this.props.user.data.username
+      const currentUserId = this.props.user.data.id
       const currentUserAlbums = this.props.user.user_albums
       const isLoggedIn = this.props.user.loggedIn
-
 
       return !isLoggedIn && !currentUserAlbums ?
       (
@@ -27,8 +28,8 @@ class Dashboard extends React.Component {
       :
       (
          <div>
-            <h4>{`Welcome home, ${currentUser}!`}</h4>
-            <UserAlbums albums={currentUserAlbums} currentUserId={this.props.user.data.id}/>
+            <h4>{`Welcome home, ${currentUserName}!`}</h4>
+            <UserAlbums albums={currentUserAlbums} currentUserId={currentUserId}/>
          </div>
       )
    }

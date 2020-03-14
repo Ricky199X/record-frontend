@@ -22,6 +22,12 @@ class App extends React.Component {
   // need a component did mount of getting current user anytime app loads
   // hits end point everytime the page reloads -> calls to users controller
 
+  componentDidMount() {
+    console.log(this.props)
+    // this.props.getCurrentUser()
+    // console.log(props)
+  }
+
 
   render() {
     return (
@@ -33,12 +39,12 @@ class App extends React.Component {
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={UserLogin}/>
             <Route exact path='/signup' component={UserSignup}/>
-            <Route exact path='/dashboard' component={Dashboard}/>
+            <Route exact path='/dashboard' component={Dashboard} currentUserId={this.props.currentUserId} />
             <Route exact path='/albums' component={AlbumsContainer} />
-            {/* <Route path='/your-albums' component={UserAlbums}/> */}
-            <Route exact path='users/:id/albums'>
+            <Route path='/your-albums' component={UserAlbums} currentUserId={this.props.currentUserId}/>
+            {/* <Route path='users/:id/albums'>
               <UserAlbums albums={this.props.albums} currentUserId={this.props.currentUserId}/>
-            </Route>
+            </Route> */}
             <Route path='/albums/:id'>
               <AlbumDetails />
             </Route>
@@ -53,7 +59,8 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentUserId: state.user.data.id,
-    albums: state.user.user_albums
+    albums: state.user.user_albums,
+    isLoggedIn: state.user.loggedIn,
   }
 }
 
