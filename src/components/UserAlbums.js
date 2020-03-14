@@ -6,22 +6,22 @@ import AlbumThumbnail from './AlbumThumbnail'
 
 const UserAlbums = (props) => {
    const albums = props.albums
-   const userId = props.currentUserId
+   // const userId = props.currentUserId
    
    console.log("inside the user albums component")
-   // console.log(props)
+   console.log(props)
 
    return (
       
       <div>
          <h5>See your album collection below!</h5>
-         {albums ? renderUserAlbums(albums, userId) : null}
+         {albums ? renderUserAlbums(albums) : null}
       </div>
    )
 }
 
 
-const renderUserAlbums = (userAlbumInfo, currentUserId) => {
+const renderUserAlbums = (userAlbumInfo) => {
    return userAlbumInfo.data.map(userAlbum => {
       return (
          <Link to={`your-albums`} key={Math.random()}>

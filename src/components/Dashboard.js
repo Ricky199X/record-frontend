@@ -10,7 +10,6 @@ class Dashboard extends React.Component {
 
    componentDidMount() {
       this.props.getUserAlbums(this.props.currentUserId)
-      // this.props.getCurrentUser()
    }
 
    // componentDidUpdate(prevState, state) {
