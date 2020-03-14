@@ -12,8 +12,6 @@ export default function albumsReducer(state = initialState, action) {
          return {...state, loading: true}
       case 'LOADING_ALBUM':
          return {...state, loading: true}
-      // case 'SELECT_ALBUM':
-      //    return {...state, loading: false, selectedAlbum: action.payload} 
       
       default:
          return state

@@ -76,40 +76,43 @@ export const getUserAlbums = (userId) => {
             mode: 'cors',
             method: 'GET',
             credentials: 'include',
-            // body: JSON.stringify({user_albums: data})
       })
       .then(resp => resp.json())
       .then(user_albums => dispatch({type: 'SET_USER_ALBUMS', payload: user_albums}) )
    }
 }
 
-
-export const getCurrentUser = () => {
-   debugger
+export const getUserAlbum = (userId, albumId) => {
    return (dispatch) => {
-      fetch('http://localhost:3000/current-user', {
+      fetch(`http://localhost:3000/users/${userId}/albums/${albumId}`, {
          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-         },
+            'Content-Type' : 'application/json',
+            'Accept' : 'application/json'
+         }, 
             mode: 'cors',
             method: 'GET',
-            credentials: 'include'
-      }).then(resp => resp.json())
-         .then(user => dispatch({type: 'SET_CURRENT_USER', payload: user}))
+            credentials: 'include',
+      })
+         .then(resp => console.log(resp.json()))
    }
 }
 
+
+// export const getCurrentUser = (userId) => {
+//    // debugger
+//    return (dispatch) => {
+//       fetch('http://localhost:3000/current-user', {
+//          headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//          },
+//             mode: 'cors',
+//             method: 'get',
+//             credentials: 'include'
+//       }).then(resp => resp.json())
+//          .then(user => dispatch({type: 'SET_CURRENT_USER', payload: user}))
+//    }
+// }
+
 // what we dispatch is an action object -> to the reducer
 // which will then return a new version of our state based on what action we sent
-
-// Backend
-
-// Frontend
-
-// no user -> then sign up event
-// sign up event -> get back user
-// put user into store
-// compnent did update sees user in store 
-// if it has a user there, renders a redirct to the dashboard 
-// else display the user signup 

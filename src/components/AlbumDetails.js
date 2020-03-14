@@ -17,7 +17,6 @@ const AlbumDetails = (props) => {
    // renders the songs from the album currently being viewed
    const renderSongsContainer = (album) => {
       let songs = album.attributes.songs
-      // console.log(songs)
       // map thru album.attributes.songs
       return songs.map(song => {
          return <section className = "songs-container" key={Math.random()}>

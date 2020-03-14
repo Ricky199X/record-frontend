@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
 
    componentDidMount() {
       this.props.getUserAlbums(this.props.currentUserId)
+      // this.props.getCurrentUser(this.props.currentUserId)
    }
 
    // componentDidUpdate(prevState, state) {
@@ -49,4 +50,4 @@ const mapStateToProps = ({user}) => {
 }
 
 
-export default connect(mapStateToProps, {getUserAlbums, getCurrentUser})(Dashboard)
+export default connect(mapStateToProps, {getUserAlbums})(Dashboard)
