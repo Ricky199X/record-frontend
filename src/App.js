@@ -22,11 +22,11 @@ class App extends React.Component {
   // need a component did mount of getting current user anytime app loads
   // hits end point everytime the page reloads -> calls to users controller
 
-  componentDidMount() {
-    console.log(this.props)
-    // this.props.getCurrentUser()
-    // console.log(props)
-  }
+  // componentDidMount() {
+  //   console.log(this.props)
+  //   // this.props.getCurrentUser()
+  //   // console.log(props)
+  // }
 
 
   render() {

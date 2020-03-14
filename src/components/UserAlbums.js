@@ -9,7 +9,7 @@ const UserAlbums = (props) => {
    const userId = props.currentUserId
    
    console.log("inside the user albums component")
-   console.log(props)
+   // console.log(props)
 
    return (
       

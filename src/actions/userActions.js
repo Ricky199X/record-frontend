@@ -85,8 +85,9 @@ export const getUserAlbums = (userId) => {
 
 
 export const getCurrentUser = () => {
+   debugger
    return (dispatch) => {
-      fetch('http://localhost:300/current-user', {
+      fetch('http://localhost:3000/current-user', {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'

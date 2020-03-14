@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getUserAlbums } from '../actions/userActions'
+import { getUserAlbums, getCurrentUser } from '../actions/userActions'
 import UserAlbums from './UserAlbums'
 
 class Dashboard extends React.Component {
@@ -10,10 +10,13 @@ class Dashboard extends React.Component {
 
    componentDidMount() {
       this.props.getUserAlbums(this.props.currentUserId)
+      // this.props.getCurrentUser()
    }
 
-   // componentDidUpdate() {
-
+   // componentDidUpdate(prevState, state) {
+   //    // this.props.getCurrentUser()
+   //    console.log(prevState)
+   //    console.log(state)
    // }
    
    render() {
@@ -42,10 +45,9 @@ class Dashboard extends React.Component {
    
 }
 
-// check if user_albums are undefined prior to rendering anything 
 const mapStateToProps = ({user}) => {
    return { user }
 }
 
 
-export default connect(mapStateToProps, {getUserAlbums})(Dashboard)
+export default connect(mapStateToProps, {getUserAlbums, getCurrentUser})(Dashboard)
