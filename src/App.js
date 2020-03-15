@@ -23,15 +23,7 @@ class App extends React.Component {
   // hits end point everytime the page reloads -> calls to users controller
 
   componentDidMount() {
-    // console.log(this.props)
-    // console.log(this.state)
-    if (this.state === null ) {
-      console.log(this.state)
-    } else {
-      this.props.getCurrentUser()
-    }
-    // this.props.getCurrentUser()
-    // console.log(props)
+    this.props.getCurrentUser()
   }
 
 
@@ -63,21 +55,19 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    state
-  }
+  return { state }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     loginUser: () => {
-//       dispatch(loginUser())
-//     },
+const mapDispatchToProps = dispatch => {
+  return {
+    loginUser: () => {
+      dispatch(loginUser())
+    },
 
-//     getCurrentUser: () => {
-//       dispatch(getCurrentUser())
-//     }
-//   };
-// };
+    getCurrentUser: () => {
+      dispatch(getCurrentUser())
+    }
+  };
+};
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

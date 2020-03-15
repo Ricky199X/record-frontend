@@ -83,7 +83,7 @@ export const getUserAlbums = (userId) => {
 }
 
 export const getUserAlbum = (userId, albumId) => {
-   return (dispatch) => {
+   return () => {
       fetch(`http://localhost:3000/users/${userId}/albums/${albumId}`, {
          headers: {
             'Content-Type' : 'application/json',
