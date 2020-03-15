@@ -107,11 +107,11 @@ export const getCurrentUser = () => {
             'Accept': 'application/json'
          },
             mode: 'cors',
-            method: 'get',
-            credentials: 'include'
+            method: 'GET',
+            credentials: 'include',
       })
          .then(resp => resp.json())
-         // .then(user => dispatch({type: 'SET_CURRENT_USER', payload: user.id}))
+         .then(user => dispatch({type: 'SET_CURRENT_USER', payload: user}))
    }
 }
 
