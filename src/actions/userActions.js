@@ -98,21 +98,22 @@ export const getUserAlbum = (userId, albumId) => {
 }
 
 
-// export const getCurrentUser = (userId) => {
-//    // debugger
-//    return (dispatch) => {
-//       fetch('http://localhost:3000/current-user', {
-//          headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//          },
-//             mode: 'cors',
-//             method: 'get',
-//             credentials: 'include'
-//       }).then(resp => resp.json())
-//          .then(user => dispatch({type: 'SET_CURRENT_USER', payload: user}))
-//    }
-// }
+export const getCurrentUser = () => {
+   // debugger
+   return (dispatch) => {
+      fetch('http://localhost:3000/current-user', {
+         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+         },
+            mode: 'cors',
+            method: 'get',
+            credentials: 'include'
+      })
+         .then(resp => resp.json())
+         // .then(user => dispatch({type: 'SET_CURRENT_USER', payload: user.id}))
+   }
+}
 
 // what we dispatch is an action object -> to the reducer
 // which will then return a new version of our state based on what action we sent

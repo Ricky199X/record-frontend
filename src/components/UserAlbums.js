@@ -3,6 +3,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import AlbumThumbnail from './AlbumThumbnail'
+import { connect } from 'react-redux'
+import { getUserAlbum } from '../actions/userActions'
 
 const UserAlbums = (props) => {
    console.log(props)
@@ -37,5 +39,10 @@ const renderUserAlbums = (userAlbumInfo, userId) => {
    })
 }
 
+const mapStateToProps = ({user}) => {
+   return {user}
+}  
 
-export default UserAlbums
+
+
+export default connect(mapStateToProps, {getUserAlbum})(UserAlbums)

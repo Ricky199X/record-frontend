@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch , Route, Link, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
-
+import { loginUser, getCurrentUser } from './actions/userActions'
 import AlbumsContainer from './containers/AlbumsContainer'
 import UsersContainer from './containers/UsersContainer'
 import NavBar from './components/NavBar';
@@ -22,11 +22,17 @@ class App extends React.Component {
   // need a component did mount of getting current user anytime app loads
   // hits end point everytime the page reloads -> calls to users controller
 
-  // componentDidMount() {
-  //   console.log(this.props)
-  //   // this.props.getCurrentUser()
-  //   // console.log(props)
-  // }
+  componentDidMount() {
+    // console.log(this.props)
+    // console.log(this.state)
+    if (this.state === null ) {
+      console.log(this.state)
+    } else {
+      this.props.getCurrentUser()
+    }
+    // this.props.getCurrentUser()
+    // console.log(props)
+  }
 
 
   render() {
@@ -58,10 +64,20 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    currentUserId: state.user.data.id,
-    albums: state.user.user_albums,
-    isLoggedIn: state.user.loggedIn,
+    state
   }
 }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     loginUser: () => {
+//       dispatch(loginUser())
+//     },
+
+//     getCurrentUser: () => {
+//       dispatch(getCurrentUser())
+//     }
+//   };
+// };
 
 export default connect(mapStateToProps)(App);
