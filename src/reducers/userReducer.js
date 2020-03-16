@@ -22,6 +22,8 @@ export default function userReducer(state = initialState, action) {
          return {...state, loading: false, loggedIn: true, user_albums: action.payload}
       case 'SET_CURRENT_USER':
          return {...state, data: action.payload, loading: false, loggedIn: false }
+      case 'LOGOUT_USER':
+         return {initialState}
       default:
          return state
    }

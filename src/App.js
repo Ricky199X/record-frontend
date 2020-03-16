@@ -13,6 +13,7 @@ import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin'
 import Dashboard from './components/Dashboard';
 import AlbumDetails from './components/AlbumDetails'
+import LogoutView from './components/LogoutView'
 
 
 
@@ -46,6 +47,7 @@ class App extends React.Component {
             <Route path='/albums/:id'>
               <AlbumDetails />
             </Route>
+            <Route exact path='/logout' component={LogoutView}/>
           </Switch>
 
         </div>
