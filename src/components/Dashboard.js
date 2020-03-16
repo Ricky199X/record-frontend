@@ -13,13 +13,10 @@ class Dashboard extends React.Component {
       // if prevprops dont have user id and current do have user id
       // if user has been populated, then call this.props.getUserAlbums 
       this.props.getUserAlbums(this.props.currentUserId)
-      // this.props.getCurrentUser(this.props.currentUserId)
    }
 
-   // componentDidUpdate(prevState, state) {
-   //    // this.props.getCurrentUser()
-   //    console.log(prevState)
-   //    console.log(state)
+   // componentDidUpdate(prevProps, prevState) {
+   //   if (!prevProps.currentUserId)
    // }
    
    render() {
@@ -34,7 +31,7 @@ class Dashboard extends React.Component {
       return !isLoggedIn && !currentUserAlbums ?
       (
          <div>
-            <h1>You are not logged in yet!</h1>
+            <h1>Loading!</h1>
          </div>
       )
       :

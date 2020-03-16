@@ -14,14 +14,14 @@ export default function userReducer(state = initialState, action) {
       case 'LOADING_USER':
          return {...state, loading: true, loggedIn: false}
       case 'LOGIN_USER':
-         // console.log(action.payload)
+         console.log(action.payload)
          return {...state, data: action.payload, loading: false, loggedIn: true}
       case 'ADD_USER_ALBUM':
          return {...state, loading: false, loggedIn: true, user_albums: action.payload}
       case 'SET_USER_ALBUMS':
          return {...state, loading: false, loggedIn: true, user_albums: action.payload}
       case 'SET_CURRENT_USER':
-         return {...state, data: action.payload, loading: false, loggedIn: true}
+         return {...state, data: action.payload, loading: false, loggedIn: false }
       default:
          return state
    }

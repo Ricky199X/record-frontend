@@ -60,9 +60,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginUser: () => {
-      dispatch(loginUser())
-    },
+    // loginUser: () => {
+    //   dispatch(loginUser())
+    // },
 
     getCurrentUser: () => {
       dispatch(getCurrentUser())
