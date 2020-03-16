@@ -117,5 +117,19 @@ export const getCurrentUser = () => {
    }
 }
 
+export const logoutUser = () => {
+   return (dispatch) => {
+      fetch('http://localhost:3000/logout', {
+         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+         },
+            mode: 'cors',
+            method: 'DELETE',
+            credentials: 'include',
+      })
+   }
+}
+
 // what we dispatch is an action object -> to the reducer
 // which will then return a new version of our state based on what action we sent
