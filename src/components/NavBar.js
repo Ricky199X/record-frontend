@@ -3,9 +3,8 @@ import { Link, withRouter } from 'react-router-dom'
 
 class NavBar extends React.Component {
 
-
-
    render() {
+      console.log(this.props)
       return (
          <nav>
             <div className="nav-wrapper container">

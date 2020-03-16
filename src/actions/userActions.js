@@ -31,7 +31,6 @@ export const createUser = (data) => {
 // will accept a user object 
 export const loginUser = (data) => {
    return (dispatch) => {
-      // console.log(data)
       fetch('http://localhost:3000/login', {
       headers: {
          'Content-Type': 'application/json',

@@ -21,8 +21,6 @@ class UserLogin extends React.Component {
 
    // check for if redirect should occur
    componentDidUpdate(prevProps) {
-      console.log(prevProps) 
-      console.log(this.props)
       if (!prevProps.user.loggedIn && this.props.user.loggedIn) {
          this.setState({
             shouldRedirect: true
@@ -59,8 +57,6 @@ class UserLogin extends React.Component {
    }
    
    render() {
-      // console.log(this.props)
-      // console.log(this.state)
       // for some reason, shouldRedirect is currently showing as false. setState not working correctly.
       if (this.state.shouldRedirect) {
          return <Redirect to='/dashboard'/>

@@ -29,11 +29,12 @@ class App extends React.Component {
 
 
   render() {
+    console.log(this.props)
     return (
 
       <Router>
         <div>
-          <NavBar currentUserId={this.props.currentUserId}/>
+          <NavBar />
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={UserLogin}/>
