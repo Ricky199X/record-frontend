@@ -1,15 +1,24 @@
-import React from 'react'
+// import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { logoutUser } from '../actions/userActions'
 
-const LogoutView = () => {
+class LogoutView extends Component {
 
-   return (
-      <div>
-         <h1>Thank you for coming!</h1>
-         <br></br>
-         <Link to='/'>Home</Link>
-      </div>
-   )
+   componentDidMount() {
+      this.props.logoutUser()
+  }
+
+   render() {
+      return (
+         <div>
+            <h1>Thank you for coming!</h1>
+            <br></br>
+            <Link to='/'>Home</Link>
+         </div>
+      )
+   }
 }
 
-export default LogoutView
+export default connect(null, {logoutUser})(LogoutView);

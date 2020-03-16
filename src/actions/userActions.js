@@ -128,6 +128,7 @@ export const logoutUser = () => {
             method: 'DELETE',
             credentials: 'include',
       })
+      .then(dispatch({type: 'LOGOUT_USER'}))
    }
 }
 
