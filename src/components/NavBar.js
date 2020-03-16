@@ -4,17 +4,16 @@ import { Link, withRouter } from 'react-router-dom'
 class NavBar extends React.Component {
 
    render() {
-      console.log(this.props)
+
       // user login status is passed down as prop to NavBAr
       // basic idea is if userLoginStatus = false, render a different navBar. If true, render the regular navbar
-      
       return this.props.userLoginStatus === false ?
       (
          <nav>
             <div className="nav-wrapper container">
-               <Link to='#' className="brand-logo">Record Collector</Link>
+               <Link to='/' className="brand-logo">Record Collector</Link>
                <ul className = "right">
-                  <li><Link to='/sign-up'>Sign Up</Link></li>
+                  <li><Link to='/signup'>Sign Up</Link></li>
                   <li><Link to='/login'>Login</Link></li>
                </ul>
             </div>

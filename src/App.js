@@ -36,8 +36,8 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.props.state.user.loggedIn)
     let userLoginStatus = this.props.state.user.loggedIn
+    
     return (
       <Router>
         <div>
