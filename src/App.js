@@ -23,18 +23,25 @@ class App extends React.Component {
   // need a component did mount of getting current user anytime app loads
   // hits end point everytime the page reloads -> calls to users controller
 
+  // state = {
+  //   currentUser: this.state.user.data
+  // }
+
   componentDidMount() {
     this.props.getCurrentUser()
+    // this.setState({
+    //   currentUser: this.props.user.data
+    // })
   }
 
 
   render() {
-    console.log(this.props)
+    console.log(this.props.state.user.loggedIn)
+    let userLoginStatus = this.props.state.user.loggedIn
     return (
-
       <Router>
         <div>
-          <NavBar />
+          <NavBar userLoginStatus={userLoginStatus}/>
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={UserLogin}/>
@@ -57,8 +64,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { state }
+const mapStateToProps = (state, user) => {
+  return { state, user }
 }
 
 const mapDispatchToProps = dispatch => {
