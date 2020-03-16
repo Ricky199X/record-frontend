@@ -15,6 +15,7 @@ class NavBar extends React.Component {
                   <li><Link to="/albums">Albums</Link></li>
                   {/* <li><Link to={`users/${this.props.currentUserId}/albums`}>Your Albums</Link></li> */}
                   <li><Link to='/your-albums'>Your Albums</Link></li>
+                  <li><Link to='/logout'>Logout</Link></li>
                </ul>
             </div>
          </nav>
