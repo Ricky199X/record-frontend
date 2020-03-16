@@ -9,6 +9,9 @@ class Dashboard extends React.Component {
    // upon sucessful mounting of component, make fetch request to get the user's albums
 
    componentDidMount() {
+      // try componentDidiUpdate here so you don't get that you are not logged in message when you refresh the page
+      // if prevprops dont have user id and current do have user id
+      // if user has been populated, then call this.props.getUserAlbums 
       this.props.getUserAlbums(this.props.currentUserId)
       // this.props.getCurrentUser(this.props.currentUserId)
    }

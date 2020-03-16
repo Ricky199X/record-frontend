@@ -93,7 +93,7 @@ export const getUserAlbum = (userId, albumId) => {
             method: 'GET',
             credentials: 'include',
       })
-         .then(resp => console.log(resp.json()))
+         .then(resp => resp.json())
    }
 }
 
@@ -101,6 +101,8 @@ export const getUserAlbum = (userId, albumId) => {
 export const getCurrentUser = () => {
    // debugger
    return (dispatch) => {
+      // SETTING LOADING TO TRUE HERE
+      dispatch({type: 'LOADING_USER'})
       fetch('http://localhost:3000/current-user', {
          headers: {
             'Content-Type': 'application/json',

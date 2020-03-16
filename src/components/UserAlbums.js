@@ -7,12 +7,8 @@ import { connect } from 'react-redux'
 import { getUserAlbum } from '../actions/userActions'
 
 const UserAlbums = (props) => {
-   console.log(props)
    const albums = props.albums
    const userId = props.currentUserId
-   
-   console.log("inside the user albums component")
-   console.log(props)
 
    return (
       
