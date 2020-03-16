@@ -68,6 +68,7 @@ export const addUserAlbum = (data, userId) => {
 // action to get the User's user_albums collection upon successful login, update it in state
 export const getUserAlbums = (userId) => {
    return (dispatch) => {
+      // dispatch({type: 'LOADING_USER_ALBUMS'})
       fetch(`http://localhost:3000/users/${userId}/albums`, {
          headers: {
             'Content-Type': 'application/json',
@@ -102,7 +103,7 @@ export const getCurrentUser = () => {
    // debugger
    return (dispatch) => {
       // SETTING LOADING TO TRUE HERE
-      // dispatch({type: 'LOADING_USER'})
+      dispatch({type: 'LOADING_USER'})
       fetch('http://localhost:3000/current-user', {
          headers: {
             'Content-Type': 'application/json',
