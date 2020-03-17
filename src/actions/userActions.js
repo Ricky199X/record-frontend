@@ -63,6 +63,7 @@ export const addUserAlbum = (data, userId) => {
 
 // action to get the User's user_albums collection upon successful login, update it in state
 export const getUserAlbums = (userId) => {
+   console.log(userId)
    return (dispatch) => {
       // dispatch({type: 'LOADING_USER_ALBUMS'})
       fetch(`http://localhost:3000/users/${userId}/user_albums`, {

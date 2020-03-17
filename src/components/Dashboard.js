@@ -9,10 +9,12 @@ class Dashboard extends React.Component {
    // upon sucessful mounting of component, make fetch request to get the user's albums
 
    componentDidMount() {
+      console.log(this.props)
+      console.log(this.props.user.data.id)
       // try componentDidiUpdate here so you don't get that you are not logged in message when you refresh the page
       // if prevprops dont have user id and current do have user id
       // if user has been populated, then call this.props.getUserAlbums 
-      this.props.getUserAlbums(this.props.currentUserId)
+      this.props.getUserAlbums(this.props.user.data.id)
    }
 
    // componentDidUpdate(prevProps, prevState) {
@@ -23,12 +25,13 @@ class Dashboard extends React.Component {
       const currentUserName = this.props.user.data.username
       const currentUserId = this.props.user.data.id
       const currentUserAlbums = this.props.user.user_albums
+      console.log(currentUserAlbums)
       const isLoggedIn = this.props.user.loggedIn
 
       // the ternary syntax below evaluates if there is any user loaded - if not, it'll show you that it's not
       // if a user is loaded, it'll display the current user's information, and pass down their user_albums in state and id as props
       // to the userAlbums component, which handles display 
-      return !isLoggedIn && !currentUserAlbums ?
+      return !isLoggedIn ?
       (
          <div>
             <h1>Loading!</h1>

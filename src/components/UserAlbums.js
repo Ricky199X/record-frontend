@@ -9,7 +9,6 @@ import { getUserAlbum } from '../actions/userActions'
 const UserAlbums = (props) => {
    const albums = props.albums
    const userId = props.currentUserId
-
    return (
       
       <div>
@@ -21,14 +20,14 @@ const UserAlbums = (props) => {
 
 
 const renderUserAlbums = (userAlbumInfo, userId) => {
-   return userAlbumInfo.data.map(userAlbum => {
+   return userAlbumInfo.map(userAlbum => {
       return (
          <Link to={`users/${userId}/albums/${userAlbum.id}`} key={Math.random()}>
             <AlbumThumbnail 
-               name={userAlbum.attributes.name}
-               img={<img alt={userAlbum.id} src={userAlbum.attributes.cover_url}  />}
-               src={userAlbum.attributes.cover_url} 
-               key={userAlbum.attributes.name} 
+               name={userAlbum.name}
+               img={<img alt={userAlbum.id} src={userAlbum.cover_url}  />}
+               src={userAlbum.cover_url} 
+               key={userAlbum.name} 
             />
          </Link>
       )
