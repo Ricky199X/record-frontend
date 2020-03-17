@@ -12,7 +12,8 @@ class Albums extends React.Component {
    
 
    state = {
-      displayDetails: false
+      displayDetails: false,
+      shouldRedirect: false
    }
 
    renderAlbumThumbnails = () => {
