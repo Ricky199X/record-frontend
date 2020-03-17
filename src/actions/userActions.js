@@ -9,7 +9,7 @@
 export const createUser = (data) => {
    // debugger
    return (dispatch) => {
-      // dispatch({type: 'LOADING_USER'})
+      dispatch({type: 'LOADING_USER'})
       fetch('http://localhost:3000/users', {
          headers: {
             'Content-Type': 'application/json',
@@ -63,7 +63,6 @@ export const addUserAlbum = (data, userId) => {
 
 // action to get the User's user_albums collection upon successful login, update it in state
 export const getUserAlbums = (userId) => {
-   console.log(userId)
    return (dispatch) => {
       // dispatch({type: 'LOADING_USER_ALBUMS'})
       fetch(`http://localhost:3000/users/${userId}/user_albums`, {
@@ -98,10 +97,10 @@ export const getUserAlbum = (userId, albumId) => {
 
 export const getCurrentUser = () => {
    // debugger
-   return (dispatch) => {
+   return async (dispatch) => {
       // SETTING LOADING TO TRUE HERE
       dispatch({type: 'LOADING_USER'})
-      fetch('http://localhost:3000/current-user', {
+      const response = await fetch('http://localhost:3000/current-user', {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -110,8 +109,10 @@ export const getCurrentUser = () => {
             method: 'GET',
             credentials: 'include',
       })
-         .then(resp => resp.json())
-         .then(user => dispatch({type: 'SET_CURRENT_USER', payload: user}))
+         const user_obj = await response.json()
+   
+         dispatch({type: 'SET_CURRENT_USER', payload: user_obj})
+         dispatch(getUserAlbums(user_obj.id))
    }
 }
 

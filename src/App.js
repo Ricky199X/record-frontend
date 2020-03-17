@@ -29,6 +29,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
+    // this.props.getUserAlbums(this.props.user.data.id)
     // this.setState({
     //   currentUser: this.props.user.data
     // })
@@ -64,8 +65,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state, user) => {
-  return { state, user }
+const mapStateToProps = (state) => {
+  return { state }
 }
 
 const mapDispatchToProps = dispatch => {

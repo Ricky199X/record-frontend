@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { addUserAlbum } from '../actions/userActions'
+import { Redirect } from 'react-router-dom'
 
 const AlbumDetails = (props) => {
    // get the url params
@@ -26,7 +27,18 @@ const AlbumDetails = (props) => {
    }
 
    const handleAddUserAlbum = (album, currentUserId) => {
+      console.log(album)
+      console.log(currentUserId)
       props.addUserAlbum(album, currentUserId)
+      console.log(props)
+
+      // redirect statment to the dashboard - if album we just added is in user.user_albums, redirect to users dashbaord. 
+      // if no data, do nothing
+      if (props.user_albums.includes(album)) {
+         return <Redirect to='/dashboard'/>
+      } else {
+         return <Redirect to='/albums' />
+      }
    }
 
    return (
