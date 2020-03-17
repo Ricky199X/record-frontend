@@ -9,7 +9,7 @@
 export const createUser = (data) => {
    // debugger
    return (dispatch) => {
-      dispatch({type: 'LOADING_USER'})
+      // dispatch({type: 'LOADING_USER'})
       fetch('http://localhost:3000/users', {
          headers: {
             'Content-Type': 'application/json',
@@ -21,10 +21,7 @@ export const createUser = (data) => {
          body: JSON.stringify({user: data})
       })
       .then(resp => resp.json())
-      .then(user => {
-         dispatch({type: 'LOGIN_USER', payload: user})
-   
-      })
+      .then(user => dispatch({type: 'LOGIN_USER', payload: user}))
    }
 }
 
@@ -68,7 +65,7 @@ export const addUserAlbum = (data, userId) => {
 export const getUserAlbums = (userId) => {
    return (dispatch) => {
       // dispatch({type: 'LOADING_USER_ALBUMS'})
-      fetch(`http://localhost:3000/users/${userId}/albums`, {
+      fetch(`http://localhost:3000/users/${userId}/user_albums`, {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
