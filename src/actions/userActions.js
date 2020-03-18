@@ -70,9 +70,9 @@ export const addUserAlbum = (data, userId) => {
 
 // action to get the User's user_albums collection upon successful login, update it in state
 export const getUserAlbums = (userId) => {
-   return (dispatch) => {
+   return async (dispatch) => {
       // dispatch({type: 'LOADING_USER_ALBUMS'})
-      fetch(`http://localhost:3000/users/${userId}/user_albums`, {
+      const response = await fetch(`http://localhost:3000/users/${userId}/user_albums`, {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -81,8 +81,8 @@ export const getUserAlbums = (userId) => {
             method: 'GET',
             credentials: 'include',
       })
-      .then(resp => resp.json())
-      .then(user_albums => dispatch({type: 'SET_USER_ALBUMS', payload: user_albums}) )
+      const user_albums = await response.json()
+      dispatch({type: 'SET_USER_ALBUMS', payload: user_albums})
    }
 }
 
@@ -124,8 +124,8 @@ export const getCurrentUser = () => {
 }
 
 export const logoutUser = () => {
-   return (dispatch) => {
-      fetch('http://localhost:3000/logout', {
+   return async (dispatch) => {
+      const response = await fetch('http://localhost:3000/logout', {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -134,7 +134,7 @@ export const logoutUser = () => {
             method: 'DELETE',
             credentials: 'include',
       })
-      .then(dispatch({type: 'LOGOUT_USER'}))
+      dispatch({type: 'LOGOUT_USER'})
    }
 }
 
