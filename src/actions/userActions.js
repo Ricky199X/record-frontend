@@ -22,7 +22,6 @@ export const createUser = (data) => {
       })
 
       const user_obj = await response.json()
-      // .then(resp => resp.json())
       dispatch({type: 'LOGIN_USER', payload: user_obj})
       dispatch(getUserAlbums(user_obj.id))
    }
@@ -71,7 +70,6 @@ export const addUserAlbum = (data, userId) => {
 // action to get the User's user_albums collection upon successful login, update it in state
 export const getUserAlbums = (userId) => {
    return async (dispatch) => {
-      // dispatch({type: 'LOADING_USER_ALBUMS'})
       const response = await fetch(`http://localhost:3000/users/${userId}/user_albums`, {
          headers: {
             'Content-Type': 'application/json',
@@ -103,7 +101,6 @@ export const getUserAlbum = (userId, albumId) => {
 
 
 export const getCurrentUser = () => {
-   // debugger
    return async (dispatch) => {
       // SETTING LOADING TO TRUE HERE
       dispatch({type: 'LOADING_USER'})
