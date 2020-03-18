@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Switch , Route, Link } from 'react-router-dom'
 
 class Albums extends React.Component {
    
-
    state = {
       displayDetails: false,
       shouldRedirect: false
@@ -43,6 +42,4 @@ class Albums extends React.Component {
 }
 
 
-
-
-export default Albums //connect(mapStateToProps, { setAlbum } ) (Albums)
+export default Albums
