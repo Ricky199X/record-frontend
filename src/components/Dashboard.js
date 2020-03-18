@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getUserAlbums, getCurrentUser } from '../actions/userActions'
+import { getUserAlbums } from '../actions/userActions'
 import UserAlbums from './UserAlbums'
 
 class Dashboard extends React.Component {
@@ -10,10 +10,8 @@ class Dashboard extends React.Component {
    // }
    
    render() {
-      const currentUserName = this.props.user.data.username
       const currentUserId = this.props.user.data.id
       const currentUserAlbums = this.props.user.user_albums
-      // console.log(currentUserAlbums)
       const isLoggedIn = this.props.user.loggedIn
 
       // the ternary syntax below evaluates if there is any user loaded - if not, it'll show you that it's not

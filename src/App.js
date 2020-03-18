@@ -3,12 +3,8 @@ import { BrowserRouter as Router, Switch , Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getCurrentUser} from './actions/userActions'
 import AlbumsContainer from './containers/AlbumsContainer'
-import UsersContainer from './containers/UsersContainer'
 import NavBar from './components/NavBar';
-import UserAlbums from './components/UserAlbums'
 import Home from './components/Home'
-import AlbumThumbnail from './components/AlbumThumbnail'
-import Albums from './components/Albums'
 import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin'
 import Dashboard from './components/Dashboard';
