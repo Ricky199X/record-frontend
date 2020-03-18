@@ -6,10 +6,9 @@ import { getUserAlbum } from '../actions/userActions'
 const UserAlbumDetails = (props) => {
    // get the url params
    let {id} = useParams()
-
-   let userAlbum = props.user.user_albums.find(album => album.id == id)
+   let userAlbum = props.user.user_albums.find(album => album.id === parseInt(id))
   
-   // defines the current user's ID 
+   // defines the current user's ID - will use later in delete action
    let currentUserId = props.user.data.id
 
    // renders the songs from the userAlbum currently being viewed

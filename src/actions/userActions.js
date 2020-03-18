@@ -140,7 +140,7 @@ export const getCurrentUser = () => {
 
 export const logoutUser = () => {
    return async (dispatch) => {
-      const response = await fetch('http://localhost:3000/logout', {
+      await fetch('http://localhost:3000/logout', {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
