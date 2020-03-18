@@ -25,21 +25,23 @@ export const createUser = (data) => {
    }
 }
 
-// will accept a user object 
 export const loginUser = (data) => {
-   return (dispatch) => {
-      fetch('http://localhost:3000/login', {
-      headers: {
-         'Content-Type': 'application/json',
-         'Accept': 'application/json'
-      },
-         mode:'cors',
-         method: 'POST',
-         credentials: 'include',
-         body: JSON.stringify({user: data})
+   // debugger
+   return async (dispatch) => {
+      const response = await fetch('http://localhost:3000/login', {
+         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+         },
+            mode: 'cors',
+            method: 'POST',
+            credentials: 'include',
+            body: JSON.stringify({user: data})
       })
-      .then(resp => resp.json())
-      .then(user => dispatch({type: 'LOGIN_USER', payload: user}))
+         const user_obj = await response.json()
+   
+         dispatch({type: 'LOGIN_USER', payload: user_obj})
+         dispatch(getUserAlbums(user_obj.id))
    }
 }
 
