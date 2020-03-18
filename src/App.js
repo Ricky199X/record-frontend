@@ -38,11 +38,12 @@ class App extends React.Component {
 
   render() {
     let userLoginStatus = this.props.state.user.loggedIn
+    let currentUserName = this.props.state.user.data.username
     
     return (
       <Router>
         <div>
-          <NavBar userLoginStatus={userLoginStatus}/>
+          <NavBar userLoginStatus={userLoginStatus} currentUserName={currentUserName}/>
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={UserLogin}/>
