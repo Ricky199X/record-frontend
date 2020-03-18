@@ -1,6 +1,6 @@
 import React from 'react'
 import AlbumThumbnail from './AlbumThumbnail'
-import { BrowserRouter as Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // will render all albums in db
 // when you click the album, it will render an album card
