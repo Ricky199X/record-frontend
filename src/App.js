@@ -13,6 +13,7 @@ import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin'
 import Dashboard from './components/Dashboard';
 import AlbumDetails from './components/AlbumDetails'
+import UserAlbumDetails from './components/UserAlbumDetails'
 import LogoutView from './components/LogoutView'
 
 
@@ -56,6 +57,10 @@ class App extends React.Component {
             </Route> */}
              <Route path='/albums/:id'>
               <AlbumDetails />
+            </Route> 
+
+            <Route path='/users/:id/user_albums/:id'>
+              <UserAlbumDetails />
             </Route> 
 
            
