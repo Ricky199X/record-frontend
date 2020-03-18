@@ -8,8 +8,10 @@ import { getUserAlbum } from '../actions/userActions'
 
 const UserAlbums = (props) => {
 
+   const albums = props.albums
+   const userId = props.currentUserId
+
    const renderUserAlbums = (userAlbumInfo, userId) => {
-      console.log(userAlbumInfo)
       return userAlbumInfo.map(userAlbum => {
    
          return (
@@ -26,18 +28,14 @@ const UserAlbums = (props) => {
    }
 
 
-   const albums = props.albums
-   const userId = props.currentUserId
    return (
-      
       <div>
          <h5>See your album collection below!</h5>
          {albums ? renderUserAlbums(albums, userId) : null}
       </div>
    )
+
 }
-
-
 
 
 const mapStateToProps = ({user}) => {
