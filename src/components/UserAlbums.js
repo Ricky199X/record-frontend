@@ -1,4 +1,4 @@
-// this component gets list of user albums - functional component
+// this component gets renders all of the user's albums - functional component
 
 import React from 'react'
 import { Link } from 'react-router-dom'
