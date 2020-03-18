@@ -7,11 +7,8 @@ const UserAlbumDetails = (props) => {
    console.log(props)
    // get the url params
    let {id} = useParams()
-   console.log({id})
-   console.log(props.user.user_albums)
 
    let userAlbum = props.user.user_albums.find(album => album.id == id)
-   console.log(userAlbum)
   
    // defines the current user's ID 
    let currentUserId = props.user.data.id
@@ -29,7 +26,8 @@ const UserAlbumDetails = (props) => {
    //    })
    // }
 
-   // const handleAddUserAlbum = (album, currentUserId) => {
+   // DELETE USER ALBUM ACTION - WILL NEED THIS LATER ON 
+   // const handleDeleteUserAlbum = (userAlbum, currentUserId) => {
    //    props.addUserAlbum(album, currentUserId)
    // }
 

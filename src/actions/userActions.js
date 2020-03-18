@@ -84,6 +84,25 @@ export const getUserAlbums = (userId) => {
    }
 }
 
+//  WILL WORK ON THIS LATER - NEED TO THIS DELETE USER ALBUM ACTION AT SOME POINT
+// export const deleteUserAlbum = (userAlbumId, userId) => {
+//    return async (dispatch) => {
+//       const response = await fetch(`http://localhost:3000/users/${userId}/user_albums/${userAlbumId}`, {
+//          headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//          },
+//             mode: 'cors',
+//             method: 'DELETE',
+//             credentials: 'include',
+//             body: JSON.stringify({album: data})
+//       })
+
+//       const user_album = await response.json()
+//       dispatch({type: 'ADD_USER_ALBUM', payload: user_album})
+//    }
+// }
+
 export const getUserAlbum = (userId, albumId) => {
    return () => {
       fetch(`http://localhost:3000/users/${userId}/albums/${albumId}`, {
