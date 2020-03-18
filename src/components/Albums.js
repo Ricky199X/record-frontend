@@ -15,21 +15,25 @@ class Albums extends React.Component {
       const albums = this.props.albums
       return albums.map(album => {
          return (
-            <Link to={`/albums/${album.id}`} key={Math.random()}>
-            <AlbumThumbnail 
-               name={album.attributes.name}
-               img={<img alt={album.id} src={album.attributes.cover_url}  />}
-               src={album.attributes.cover_url} 
-               key={album.attributes.name} 
-            />
-         </Link>
+            <div className="row">
+               <div className="col s12">
+                  <Link to={`/albums/${album.id}`} key={Math.random()}>
+                  <AlbumThumbnail 
+                     name={album.attributes.name}
+                     img={<img alt={album.id} src={album.attributes.cover_url}  />}
+                     src={album.attributes.cover_url} 
+                     key={album.attributes.name} 
+                  />
+                  </Link>
+               </div>
+            </div>
          )
       })
    }
 
    render() {
       return (
-         <div >
+         <div>
             {this.renderAlbumThumbnails()}
          </div>
       )
