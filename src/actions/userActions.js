@@ -51,8 +51,8 @@ export const loginUser = (data) => {
 
 // action to add an album to user's albums collection - will take an album object and a user id
 export const addUserAlbum = (data, userId) => {
-   return (dispatch) => {
-      fetch(`http://localhost:3000/users/${userId}/user_albums`, {
+   return async (dispatch) => {
+      const response = await fetch(`http://localhost:3000/users/${userId}/user_albums`, {
          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -62,8 +62,9 @@ export const addUserAlbum = (data, userId) => {
             credentials: 'include',
             body: JSON.stringify({album: data})
       })
-      .then(resp => resp.json())
-      .then(user_album => dispatch({type: 'ADD_USER_ALBUM', payload: user_album}))
+
+      const user_album = await response.json()
+      dispatch({type: 'ADD_USER_ALBUM', payload: user_album})
    }
 }
 
