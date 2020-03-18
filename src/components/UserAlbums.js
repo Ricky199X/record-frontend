@@ -7,6 +7,25 @@ import { connect } from 'react-redux'
 import { getUserAlbum } from '../actions/userActions'
 
 const UserAlbums = (props) => {
+
+   const renderUserAlbums = (userAlbumInfo, userId) => {
+      console.log(userAlbumInfo)
+      return userAlbumInfo.map(userAlbum => {
+   
+         return (
+            <Link to={`users/${userId}/user_albums/${userAlbum.id}`} key={Math.random()}>
+               <AlbumThumbnail 
+                  name={userAlbum.name}
+                  img={<img alt={userAlbum.id} src={userAlbum.cover_url}  />}
+                  src={userAlbum.cover_url} 
+                  key={userAlbum.name} 
+               />
+            </Link>
+         )
+      })
+   }
+
+
    const albums = props.albums
    const userId = props.currentUserId
    return (
@@ -19,22 +38,7 @@ const UserAlbums = (props) => {
 }
 
 
-const renderUserAlbums = (userAlbumInfo, userId) => {
-   console.log(userAlbumInfo)
-   return userAlbumInfo.map(userAlbum => {
 
-      return (
-         <Link to={`users/${userId}/user_albums/${userAlbum.id}`} key={Math.random()}>
-            <AlbumThumbnail 
-               name={userAlbum.name}
-               img={<img alt={userAlbum.id} src={userAlbum.cover_url}  />}
-               src={userAlbum.cover_url} 
-               key={userAlbum.name} 
-            />
-         </Link>
-      )
-   })
-}
 
 const mapStateToProps = ({user}) => {
    return {user}

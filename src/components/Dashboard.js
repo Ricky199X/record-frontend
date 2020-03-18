@@ -13,6 +13,7 @@ class Dashboard extends React.Component {
    // }
    
    render() {
+      console.log(this.props)
       const currentUserName = this.props.user.data.username
       const currentUserId = this.props.user.data.id
       const currentUserAlbums = this.props.user.user_albums

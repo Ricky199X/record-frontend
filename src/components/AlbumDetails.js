@@ -8,10 +8,6 @@ import { Redirect, Link } from 'react-router-dom'
 const AlbumDetails = (props) => {
    console.log(props)
 
-   // this.state = {
-   //    shouldRedirect: false,
-   // }
-
    // get the url params
    let {id} = useParams()
 
@@ -35,7 +31,8 @@ const AlbumDetails = (props) => {
 
    const handleAddUserAlbum = (album, currentUserId) => {
       props.addUserAlbum(album, currentUserId)
-      props.history.push(`/dashboard`)
+      //props.history.push(`/dashboard`)
+      window.location="/dashboard"
       // redirect statment to the dashboard - if album we just added is in user.user_albums, redirect to users dashbaord. 
       // if no data, do nothing
       // this.setState({
