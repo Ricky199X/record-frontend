@@ -7,15 +7,18 @@ const UserAlbumDetails = (props) => {
    console.log(props)
    // get the url params
    let {id} = useParams()
+   console.log({id})
+   console.log(props.user.user_albums)
 
    let userAlbum = props.user.user_albums.find(album => album.id == id)
+   console.log(userAlbum)
   
    // defines the current user's ID 
    let currentUserId = props.user.data.id
 
-   // renders the songs from the album currently being viewed
-   // const renderSongsContainer = (user_album) => {
-   //    let songs = album.attributes.songs
+   // renders the songs from the userAlbum currently being viewed
+   // const renderSongsContainer = (userAlbum) => {
+   //    let songs = userAlbum.attributes.songs
    //    // map thru album.attributes.songs
    //    return songs.map(song => {
    //       return <section className = "songs-container" key={Math.random()}>
@@ -32,7 +35,16 @@ const UserAlbumDetails = (props) => {
 
    return (
       <div>
-         
+         <img alt={userAlbum.name} src={userAlbum.cover_url} width="300" height="300"/>
+         {/* <h5>Artist: {userAlbum.attributes.artist.name}</h5> */}
+         <h5>Album Name: {userAlbum.name}</h5> 
+         <h5>Release Date: {userAlbum.release_date}</h5> 
+         <h5>Record Label: {userAlbum.label}</h5>
+         <h5>Popularity: {userAlbum.popularity}</h5>
+         {/* {renderSongsContainer(userAlbum)} */}
+
+         {/* add album button */}
+         {/* <button onClick={() => handleAddUserAlbum(album, currentUserId)}>Add Album</button> */}
          
       </div>
    )
