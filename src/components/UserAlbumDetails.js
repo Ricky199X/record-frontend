@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { getUserAlbum } from '../actions/userActions'
 
 const UserAlbumDetails = (props) => {
-   console.log(props)
    // get the url params
    let {id} = useParams()
 

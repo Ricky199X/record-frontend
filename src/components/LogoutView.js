@@ -1,4 +1,4 @@
-// import React from 'react'
+// Logout screen - after successful logout, user is redirected here.
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'

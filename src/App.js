@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch , Route, Link, useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Switch , Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getCurrentUser} from './actions/userActions'
 import AlbumsContainer from './containers/AlbumsContainer'
@@ -23,17 +23,8 @@ class App extends React.Component {
   // to not lose the currentUser on page refresh: 
   // need a component did mount of getting current user anytime app loads
   // hits end point everytime the page reloads -> calls to users controller
-
-  // state = {
-  //   currentUser: this.state.user.data
-  // }
-
   componentDidMount() {
     this.props.getCurrentUser()
-    // this.props.getUserAlbums(this.props.user.data.id)
-    // this.setState({
-    //   currentUser: this.props.user.data
-    // })
   }
 
 
@@ -52,10 +43,8 @@ class App extends React.Component {
             <Route exact path='/dashboard' component={Dashboard} currentUserId={this.props.currentUserId} />
             <Route exact path='/albums' component={AlbumsContainer} />
             <Route path='/your-albums' component={Dashboard} currentUserId={this.props.currentUserId}/>
-            {/* <Route path='users/:id/albums'>
-              <UserAlbums albums={this.props.albums} currentUserId={this.props.currentUserId}/>
-            </Route> */}
-             <Route path='/albums/:id'>
+
+            <Route path='/albums/:id'>
               <AlbumDetails />
             </Route> 
 
@@ -63,8 +52,6 @@ class App extends React.Component {
               <UserAlbumDetails />
             </Route> 
 
-           
-            
             <Route exact path='/logout' component={LogoutView}/>
           </Switch>
 

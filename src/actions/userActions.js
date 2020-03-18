@@ -4,7 +4,6 @@
 // before every fetch, dispatch an action to the appropriate reducer 
 // the reducer will use that to set loading to either true or false
 // be very clear on what what's happening - visualize the store 
-// both have a data 
 
 export const createUser = (data) => {
    // debugger

@@ -53,11 +53,9 @@ class UserLogin extends React.Component {
    handleSubmit = (event) => {
       event.preventDefault()
       this.props.loginUser(this.state)
-      // this.props.getUserAlbums(this.state)
    }
    
    render() {
-      // for some reason, shouldRedirect is currently showing as false. setState not working correctly.
       if (this.state.shouldRedirect) {
          return <Redirect to='/dashboard'/>
       } else {
@@ -71,8 +69,7 @@ class UserLogin extends React.Component {
                   <label>Password:</label>
                   <input onChange={this.handlePasswordChange} type='text' name='password' placeholder='Enter password' value={this.state.password}/>
                </form> 
-   
-               <button onClick={this.handleSubmit}>Log In!</button>
+                  <button onClick={this.handleSubmit}>Log In!</button>
                <div>
                   or <Link to='/signup'>sign up</Link>
                </div>

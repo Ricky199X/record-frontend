@@ -1,9 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import AlbumThumbnail from './AlbumThumbnail'
-import { setAlbum } from '../actions/albumActions'
-import { Redirect } from 'react-router-dom'
-import { BrowserRouter as Router, Switch , Route, Link } from 'react-router-dom'
+import { BrowserRouter as Link } from 'react-router-dom'
 
 // will render all albums in db
 // when you click the album, it will render an album card
@@ -12,7 +9,6 @@ class Albums extends React.Component {
    
    state = {
       displayDetails: false,
-      shouldRedirect: false
    }
 
    renderAlbumThumbnails = () => {

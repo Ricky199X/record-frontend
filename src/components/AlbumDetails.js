@@ -8,7 +8,6 @@ const AlbumDetails = (props) => {
 
    // get the url params
    let {id} = useParams()
-
    let album = props.albums.data.find(a => a.id == id)
   
    // defines the current user's ID 

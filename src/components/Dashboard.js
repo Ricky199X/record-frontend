@@ -5,9 +5,6 @@ import UserAlbums from './UserAlbums'
 
 class Dashboard extends React.Component {
 
-   // set variable for the current_user's id, so that the fetch call knows where to get albums
-   // upon sucessful mounting of component, make fetch request to get the user's albums
-
    // componentDidUpdate(prevProps, prevState) {
    //   if (!prevProps.currentUserId)
    // }

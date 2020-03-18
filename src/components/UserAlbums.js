@@ -1,10 +1,10 @@
-// this component gets renders all of the user's albums - functional component
+// Renders all albums in a user's collection - functional component.
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AlbumThumbnail from './AlbumThumbnail'
 import { connect } from 'react-redux'
 import { getUserAlbum } from '../actions/userActions'
+import AlbumThumbnail from './AlbumThumbnail'
 
 const UserAlbums = (props) => {
 
@@ -13,7 +13,6 @@ const UserAlbums = (props) => {
 
    const renderUserAlbums = (userAlbumInfo, userId) => {
       return userAlbumInfo.map(userAlbum => {
-   
          return (
             <Link to={`users/${userId}/user_albums/${userAlbum.id}`} key={Math.random()}>
                <AlbumThumbnail 
@@ -37,11 +36,8 @@ const UserAlbums = (props) => {
 
 }
 
-
 const mapStateToProps = ({user}) => {
    return {user}
 }  
-
-
 
 export default connect(mapStateToProps, {getUserAlbum})(UserAlbums)

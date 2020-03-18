@@ -1,3 +1,5 @@
+// Home Screen - provides option to login or signup -> Functional Component
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 

@@ -1,5 +1,6 @@
-import React from 'react'
+// Renders an album thumbnail -> Functional component
 
+import React from 'react'
 
 const AlbumThumbnail = (props) => {
 
