@@ -42,7 +42,9 @@ const AlbumDetails = (props) => {
          {renderSongsContainer(album)}
 
          {/* add album button */}
-         <button onClick={() => handleAddUserAlbum(album, currentUserId)}>Add Album</button>
+         <button class="btn waves-effect waves-light" type="submit" name="action" onClick={() => handleAddUserAlbum(album, currentUserId)}>
+            Add Album
+         </button>
          
       </div>
    )
