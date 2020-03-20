@@ -2,19 +2,52 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { addUserAlbum } from '../actions/userActions'
+import { addUserAlbum, getCurrentUser } from '../actions/userActions'
+import { fetchAlbums } from '../actions/albumActions'
 
-const AlbumDetails = (props) => {
+class AlbumDetails extends React.Component {
 
+   // add a componentDidMount, fetch the albums again, because it will lose it when you refresh
+   componentDidMount() {
+      this.props.fetchAlbums()
+      this.props.getCurrentUser()
+   }
    // get the url params
-   let {id} = useParams()
-   let album = props.albums.data.find(a => a.id == id)
+   // let {id} = useParams()
+   // let album = props.albums.data.find(a => a.id == id)
   
    // defines the current user's ID 
-   let currentUserId = props.user.data.id
+   // let currentUserId = props.user.data.id
+
+   // render the album itself
+   renderAlbum = (albums, albumId) => {
+      const album = albums.find(album => album.id === albumId)
+      let currentUserId = this.props.user.data.id
+
+      return (
+         // need to handle case if null - need to re-render the previous page
+         <div>
+            <img alt={album.attributes.name} src={album.attributes.cover_url} width="300" height="300"/>
+            <h5>Artist: {album.attributes.artist.name}</h5>
+            <h5>Album Name: {album.attributes.name}</h5> 
+            <h5>Release Date: {album.attributes.release_date}</h5> 
+            <h5>Record Label: {album.attributes.label}</h5>
+            <h5>Popularity: {album.attributes.popularity}</h5>
+            {this.renderSongsContainer(album)}
+   
+            {/* add album button */}
+            <button class="btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleAddUserAlbum(album, currentUserId)}>
+               Add Album
+            </button>
+         </div>
+      )
+   }
+
+
+
 
    // renders the songs from the album currently being viewed
-   const renderSongsContainer = (album) => {
+   renderSongsContainer = (album) => {
       let songs = album.attributes.songs
       // map thru album.attributes.songs
       return songs.map(song => {
@@ -26,32 +59,41 @@ const AlbumDetails = (props) => {
       })
    }
 
-   const handleAddUserAlbum = (album, currentUserId) => {
-      props.addUserAlbum(album, currentUserId)
+   handleAddUserAlbum = (album, currentUserId) => {
+      this.props.addUserAlbum(album, currentUserId)
       window.location="/dashboard"
    }
 
-   return (
-      <div>
-         <img alt={album.attributes.name} src={album.attributes.cover_url} width="300" height="300"/>
-         <h5>Artist: {album.attributes.artist.name}</h5>
-         <h5>Album Name: {album.attributes.name}</h5> 
-         <h5>Release Date: {album.attributes.release_date}</h5> 
-         <h5>Record Label: {album.attributes.label}</h5>
-         <h5>Popularity: {album.attributes.popularity}</h5>
-         {renderSongsContainer(album)}
+   render() {
+      let albums = this.props.albums.data
+      let albumId = this.props.match.params.id
 
-         {/* add album button */}
-         <button class="btn waves-effect waves-light" type="submit" name="action" onClick={() => handleAddUserAlbum(album, currentUserId)}>
-            Add Album
-         </button>
-         
-      </div>
-   )
+      return (
+         <div>
+            <div>
+            {albums ? this.renderAlbum(albums, albumId) : null}
+         </div>
+         </div>
+      )
+   }
 }
+
+const mapDispatchToProps = (dispatch)=> {
+   return {
+ 
+      getCurrentUser: () => {
+         dispatch(getCurrentUser())
+      },
+
+      fetchAlbums: () => {
+         dispatch(fetchAlbums())
+      }
+   };
+};
+
 
 const mapStateToProps = ({albums, user}) => {
    return { albums, user }
 }
  
-export default withRouter(connect(mapStateToProps, {addUserAlbum})(AlbumDetails))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AlbumDetails))

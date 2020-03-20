@@ -17,8 +17,7 @@ class UserAlbumDetails extends React.Component {
    // let currentUserId = props.user.data.id
 
    componentDidMount() {
-      this.props.getCurrentUser()
-      
+      this.props.getCurrentUser()  
    }
 
    renderUserAlbum = (userAlbums, albumId) => {
@@ -95,14 +94,14 @@ class UserAlbumDetails extends React.Component {
    }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch)=> {
    return {
  
       getCurrentUser: () => {
          dispatch(getCurrentUser())
       }
    };
- };
+};
 
 const mapStateToProps = ({user, albums}) => {
    return { user, albums } 
