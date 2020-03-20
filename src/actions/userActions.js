@@ -134,7 +134,6 @@ export const getCurrentUser = () => {
             credentials: 'include',
       })
          const user_obj = await response.json()
-         console.log(user_obj)
          dispatch({type: 'SET_CURRENT_USER', payload: user_obj})
          dispatch(getUserAlbums(user_obj.id))
    }

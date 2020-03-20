@@ -18,10 +18,12 @@ class UserAlbumDetails extends React.Component {
 
    componentDidMount() {
       this.props.getCurrentUser()
-      const id = this.props.match.params.id;
+      
    }
 
-   renderUserAlbum = (userAlbum) => {
+   renderUserAlbum = (userAlbums, albumId) => {
+      const userAlbum = userAlbums.find(album => album.id === parseInt(albumId))
+
       return (
          // need to handle case if null - need to re-render the previous page
          <div>
@@ -81,14 +83,13 @@ class UserAlbumDetails extends React.Component {
    // )
 
    render() {
+      let userAlbums = this.props.user.user_albums
+      let albumId = this.props.match.params.id;
+      let userId = this.props.user.data.id
 
-      console.log(this.id, "this is id of the album that we selected")
-      console.log(this.props, "these are the props")
-      console.log(this.props.user.user_albums, "these are the user albums, prior to trying to set a userAlbum variable")
-      console.log(this.props.user)
       return (
          <div>
-            {this.userAlbum ? this.renderUserAlbum(this.userAlbum) : null}
+            {userAlbums ? this.renderUserAlbum(userAlbums, albumId) : null}
          </div>
       )
    }
@@ -97,9 +98,9 @@ class UserAlbumDetails extends React.Component {
 const mapDispatchToProps = dispatch => {
    return {
  
-     getCurrentUser: () => {
-       dispatch(getCurrentUser())
-     }
+      getCurrentUser: () => {
+         dispatch(getCurrentUser())
+      }
    };
  };
 
