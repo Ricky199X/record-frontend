@@ -12,7 +12,7 @@ class AlbumDetails extends React.Component {
       console.log("component loaded")
       console.log(this.props)
       this.props.fetchAlbums()
-      this.props.getCurrentUser()
+      // this.props.getCurrentUser()
    }
    // get the url params
    // let {id} = useParams()
@@ -72,9 +72,7 @@ class AlbumDetails extends React.Component {
 
       return (
          <div>
-            <div>
             {albums ? this.renderAlbum(albums, albumId) : null}
-         </div>
          </div>
       )
    }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchAlbums } from '../actions/albumActions'
+import { getCurrentUser } from '../actions/userActions'
 import Albums from '../components/Albums'
 
 class AlbumsContainer extends React.Component {
@@ -12,6 +13,7 @@ class AlbumsContainer extends React.Component {
 
    componentDidMount() {
       this.props.fetchAlbums()
+      this.props.getCurrentUser()
    }
 
    render() {
@@ -38,4 +40,4 @@ const mapStateToProps = (state) => {
    }
 }
 
-export default connect(mapStateToProps, { fetchAlbums })(AlbumsContainer)
+export default connect(mapStateToProps, { fetchAlbums, getCurrentUser })(AlbumsContainer)
