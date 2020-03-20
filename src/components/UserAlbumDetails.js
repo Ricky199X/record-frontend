@@ -1,11 +1,14 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { getUserAlbum } from '../actions/userActions'
+// import { getUserAlbum } from '../actions/userActions'
 
 const UserAlbumDetails = (props) => {
    // get the url params
    let {id} = useParams()
+   console.log(id, "this is id of the album that we selected")
+   console.log(props, "these are the props")
+   console.log(props.user.user_albums, "these are the user albums, prior to trying to set a userAlbum variable")
    let userAlbum = props.user.user_albums.find(album => album.id === parseInt(id))
   
    // defines the current user's ID - will use later in delete action
@@ -29,7 +32,13 @@ const UserAlbumDetails = (props) => {
    //    props.addUserAlbum(album, currentUserId)
    // }
 
-   return (
+   return !props.user.loggedIn? 
+   (
+      <div>Album Loading!</div>
+   )
+   :
+   (
+      // need to handle case if null - need to re-render the previous page
       <div>
          <img alt={userAlbum.name} src={userAlbum.cover_url} width="300" height="300"/>
          {/* <h5>Artist: {userAlbum.attributes.artist.name}</h5> */}
@@ -50,4 +59,4 @@ const mapStateToProps = ({user}) => {
    return { user } 
 }
  
-export default connect(mapStateToProps, {getUserAlbum})(UserAlbumDetails)
+export default connect(mapStateToProps)(UserAlbumDetails)

@@ -3,7 +3,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { getUserAlbum } from '../actions/userActions'
 import AlbumThumbnail from './AlbumThumbnail'
 
 const UserAlbums = (props) => {
@@ -12,6 +11,7 @@ const UserAlbums = (props) => {
    const userId = props.currentUserId
 
    const renderUserAlbums = (userAlbumInfo, userId) => {
+      console.log(userAlbumInfo)
       return userAlbumInfo.map(userAlbum => {
          return (
             <Link to={`users/${userId}/user_albums/${userAlbum.id}`} key={Math.random()}>
@@ -40,4 +40,4 @@ const mapStateToProps = ({user}) => {
    return {user}
 }  
 
-export default connect(mapStateToProps, {getUserAlbum})(UserAlbums)
+export default connect(mapStateToProps)(UserAlbums)

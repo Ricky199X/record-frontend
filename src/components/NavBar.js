@@ -8,7 +8,7 @@ const NavBar = (props) => {
    return props.userLoginStatus === false ?
    (
       <nav>
-         <div className="nav-wrapper container">
+         <div className="nav-wrapper container" >
             <Link to='/' className="brand-logo">Record Collector</Link>
             <ul className = "right">
                <li><Link to='/signup'>Sign Up</Link></li>

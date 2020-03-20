@@ -4,10 +4,6 @@ import { getUserAlbums } from '../actions/userActions'
 import UserAlbums from './UserAlbums'
 
 class Dashboard extends React.Component {
-
-   // componentDidUpdate(prevProps, prevState) {
-   //   if (!prevProps.currentUserId)
-   // }
    
    render() {
       const currentUserId = this.props.user.data.id

@@ -103,8 +103,8 @@ export const getUserAlbums = (userId) => {
 // }
 
 export const getUserAlbum = (userId, albumId) => {
-   return () => {
-      fetch(`http://localhost:3000/users/${userId}/albums/${albumId}`, {
+   return async () => {
+      const response = fetch(`http://localhost:3000/users/${userId}/albums/${albumId}`, {
          headers: {
             'Content-Type' : 'application/json',
             'Accept' : 'application/json'
@@ -113,7 +113,9 @@ export const getUserAlbum = (userId, albumId) => {
             method: 'GET',
             credentials: 'include',
       })
-         .then(resp => resp.json())
+      const user_album = await response.json()
+      console.log(user_album)
+      return user_album
    }
 }
 
