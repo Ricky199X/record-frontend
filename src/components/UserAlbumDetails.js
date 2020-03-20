@@ -22,6 +22,7 @@ class UserAlbumDetails extends React.Component {
 
    renderUserAlbum = (userAlbums, albumId) => {
       const userAlbum = userAlbums.find(album => album.id === parseInt(albumId))
+      const currentUserId = this.props.user.data.id
 
       return (
          // need to handle case if null - need to re-render the previous page
@@ -32,32 +33,19 @@ class UserAlbumDetails extends React.Component {
             <h5>Release Date: {userAlbum.release_date}</h5> 
             <h5>Record Label: {userAlbum.label}</h5>
             <h5>Popularity: {userAlbum.popularity}</h5>
-            {/* {renderSongsContainer(userAlbum)} */}
    
-            {/* add album button */}
-            {/* <button onClick={() => handleAddUserAlbum(album, currentUserId)}>Add Album</button> */}
+            {/* delete album button */}
+            <button onClick={() => this.handleDeleteUserAlbum(albumId, currentUserId)}>Delete Album</button>
             
          </div>
       )
    }
 
-   // renders the songs from the userAlbum currently being viewed
-   // const renderSongsContainer = (userAlbum) => {
-   //    let songs = userAlbum.attributes.songs
-   //    // map thru album.attributes.songs
-   //    return songs.map(song => {
-   //       return <section className = "songs-container" key={Math.random()}>
-   //          <ol>
-   //          <li id={song.name} >{song.name}</li>
-   //          </ol>
-   //       </section>
-   //    })
-   // }
 
    // DELETE USER ALBUM ACTION - WILL NEED THIS LATER ON 
-   // const handleDeleteUserAlbum = (userAlbum, currentUserId) => {
-   //    props.addUserAlbum(album, currentUserId)
-   // }
+   handleDeleteUserAlbum = (albumId, currentUserId) => {
+      this.props.deleteUserAlbum(albumId, currentUserId)
+   }
 
    // return userAlbum === null && userLoginStatus === false ? 
    // (
@@ -94,17 +82,9 @@ class UserAlbumDetails extends React.Component {
    }
 }
 
-const mapDispatchToProps = (dispatch)=> {
-   return {
- 
-      getCurrentUser: () => {
-         dispatch(getCurrentUser())
-      }
-   };
-};
 
 const mapStateToProps = ({user, albums}) => {
    return { user, albums } 
 }
  
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserAlbumDetails))
+export default withRouter(connect(mapStateToProps, {getCurrentUser})(UserAlbumDetails))

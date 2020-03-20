@@ -9,6 +9,8 @@ class AlbumDetails extends React.Component {
 
    // add a componentDidMount, fetch the albums again, because it will lose it when you refresh
    componentDidMount() {
+      console.log("component loaded")
+      console.log(this.props)
       this.props.fetchAlbums()
       this.props.getCurrentUser()
    }
@@ -78,22 +80,9 @@ class AlbumDetails extends React.Component {
    }
 }
 
-const mapDispatchToProps = (dispatch)=> {
-   return {
- 
-      getCurrentUser: () => {
-         dispatch(getCurrentUser())
-      },
-
-      fetchAlbums: () => {
-         dispatch(fetchAlbums())
-      }
-   };
-};
-
 
 const mapStateToProps = ({albums, user}) => {
    return { albums, user }
 }
  
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AlbumDetails))
+export default withRouter(connect(mapStateToProps, {getCurrentUser, fetchAlbums})(AlbumDetails))
