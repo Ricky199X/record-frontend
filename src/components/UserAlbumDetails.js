@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getCurrentUser} from '../actions/userActions'
+import { getCurrentUser, deleteUserAlbum} from '../actions/userActions'
 import {withRouter } from 'react-router'
 
 
@@ -54,4 +54,4 @@ const mapStateToProps = ({user, albums}) => {
    return { user, albums } 
 }
  
-export default withRouter(connect(mapStateToProps, {getCurrentUser})(UserAlbumDetails))
+export default withRouter(connect(mapStateToProps, {getCurrentUser, deleteUserAlbum})(UserAlbumDetails))
