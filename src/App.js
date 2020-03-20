@@ -36,16 +36,16 @@ class App extends React.Component {
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={UserLogin}/>
             <Route exact path='/signup' component={UserSignup}/>
-            <Route exact path='/dashboard' component={Dashboard} currentUserId={this.props.currentUserId} />
+            <Route exact path='/dashboard' component={Dashboard} currentUserId={this.props.currentUserId} userLoginStatus={userLoginStatus} />
             <Route exact path='/albums' component={AlbumsContainer} />
-            <Route path='/your-albums' component={Dashboard} currentUserId={this.props.currentUserId}/>
+            <Route path='/your-albums' component={Dashboard} currentUserId={this.props.currentUserId} />
 
             <Route path='/albums/:id'>
               <AlbumDetails />
             </Route> 
 
             <Route path='/users/:id/user_albums/:id'>
-              <UserAlbumDetails />
+              <UserAlbumDetails userLoginStatus={userLoginStatus}/>
             </Route> 
 
             <Route exact path='/logout' component={LogoutView}/>

@@ -11,7 +11,6 @@ const UserAlbums = (props) => {
    const userId = props.currentUserId
 
    const renderUserAlbums = (userAlbumInfo, userId) => {
-      console.log(userAlbumInfo)
       return userAlbumInfo.map(userAlbum => {
          return (
             <Link to={`users/${userId}/user_albums/${userAlbum.id}`} key={Math.random()}>

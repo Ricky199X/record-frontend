@@ -1,7 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
-// import { getUserAlbum } from '../actions/userActions'
+import { loginUser } from '../actions/userActions'
+
 
 const UserAlbumDetails = (props) => {
    // get the url params
@@ -9,10 +10,20 @@ const UserAlbumDetails = (props) => {
    console.log(id, "this is id of the album that we selected")
    console.log(props, "these are the props")
    console.log(props.user.user_albums, "these are the user albums, prior to trying to set a userAlbum variable")
+   let userLoginStatus = props.userLoginStatus
    let userAlbum = props.user.user_albums.find(album => album.id === parseInt(id))
+
+   // const componentDidUpdate = (prevProps, props) => {
+   //    // Typical usage (don't forget to compare props):
+   //    if (props.userLoginStatus !== prevProps.userLoginStatus) {
+   //       loginUser(prevProps.user);
+   //    }
+   // }
+
+   
   
    // defines the current user's ID - will use later in delete action
-   let currentUserId = props.user.data.id
+   // let currentUserId = props.user.data.id
 
    // renders the songs from the userAlbum currently being viewed
    // const renderSongsContainer = (userAlbum) => {
@@ -32,7 +43,7 @@ const UserAlbumDetails = (props) => {
    //    props.addUserAlbum(album, currentUserId)
    // }
 
-   return !props.user.loggedIn? 
+   return userAlbum === null && userLoginStatus === false ? 
    (
       <div>Album Loading!</div>
    )
@@ -59,4 +70,4 @@ const mapStateToProps = ({user}) => {
    return { user } 
 }
  
-export default connect(mapStateToProps)(UserAlbumDetails)
+export default connect(mapStateToProps, { loginUser })(UserAlbumDetails)
