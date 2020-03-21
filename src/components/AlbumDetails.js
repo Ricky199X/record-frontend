@@ -1,20 +1,16 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getCurrentUser } from '../actions/userActions'
 import { fetchAlbums } from '../actions/albumActions'
 
 class AlbumDetails extends React.Component {
 
-   // add a componentDidMount, fetch the albums again, because it will lose it when you refresh
-   // componentDidMount() {
-   //    console.log("album deatils component loaded")
-   //    console.log(this.props)
-   //    this.props.fetchAlbums()
-   //    // this.props.getCurrentUser()
-   // }
 
+   componentDidMount() {
+      console.log("Component Mounted")
+      console.log(this.props.user.loggedIn)
+   }
    // render the album itself
    renderAlbum = (albums, albumId) => {
       const album = albums.find(album => album.id === albumId)
@@ -62,7 +58,12 @@ class AlbumDetails extends React.Component {
       let albums = this.props.albums.data
       let albumId = this.props.match.params.id
 
-      return (
+      return !this.props.user.loggedIn? 
+      (
+         <Redirect to='/dashboard' />
+      )
+      :
+      (
          <div>
             {albums ? this.renderAlbum(albums, albumId) : null}
          </div>
