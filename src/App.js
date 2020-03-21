@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch , Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getCurrentUser} from './actions/userActions'
+import { fetchAlbums } from './actions/albumActions'
 import AlbumsContainer from './containers/AlbumsContainer'
 import NavBar from './components/NavBar';
 import Home from './components/Home'
@@ -21,6 +22,7 @@ class App extends React.Component {
   // hits end point everytime the page reloads -> calls to users controller
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.fetchAlbums()
   }
 
 
@@ -61,13 +63,15 @@ const mapStateToProps = (state) => {
   return { state }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
+// const mapDispatchToProps = dispatch => {
+//   return {
 
-    getCurrentUser: () => {
-      dispatch(getCurrentUser())
-    }
-  };
-};
+//     getCurrentUser: () => {
+//       dispatch(getCurrentUser())
+//     },
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+//   };
+// };
+
+export default connect(mapStateToProps, {getCurrentUser, fetchAlbums})(App);

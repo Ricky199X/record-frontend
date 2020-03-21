@@ -2,24 +2,18 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { addUserAlbum, getCurrentUser } from '../actions/userActions'
+import { getCurrentUser } from '../actions/userActions'
 import { fetchAlbums } from '../actions/albumActions'
 
 class AlbumDetails extends React.Component {
 
    // add a componentDidMount, fetch the albums again, because it will lose it when you refresh
-   componentDidMount() {
-      console.log("component loaded")
-      console.log(this.props)
-      this.props.fetchAlbums()
-      // this.props.getCurrentUser()
-   }
-   // get the url params
-   // let {id} = useParams()
-   // let album = props.albums.data.find(a => a.id == id)
-  
-   // defines the current user's ID 
-   // let currentUserId = props.user.data.id
+   // componentDidMount() {
+   //    console.log("album deatils component loaded")
+   //    console.log(this.props)
+   //    this.props.fetchAlbums()
+   //    // this.props.getCurrentUser()
+   // }
 
    // render the album itself
    renderAlbum = (albums, albumId) => {
@@ -44,8 +38,6 @@ class AlbumDetails extends React.Component {
          </div>
       )
    }
-
-
 
 
    // renders the songs from the album currently being viewed

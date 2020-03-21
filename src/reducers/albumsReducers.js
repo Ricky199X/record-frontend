@@ -10,9 +10,6 @@ export default function albumsReducer(state = initialState, action) {
          return {loading: false, data: action.payload}
       case 'LOADING_ALBUMS':
          return {...state, loading: true}
-      case 'LOADING_ALBUM':
-         return {...state, loading: true}
-      
       default:
          return state
    }

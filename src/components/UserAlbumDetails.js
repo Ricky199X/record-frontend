@@ -6,9 +6,9 @@ import {withRouter } from 'react-router'
 
 class UserAlbumDetails extends React.Component {
 
-   componentDidMount() {
-      this.props.getCurrentUser()  
-   }
+   // componentDidMount() {
+   //    this.props.getCurrentUser()  
+   // }
 
    renderUserAlbum = (userAlbums, albumId) => {
       const userAlbum = userAlbums.find(album => album.id === parseInt(albumId))
