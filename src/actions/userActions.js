@@ -84,15 +84,16 @@ export const getUserAlbums = (userId) => {
 }
 
 //  WILL WORK ON THIS LATER - NEED TO THIS DELETE USER ALBUM ACTION AT SOME POINT
-export function deleteUserAlbum(albumId, userId) {
-   return () => {
-      fetch(`http://localhost:3000/users/${userId}/albums/${albumId}`, {
-         method: "DELETE"
-      })
-         .then(res => console.log(res.json()))
-         // .then(album => dispatch({ type: 'DELETE_USER_ALBUM', payload: album.id }))
-   }
-}
+// export function deleteUserAlbum(albumId, userId) {
+//    return () => {
+//       fetch(`http://localhost:3000/users/${userId}/user_albums/${albumId}`, {
+//          mode: 'cors',
+//          method: "DELETE"
+//       })
+//          .then(res => console.log(res.json()))
+//          // .then(album => dispatch({ type: 'DELETE_USER_ALBUM', payload: album.id }))
+//    }
+// }
 
 export const getUserAlbum = (userId, albumId) => {
    return async () => {

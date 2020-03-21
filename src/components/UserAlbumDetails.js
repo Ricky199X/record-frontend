@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getCurrentUser, deleteUserAlbum} from '../actions/userActions'
+import { getCurrentUser} from '../actions/userActions'
 import {withRouter } from 'react-router'
 
 
@@ -25,16 +25,16 @@ class UserAlbumDetails extends React.Component {
             <h5>Popularity: {userAlbum.popularity}</h5>
    
             {/* delete album button */}
-            <button onClick={() => this.handleDeleteUserAlbum(albumId, currentUserId)}>Delete Album</button>
+            {/* <button onClick={() => this.handleDeleteUserAlbum(albumId, currentUserId)}>Delete Album</button> */}
             
          </div>
       )
    }
 
    // DELETE USER ALBUM ACTION - WILL NEED THIS LATER ON 
-   handleDeleteUserAlbum = (albumId, currentUserId) => {
-      this.props.deleteUserAlbum(albumId, currentUserId)
-   }
+   // handleDeleteUserAlbum = (albumId, currentUserId) => {
+   //    this.props.deleteUserAlbum(albumId, currentUserId)
+   // }
 
    render() {
       let userAlbums = this.props.user.user_albums
@@ -54,4 +54,4 @@ const mapStateToProps = ({user, albums}) => {
    return { user, albums } 
 }
  
-export default withRouter(connect(mapStateToProps, {getCurrentUser, deleteUserAlbum})(UserAlbumDetails))
+export default withRouter(connect(mapStateToProps, {getCurrentUser})(UserAlbumDetails))
