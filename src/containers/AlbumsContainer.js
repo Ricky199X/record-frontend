@@ -11,7 +11,7 @@ class AlbumsContainer extends React.Component {
       const albums = this.props.albums.data
       return albums.map(album => {
          return (
-            <div>
+            <div >
                <Albums album={album}/>
             </div>
          )

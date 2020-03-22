@@ -1,16 +1,12 @@
 import React from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { getCurrentUser } from '../actions/userActions'
+import { getCurrentUser, addUserAlbum } from '../actions/userActions'
 import { fetchAlbums } from '../actions/albumActions'
 
 class AlbumDetails extends React.Component {
 
 
-   componentDidMount() {
-      console.log("Component Mounted")
-      console.log(this.props.user.loggedIn)
-   }
    // render the album itself
    renderAlbum = (albums, albumId) => {
       const album = albums.find(album => album.id === albumId)
@@ -76,4 +72,4 @@ const mapStateToProps = ({albums, user}) => {
    return { albums, user }
 }
  
-export default withRouter(connect(mapStateToProps, {getCurrentUser, fetchAlbums})(AlbumDetails))
+export default withRouter(connect(mapStateToProps, {addUserAlbum})(AlbumDetails))

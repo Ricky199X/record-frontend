@@ -29,6 +29,9 @@ class App extends React.Component {
   render() {
     let userLoginStatus = this.props.state.user.loggedIn
     let currentUserName = this.props.state.user.data.username
+    console.log(this.props)
+    console.log(userLoginStatus)
+    console.log(this.props.state.user.data.attributes)
     
     return (
       <Router>

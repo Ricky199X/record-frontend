@@ -8,7 +8,7 @@
 export const createUser = (data) => {
    // debugger
    return async (dispatch) => {
-      dispatch({type: 'LOADING_USER'})
+      // dispatch({type: 'LOADING_USER'})
       const response = await fetch('http://localhost:3000/users', {
          headers: {
             'Content-Type': 'application/json',
@@ -21,8 +21,11 @@ export const createUser = (data) => {
       })
 
       const user_obj = await response.json()
-      dispatch({type: 'LOGIN_USER', payload: user_obj})
-      dispatch(getUserAlbums(user_obj.id))
+      const user = user_obj.data
+      console.log(user)
+      dispatch({type: 'LOGIN_USER', payload: user})
+      dispatch({type: 'SET_USER_ALBUMS', payload: user.user_albums})
+      // dispatch(loginUser(user_obj))
    }
 }
 
@@ -127,7 +130,7 @@ export const getCurrentUser = () => {
             credentials: 'include',
       })
          const user_obj = await response.json()
-         dispatch({type: 'SET_CURRENT_USER', payload: user_obj})
+         dispatch({type: 'LOGIN_USER', payload: user_obj})
          dispatch(getUserAlbums(user_obj.id))
    }
 }
