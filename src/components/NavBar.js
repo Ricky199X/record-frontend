@@ -5,9 +5,6 @@ import { Link, withRouter } from 'react-router-dom'
 const NavBar = (props) => {
    // user login status is passed down as prop to NavBAr
    // if userLoginStatus = false, render a logged out navBar. If true, render the regular navbar
-
-   console.log(props)
-   console.log(props.userLoginStatus)
    return props.userLoginStatus === false ?
    (
       <nav>
