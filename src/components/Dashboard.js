@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getUserAlbums, getCurrentUser } from '../actions/userActions'
 import UserAlbums from './UserAlbums'
 
 class Dashboard extends React.Component {
@@ -25,8 +24,7 @@ class Dashboard extends React.Component {
             <UserAlbums albums={currentUserAlbums} currentUserId={currentUserId}/>
          </div>
       )
-   }
-   
+   }  
 }
 
 const mapStateToProps = ({user}) => {
@@ -34,4 +32,4 @@ const mapStateToProps = ({user}) => {
 }
 
 
-export default connect(mapStateToProps, {getUserAlbums, getCurrentUser})(Dashboard)
+export default connect(mapStateToProps)(Dashboard)
