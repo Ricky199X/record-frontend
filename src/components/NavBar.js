@@ -1,4 +1,4 @@
-// Navbar component: renders a different navbar based on whether you are logged in or not. Functional Component.
+// Navbar component: renders a different navbar based on whether you are logged in or not. Functional Component - received props from app.
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 

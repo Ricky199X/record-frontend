@@ -20,6 +20,7 @@ class App extends React.Component {
   // to not lose the currentUser on page refresh: 
   // need a component did mount of getting current user anytime app loads
   // hits end point everytime the page reloads -> calls to users controller
+
   componentDidMount() {
     this.props.getCurrentUser()
     this.props.fetchAlbums()
@@ -47,7 +48,7 @@ class App extends React.Component {
             </Route> 
 
             <Route path='/users/:id/user_albums/:id'>
-              <UserAlbumDetails userLoginStatus={userLoginStatus}/>
+              <UserAlbumDetails />
             </Route> 
 
             <Route exact path='/logout' component={LogoutView}/>
@@ -62,16 +63,5 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return { state }
 }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-
-//     getCurrentUser: () => {
-//       dispatch(getCurrentUser())
-//     },
-
-
-//   };
-// };
 
 export default connect(mapStateToProps, {getCurrentUser, fetchAlbums})(App);
