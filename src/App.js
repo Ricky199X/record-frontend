@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch , Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import { connect } from 'react-redux'
-import { getCurrentUser} from './actions/userActions'
+import { getCurrentUser } from './actions/userActions'
 import { fetchAlbums } from './actions/albumActions'
+
+// Component Import
 import AlbumsContainer from './containers/AlbumsContainer'
 import NavBar from './components/NavBar';
 import Home from './components/Home'
@@ -12,7 +14,6 @@ import Dashboard from './components/Dashboard';
 import AlbumDetails from './components/AlbumDetails'
 import UserAlbumDetails from './components/UserAlbumDetails'
 import LogoutView from './components/LogoutView'
-
 
 
 class App extends React.Component {
