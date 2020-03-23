@@ -1,3 +1,5 @@
+// Class Component - It returns a react Element (UserAlbums) and has a render method.
+
 import React from 'react'
 import { connect } from 'react-redux'
 import UserAlbums from './UserAlbums'
@@ -9,9 +11,10 @@ class Dashboard extends React.Component {
       const currentUserAlbums = this.props.user.user_albums
       const isLoggedIn = this.props.user.loggedIn
 
-      // the ternary syntax below evaluates if there is any user loaded - if not, it'll show you that it's not
-      // if a user is loaded, it'll display the current user's information, and pass down their user_albums in state and id as props
-      // to the userAlbums component, which handles display 
+      // the ternary below evaluates if there is any user loaded - if not, it'll show you that it's not
+      // if a user is loaded, it'll render the UserAlbums component, and pass down their user_albums in state and user id as props.
+      // UserAlbums component is responsible for handling Rendering of user album thumbnails.
+
       return !isLoggedIn ?
       (
          <div>
@@ -27,7 +30,8 @@ class Dashboard extends React.Component {
    }  
 }
 
-const mapStateToProps = ({user}) => {
+// we destructure the user listed in state here, giving the component access to the info in state as props.
+const mapStateToProps = ( { user } ) => {
    return { user }
 }
 
