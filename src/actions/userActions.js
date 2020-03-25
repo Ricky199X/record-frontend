@@ -31,6 +31,7 @@ export const createUser = (data) => {
 
 export const loginUser = (data) => {
    return async (dispatch) => {
+      dispatch({type: 'LOADING_USER'})
       const response = await fetch('http://localhost:3000/login', {
          headers: {
             'Content-Type': 'application/json',

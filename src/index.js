@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import rootReducer from './reducers'
 
 
-// set up devtools
+// set up Redux devtools
 const composeEnhancer = typeof window === 'object' && 
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? 
    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
@@ -15,6 +15,7 @@ window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
 }) : compose;
 
 const enhancer = composeEnhancer(applyMiddleware(thunk))
+
 // set up store
 const store = createStore(rootReducer, enhancer)
 
