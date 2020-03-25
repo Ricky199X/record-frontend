@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom'
 
 
 class UserLogin extends React.Component {
+   
    constructor(props) {
       super(props);
 
@@ -16,8 +17,6 @@ class UserLogin extends React.Component {
         shouldRedirect: false
       };
    }
-
-
 
    // check for if redirect should occur
    componentDidUpdate(prevProps) {
