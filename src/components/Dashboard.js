@@ -1,5 +1,4 @@
 // Class Component - It returns a react Element (UserAlbums) and has a render method.
-
 import React from 'react'
 import { connect } from 'react-redux'
 import UserAlbums from './UserAlbums'
@@ -7,6 +6,7 @@ import UserAlbums from './UserAlbums'
 class Dashboard extends React.Component {
    
    render() {
+      
       const currentUserId = this.props.user.data.id
       const currentUserAlbums = this.props.user.user_albums
       const isLoggedIn = this.props.user.loggedIn
@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
    }  
 }
 
-// we destructure the user listed in state here, giving the component access to the info in state as props.
+// We acces the store directly and destructure the user listed in state here, giving the component access to the info in state as props.
 const mapStateToProps = ( { user } ) => {
    return { user }
 }

@@ -32,8 +32,9 @@ class App extends React.Component {
 
 
   render() {
-    let userLoginStatus = this.props.state.user.loggedIn
-    let currentUserName = this.props.state.user.data.username
+    let userLoginStatus = this.props.user.loggedIn
+    let currentUserName = this.props.user.data.username
+    console.log(this.props.user)
     
     return (
       <Router>
@@ -43,7 +44,7 @@ class App extends React.Component {
             <Route exact path='/' component={Home}/>
             <Route exact path='/login' component={UserLogin}/>
             <Route exact path='/signup' component={UserSignup}/>
-            <Route exact path='/dashboard' component={Dashboard} currentUserId={this.props.currentUserId} userLoginStatus={userLoginStatus} />
+            <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/albums' component={AlbumsContainer}/>
             <Route path='/your-albums' component={Dashboard} currentUserId={this.props.currentUserId} />
 
@@ -64,8 +65,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { state }
+const mapStateToProps = ( {user, albums } ) => {
+  return { user, albums }
 }
 
 export default connect(mapStateToProps, {getCurrentUser, fetchAlbums})(App);
