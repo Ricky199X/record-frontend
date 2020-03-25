@@ -25,24 +25,10 @@ class UserSignup extends React.Component {
       }
    }
 
-   // handle user name changes
-   handleUsernameChange = (event) => {
+   // handle form changes
+   handleFormChange = (event) => {
       this.setState({
-         username: event.target.value
-      })
-   }
-
-   // handle email changes
-   handleEmailChange = (event) => {
-      this.setState({
-         email: event.target.value
-      })
-   }
-
-   // handle password changes
-   handlePasswordChange = (event) => {
-      this.setState({
-         password: event.target.value
+         [event.target.name]: event.target.value
       })
    }
 
@@ -62,11 +48,11 @@ class UserSignup extends React.Component {
          <div>
             <form onSubmit={this.handleSubmit} >
                <label>Username:</label>
-               <input onChange={this.handleUsernameChange} type='text' name='username' placeholder='Enter your Username' value={this.state.username}/>
+               <input onChange={this.handleFormChange} type='text' name='username' placeholder='Enter your Username' value={this.state.username}/>
                <label>Email Address:</label>
-               <input onChange={this.handleEmailChange} type='text' name='email' placeholder='Email address' value={this.state.email}/>
+               <input onChange={this.handleFormChange} type='text' name='email' placeholder='Email address' value={this.state.email}/>
                <label>Password:</label>
-               <input onChange={this.handlePasswordChange} type='text' name='password' placeholder='Enter password' value={this.state.password}/>
+               <input onChange={this.handleFormChange} type='password' name='password' placeholder='Enter password' value={this.state.password}/>
             </form> 
 
             <button onClick={this.handleSubmit}>Sign Up!</button>
