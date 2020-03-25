@@ -7,7 +7,7 @@ import AlbumThumbnail from './AlbumThumbnail'
 
 const UserAlbums = (props) => {
 
-   const albums = props.albums
+   const userAlbums = props.user.user_albums
    const userId = props.currentUserId
 
    const renderUserAlbums = (userAlbumInfo, userId) => {
@@ -28,8 +28,8 @@ const UserAlbums = (props) => {
 
    return (
       <div>
-         <h5>See your album collection below!</h5>
-         {albums ? renderUserAlbums(albums, userId) : null}
+         <h5>See your album collection below!</h5><br></br>
+         {userAlbums ? renderUserAlbums(userAlbums, userId) : null}
       </div>
    )
 
