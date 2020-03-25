@@ -34,7 +34,6 @@ class App extends React.Component {
   render() {
     let userLoginStatus = this.props.user.loggedIn
     let currentUserName = this.props.user.data.username
-    console.log(this.props.user)
     
     return (
       <Router>
@@ -46,7 +45,7 @@ class App extends React.Component {
             <Route exact path='/signup' component={UserSignup}/>
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/albums' component={AlbumsContainer}/>
-            <Route path='/your-albums' component={Dashboard} currentUserId={this.props.currentUserId} />
+            <Route path='/your-albums' component={Dashboard} />
 
             <Route path='/albums/:id'>
               <AlbumDetails />
