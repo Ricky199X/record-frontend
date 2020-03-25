@@ -34,20 +34,6 @@ class UserLogin extends React.Component {
       })
    }
 
-   // // handle email changes
-   // handleEmailChange = (event) => {
-   //    this.setState({
-   //       email: event.target.value
-   //    })
-   // }
-
-   // // handle password changes
-   // handlePasswordChange = (event) => {
-   //    this.setState({
-   //       password: event.target.value
-   //    })
-   // }
-
    // handle submit
    handleSubmit = (event) => {
       event.preventDefault()
