@@ -2,21 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
-
 class UserAlbumDetails extends React.Component {
 
    renderUserAlbum = (userAlbums, albumId) => {
       const userAlbum = userAlbums.find(album => album.id === parseInt(albumId))
 
       return (
-         // need to handle case if null - need to re-render the previous page
          <div>
             <img alt={userAlbum.name} src={userAlbum.cover_url} width="300" height="300"/>
             <h5>Album Name: {userAlbum.name}</h5> 
             <h5>Release Date: {userAlbum.release_date}</h5> 
             <h5>Record Label: {userAlbum.label}</h5>
             <h5>Popularity: {userAlbum.popularity}</h5>
-            
          </div>
       )
    }
@@ -35,8 +32,8 @@ class UserAlbumDetails extends React.Component {
 }
 
 
-const mapStateToProps = ({user, albums}) => {
-   return { user, albums } 
+const mapStateToProps = ({ user }) => {
+   return { user } 
 }
  
 export default withRouter(connect(mapStateToProps)(UserAlbumDetails))
