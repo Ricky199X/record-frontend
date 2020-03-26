@@ -67,9 +67,4 @@ const mapStateToProps = ( {user, albums } ) => {
   return { user, albums }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  getCurrentUser: () => dispatch(getCurrentUser()),
-  fetchAlbums: () => dispatch(fetchAlbums())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, {getCurrentUser, fetchAlbums})(App);
