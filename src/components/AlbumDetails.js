@@ -1,19 +1,16 @@
 import React from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { getCurrentUser, addUserAlbum } from '../actions/userActions'
-import { fetchAlbums } from '../actions/albumActions'
+import { addUserAlbum } from '../actions/userActions'
 
 class AlbumDetails extends React.Component {
 
-
-   // render the album itself
+   // function to dynamically find the album 
    renderAlbum = (albums, albumId) => {
       const album = albums.find(album => album.id === albumId)
       let currentUserId = this.props.user.data.id
 
       return (
-         // need to handle case if null - need to re-render the previous page
          <div>
             <img alt={album.attributes.name} src={album.attributes.cover_url} width="300" height="300"/>
             <h5>Artist: {album.attributes.artist.name}</h5>
@@ -31,7 +28,6 @@ class AlbumDetails extends React.Component {
       )
    }
 
-
    // renders the songs from the album currently being viewed
    renderSongsContainer = (album) => {
       let songs = album.attributes.songs
@@ -39,12 +35,13 @@ class AlbumDetails extends React.Component {
       return songs.map(song => {
          return <section className = "songs-container" key={Math.random()}>
             <ol>
-            <li id={song.name} >{song.name}</li>
+               <li id={song.name} >{song.name}</li>
             </ol>
          </section>
       })
    }
 
+   // function to add the album to the user's collection
    handleAddUserAlbum = (album, currentUserId) => {
       this.props.addUserAlbum(album, currentUserId)
       window.location="/dashboard"
