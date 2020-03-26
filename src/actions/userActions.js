@@ -99,7 +99,6 @@ export const getUserAlbum = (userId, albumId) => {
    }
 }
 
-
 export const getCurrentUser = () => {
    return async (dispatch) => {
       // SETTING LOADING TO TRUE HERE

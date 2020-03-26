@@ -1,7 +1,7 @@
-// this is a form component, used for setting up new user account
+// this is a Class component, used for setting up new user account
 import React from 'react'
 import { connect } from 'react-redux'
-import { createUser, loginUser } from '../actions/userActions'
+import { createUser } from '../actions/userActions'
 import { Redirect } from 'react-router-dom'
 
 class UserSignup extends React.Component {
@@ -85,4 +85,4 @@ const mapStateToProps = ({user}) => {
    return { user }
 }
 
-export default connect(mapStateToProps, {createUser, loginUser})(UserSignup)
+export default connect(mapStateToProps, {createUser})(UserSignup)
