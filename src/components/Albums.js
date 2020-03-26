@@ -2,13 +2,11 @@
 import React from 'react'
 import Album from './Album'
 import { Link } from 'react-router-dom'
-import AlbumDetails from './AlbumDetails'
 
 // will render all albums in db
 // when you click the album, it will render an album card
 
 const Albums = (props) => {
-   console.log(props)
    return (
       <div className="row">
          <div className="col s12">

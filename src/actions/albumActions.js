@@ -12,7 +12,6 @@ export const fetchAlbums = () => {
             method: 'GET',
             credentials: 'include',
       })
-      // const albums = await response.data.json()
       .then(resp => resp.json())
       .then(res => dispatch({type: 'SET_ALBUMS', payload: res.data}))
    }

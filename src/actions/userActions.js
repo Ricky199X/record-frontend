@@ -6,7 +6,6 @@
 // be very clear on what what's happening - visualize the store 
 
 export const createUser = (data) => {
-   // debugger
    return async (dispatch) => {
       dispatch({type: 'LOADING_USER'})
       const response = await fetch('http://localhost:3000/users', {
@@ -26,8 +25,6 @@ export const createUser = (data) => {
       dispatch(getCurrentUser())
    }
 }
-
-
 
 export const loginUser = (data) => {
    return async (dispatch) => {
@@ -84,18 +81,6 @@ export const getUserAlbums = (userId) => {
       dispatch({type: 'SET_USER_ALBUMS', payload: user_albums})
    }
 }
-
-//  WILL WORK ON THIS LATER - NEED TO THIS DELETE USER ALBUM ACTION AT SOME POINT
-// export function deleteUserAlbum(albumId, userId) {
-//    return () => {
-//       fetch(`http://localhost:3000/users/${userId}/user_albums/${albumId}`, {
-//          mode: 'cors',
-//          method: "DELETE"
-//       })
-//          .then(res => console.log(res.json()))
-//          // .then(album => dispatch({ type: 'DELETE_USER_ALBUM', payload: album.id }))
-//    }
-// }
 
 export const getUserAlbum = (userId, albumId) => {
    return async () => {
