@@ -1,6 +1,6 @@
 // Presentational Component - gets the individual album passed down 
 import React from 'react'
-import AlbumThumbnail from './AlbumThumbnail'
+import Album from './Album'
 import { Link } from 'react-router-dom'
 import AlbumDetails from './AlbumDetails'
 
@@ -8,14 +8,12 @@ import AlbumDetails from './AlbumDetails'
 // when you click the album, it will render an album card
 
 const Albums = (props) => {
-
-   
-
+   console.log(props)
    return (
       <div className="row">
          <div className="col s12">
             <Link to={`/albums/${props.album.id}`} key={Math.random()}>
-            <AlbumThumbnail 
+            <Album 
                name={props.album.attributes.name}
                img={<img alt={props.album.id} src={props.album.attributes.cover_url}  />}
                src={props.album.attributes.cover_url} 

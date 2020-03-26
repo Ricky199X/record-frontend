@@ -3,7 +3,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import AlbumThumbnail from './AlbumThumbnail'
+import Album from './Album'
 
 const UserAlbums = (props) => {
 
@@ -14,7 +14,7 @@ const UserAlbums = (props) => {
       return userAlbumInfo.map(userAlbum => {
          return (
             <Link to={`users/${userId}/user_albums/${userAlbum.id}`} key={Math.random()}>
-               <AlbumThumbnail 
+               <Album
                   name={userAlbum.name}
                   img={<img alt={userAlbum.id} src={userAlbum.cover_url}  />}
                   src={userAlbum.cover_url} 
