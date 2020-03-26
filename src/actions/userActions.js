@@ -94,7 +94,6 @@ export const getUserAlbum = (userId, albumId) => {
             credentials: 'include',
       })
       const user_album = await response.json()
-      console.log(user_album)
       return user_album
    }
 }
