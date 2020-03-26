@@ -45,7 +45,6 @@ class App extends React.Component {
             <Route exact path='/signup' component={UserSignup}/>
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/albums' component={AlbumsContainer}/>
-            <Route path='/your-albums' component={Dashboard} />
 
             <Route path='/albums/:id'>
               <AlbumDetails />

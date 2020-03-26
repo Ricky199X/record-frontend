@@ -25,7 +25,6 @@ const NavBar = (props) => {
             <ul className = "right">
                <li><Link to="/dashboard">Dashboard</Link></li>
                <li><Link to="/albums">Albums</Link></li>
-               <li><Link to='/your-albums'>Your Albums</Link></li>
                <li><Link to='/logout'>Logout</Link></li>
                <li><Link to='#' >{props.currentUserName}</Link></li>
             </ul>

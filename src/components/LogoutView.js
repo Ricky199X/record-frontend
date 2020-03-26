@@ -1,4 +1,4 @@
-// Logout screen - after successful logout, user is redirected here.
+// Logout screen - after successful logout, user is redirected here. Class Component.
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -8,7 +8,7 @@ class LogoutView extends Component {
 
    componentDidMount() {
       this.props.logoutUser()
-  }
+   }
 
    render() {
       return (
