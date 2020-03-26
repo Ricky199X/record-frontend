@@ -11,7 +11,6 @@ const Home = () => {
          <Link to='/signup'>Sign Up</Link>
       </div>
    )
-
 }
 
 export default Home
