@@ -5,6 +5,7 @@ import { addUserAlbum } from '../actions/userActions'
 
 class AlbumDetails extends React.Component {
 
+
    // function to dynamically find the album 
    renderAlbum = (albums, albumId) => {
       const album = albums.find(album => album.id === albumId)
@@ -21,9 +22,10 @@ class AlbumDetails extends React.Component {
             {this.renderSongsContainer(album)}
    
             {/* add album button */}
-            <button class="btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleAddUserAlbum(album, currentUserId)}>
+            <button className="btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleAddUserAlbum(album, currentUserId)}>
                Add Album
             </button>
+         
          </div>
       )
    }

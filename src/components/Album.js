@@ -3,7 +3,7 @@
 import React from 'react'
 
 const Album = (props) => {
-   console.log(props)
+   
    return (
       <div>{props.img}</div>
    )
