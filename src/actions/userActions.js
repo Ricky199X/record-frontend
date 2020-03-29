@@ -6,6 +6,7 @@
 // be very clear on what what's happening - visualize the store 
 
 export const createUser = (data) => {
+
    return async (dispatch) => {
       dispatch({type: 'LOADING_USER'})
       const response = await fetch('http://localhost:3000/users', {

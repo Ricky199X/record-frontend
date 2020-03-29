@@ -4,8 +4,13 @@ import React from 'react'
 
 const Album = (props) => {
    
+   console.log(props)
    return (
-      <div>{props.img}</div>
+      <div>
+         {props.img}
+         <h5>Likes: {props.likes}</h5>
+      </div>
+
    )
 
 }
