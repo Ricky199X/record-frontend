@@ -31,7 +31,7 @@ class Albums extends React.Component {
                   key={this.props.album.attributes.name} 
                />
                </Link>
-               <button onClick={this.handleLike}>Like Album</button>
+               <button className="btn waves-effect waves-light" onClick={this.handleLike}>Like Album</button>
             </div>
          </div>
       )
