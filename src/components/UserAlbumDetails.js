@@ -9,11 +9,11 @@ class UserAlbumDetails extends React.Component {
 
       return (
          <div>
-            <img alt={userAlbum.name} src={userAlbum.cover_url} width="300" height="300"/>
-            <h5>Album Name: {userAlbum.name}</h5> 
-            <h5>Release Date: {userAlbum.release_date}</h5> 
-            <h5>Record Label: {userAlbum.label}</h5>
-            <h5>Popularity: {userAlbum.popularity}</h5>
+            <img alt={userAlbum.name} src={userAlbum.cover_url} width="300" height="300" />
+            <h5 class="white-text">Album Name: {userAlbum.name}</h5>
+            <h5 class="white-text">Release Date: {userAlbum.release_date}</h5>
+            <h5 class="white-text">Record Label: {userAlbum.label}</h5>
+            <h5 class="white-text">Popularity: {userAlbum.popularity}</h5>
          </div>
       )
    }
@@ -33,7 +33,7 @@ class UserAlbumDetails extends React.Component {
 
 
 const mapStateToProps = ({ user }) => {
-   return { user } 
+   return { user }
 }
- 
+
 export default withRouter(connect(mapStateToProps)(UserAlbumDetails))
