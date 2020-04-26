@@ -49,19 +49,18 @@ class UserSignup extends React.Component {
 
                <section class="section form-section">
                   <div class="row">
-                     <form class="col s12"
-                        onSubmit={this.handleSubmit} >
-                        <label>Username:</label>
+                     <form class="col s12" onSubmit={this.handleSubmit} >
+                        <label class="black-text">Username:</label>
 
 
-                        <input
+                        <input class="black-text"
                            onChange={this.handleFormChange}
                            type='text' name='username'
                            placeholder='Enter your Username'
                            value={this.state.username}
                         />
 
-                        <label>Email Address:</label>
+                        <label class="black-text">Email Address:</label>
                         <input
                            onChange={this.handleFormChange}
                            type='text'
@@ -70,7 +69,7 @@ class UserSignup extends React.Component {
                            value={this.state.email}
                         />
 
-                        <label>Password:</label>
+                        <label class="black-text">Password:</label>
                         <input
                            onChange={this.handleFormChange}
                            type='password'
