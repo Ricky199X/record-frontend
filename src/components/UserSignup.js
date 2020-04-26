@@ -63,7 +63,7 @@ class UserSignup extends React.Component {
                         <label class="white-text">Username:</label>
 
 
-                        <input class="white-text"
+                        <input class="grey-text lighten-5"
                            onChange={this.handleFormChange}
                            type='text' name='username'
                            value={this.state.username}
@@ -71,7 +71,7 @@ class UserSignup extends React.Component {
 
                         <label class="white-text">Email Address:</label>
                         <input
-                           class="white-text"
+                           class="grey-text lighten-5"
                            onChange={this.handleFormChange}
                            type='text'
                            name='email'
@@ -80,7 +80,7 @@ class UserSignup extends React.Component {
 
                         <label class="white-text">Password:</label>
                         <input
-                           class="white-text"
+                           class="grey-text lighten-5"
                            onChange={this.handleFormChange}
                            type='password'
                            name='password'
