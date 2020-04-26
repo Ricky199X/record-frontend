@@ -47,6 +47,7 @@ class UserSignup extends React.Component {
          return (
             <div class="page-container">
 
+               {/* Message */}
                <section class="section message-section center">
                   <div class="welcome-message">
                      <h5 class="white-text">
@@ -55,7 +56,7 @@ class UserSignup extends React.Component {
                   </div>
                </section>
 
-
+               {/* Form */}
                <section class="section form-section">
                   <div class="row">
                      <form class="col s12 l12" onSubmit={this.handleSubmit} >
