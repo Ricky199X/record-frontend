@@ -1,14 +1,15 @@
 // Navbar component: renders a different navbar based on whether you are logged in or not. Functional Component - received props from app.
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import '../index.css'
 
 const NavBar = (props) => {
    // user login status is passed down as prop to NavBAr
    // if userLoginStatus = false, render a logged out navBar. If true, render the regular navbar
    return props.userLoginStatus === false ?
       (
-         <nav class="black">
-            <div className="nav-wrapper container" >
+         <nav class="nav black">
+            <div class="nav-wrapper container" >
                <Link to='/' class="brand-logo left-align">Record Collector</Link>
                <ul id="nav-mobile" class="right hide-on-small-and-down ">
                   <li><Link to='/signup'>Sign Up</Link></li>
@@ -19,7 +20,7 @@ const NavBar = (props) => {
       )
       :
       (
-         <nav class="black">
+         <nav class="nav">
             <div className="nav-wrapper container">
                <Link to='#' class="brand-logo left-align">Record Collector</Link>
                <ul id="nav-mobile" class="right hide-on-small-and-down ">
