@@ -5,10 +5,11 @@ body {
    background-repeat: no-repeat;
    font-family: 'Didact Gothic', 'sans-serif';
    margin: auto;
+   height: 100%
 }
 
 img {
-   height: 400px
+   border: 4mm ridge rgba(170, 50, 220, .6);
 }
 
 a {
@@ -16,12 +17,21 @@ a {
    color: black;
 }
 
+.homepage-message-container {
+   padding: 35px;
+}
+
+.homepage-img-container {
+   padding: 35px;
+}
+
+
 .homepage-links-container {
-   padding: 10px;
+   padding: 20px;
 }
 
 .btn-large {
-   margin-left: 50px;
+   margin: 20px;
 }
 
 .btn-small {

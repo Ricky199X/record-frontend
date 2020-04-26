@@ -11,16 +11,24 @@ const Home = () => {
    return (
       <div class="homepage-container">
 
-         <section class="homepage-img-container center">
+         {/* Landing Page Message */}
 
-            <div class="img-div">
-               <img class="landing-page-pic" src={LandingPagePic} />
+         <section class="homepage-message-container center">
+            <div class="landing-page-message">
+               <h3 class="white-text">
+                  Music For Everyone.
+               </h3>
             </div>
-
-
          </section>
 
+         {/* Landing Pag Image */}
+         <section class="homepage-img-container center">
+            <div class="img-div">
+               <img class="landing-page-pic" src={LandingPagePic} height="400px" width="600px" />
+            </div>
+         </section>
 
+         {/* Landing Page Links */}
          <section class="homepage-links-container center">
             <button class="btn-large green accent-4">
                <Link to='/signup' class="white-text">Sign Up</Link>
