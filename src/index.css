@@ -17,4 +17,10 @@ a {
    color: black;
 }
 
+.homepage-links-container {
+   padding: 210px;
+}
 
+.btn-large {
+   margin-left: 50px;
+}

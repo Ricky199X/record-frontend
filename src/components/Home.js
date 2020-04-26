@@ -5,20 +5,16 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
    return (
-      <div class="homepage-container">
-         <div class="homepage-links-container">
+      <div class="homepage-links-container center">
 
-            <button class="btn-large">
-               <Link to='/signup'>Sign Up</Link>
-            </button>
+         <button class="btn-large">
+            <Link to='/signup' class="white-text">Sign Up</Link>
+         </button>
 
+         <button class="btn-large">
+            <Link to='/login' class="white-text">Log In</Link>
+         </button>
 
-
-            <button class="btn-large">
-               <Link to='/login'>Log In</Link>
-            </button>
-
-         </div>
       </div>
    )
 }
