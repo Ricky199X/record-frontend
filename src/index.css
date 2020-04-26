@@ -43,6 +43,10 @@ a {
    padding: 1rem;
 }
 
+.section.home-button-section {
+   padding: 5rem;
+}
+
 .or.white-text {
    padding: 30px;
 }

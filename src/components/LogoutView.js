@@ -13,12 +13,23 @@ class LogoutView extends Component {
    render() {
       return (
          <div>
-            <h1>Thank you for coming!</h1>
-            <br></br>
-            <Link to='/'>Home</Link>
+            {/* Message */}
+            <section class="section message-section center">
+               <div class="goodbye-message">
+                  <h5 class="white-text">
+                     Thanks for coming. See you next time!
+                     </h5>
+               </div>
+            </section>
+
+            <section class="section home-button-section center">
+               <button class="btn-large green accent-4">
+                  <Link to='/' class="white-text">Home</Link>
+               </button>
+            </section>
          </div>
       )
    }
 }
 
-export default connect(null, {logoutUser})(LogoutView);
+export default connect(null, { logoutUser })(LogoutView);

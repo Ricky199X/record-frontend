@@ -20,7 +20,7 @@ const NavBar = (props) => {
       )
       :
       (
-         <nav class="nav">
+         <nav class="nav black">
             <div className="nav-wrapper container">
                <Link to='#' class="brand-logo left-align">Record Collector</Link>
                <ul id="nav-mobile" class="right hide-on-small-and-down ">
@@ -28,6 +28,7 @@ const NavBar = (props) => {
                   <li><Link to="/albums">Albums</Link></li>
                   <li><Link to='/logout'>Logout</Link></li>
                   <li><Link to='#' >{props.currentUserName}</Link></li>
+
                </ul>
             </div>
          </nav>
