@@ -14,7 +14,7 @@ img {
 }
 
 a {
-   font-size: x-large;
+   font-size: large;
    color: black;
 }
 
@@ -24,6 +24,11 @@ a {
 
 .btn-large {
    margin-left: 50px;
+}
+
+.btn-small {
+   margin-left: 50px;
+   font-size: 5px;
 }
 
 .section.form-section {
@@ -38,6 +43,9 @@ a {
    padding: 1rem;
 }
 
+.or.white-text {
+   padding: 30px;
+}
 /* form css */
 
 label.white-text {

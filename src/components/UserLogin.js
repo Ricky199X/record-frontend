@@ -6,15 +6,15 @@ import { Redirect } from 'react-router-dom'
 
 
 class UserLogin extends React.Component {
-   
+
    constructor(props) {
       super(props);
 
       this.state = {
-        username: "",
-        email: "",
-        password: "",
-        shouldRedirect: false
+         username: "",
+         email: "",
+         password: "",
+         shouldRedirect: false
       };
    }
 
@@ -39,53 +39,81 @@ class UserLogin extends React.Component {
       event.preventDefault()
       this.props.loginUser(this.state)
    }
-   
+
    render() {
       if (this.state.shouldRedirect) {
-         return <Redirect to='/dashboard'/>
+         return <Redirect to='/dashboard' />
       } else {
          return (
-            <div>
-               <form onSubmit={this.handleSubmit} >
-                  <label>Username:</label>
-                  <input 
-                     onChange={this.handleFormChange} 
-                     type='text' 
-                     name='username' 
-                     placeholder='Enter your Username' 
-                     value={this.state.username}
-                  />
+            <div class="page-container">
 
-                  <label>Email Address:</label>
-                  <input 
-                     onChange={this.handleFormChange} 
-                     type='text' 
-                     name='email' 
-                     placeholder='Email address' 
-                     value={this.state.email}
-                  />
+               {/* Message */}
+               <section class="section message-section center">
+                  <div class="welcome-message">
+                     <h5 class="white-text">
+                        Welcome to the party. Please log back in.
+                     </h5>
+                  </div>
+               </section>
 
-                  <label>Password:</label>
-                  <input 
-                     onChange={this.handleFormChange} 
-                     type='password' 
-                     name='password' 
-                     placeholder='Enter password' 
-                     value={this.state.password}
-                  />
-               </form> 
-                  <button onClick={this.handleSubmit}>Log In!</button>
-               <div>
-                  or <Link to='/signup'>sign up</Link>
-               </div>
+               {/* Form */}
+               <section class="section form-section">
+                  <div class="row">
+                     <form class="col s12 l12" onSubmit={this.handleSubmit} >
+                        <label class="white-text">Username:</label>
+
+
+                        <input class="grey-text lighten-5"
+                           onChange={this.handleFormChange}
+                           type='text' name='username'
+                           value={this.state.username}
+                        />
+
+                        <label class="white-text">Email Address:</label>
+                        <input
+                           class="grey-text lighten-5"
+                           onChange={this.handleFormChange}
+                           type='text'
+                           name='email'
+                           value={this.state.email}
+                        />
+
+                        <label class="white-text">Password:</label>
+                        <input
+                           class="grey-text lighten-5"
+                           onChange={this.handleFormChange}
+                           type='password'
+                           name='password'
+                           value={this.state.password}
+                        />
+                     </form>
+                  </div>
+               </section>
+
+               {/* Submit Button */}
+               <section class="section button-section center">
+                  <button class="btn-large green accent-4"
+                     onClick={this.handleSubmit}>
+                     Log in!
+                  </button>
+               </section>
+
+               <section class="section button-section center">
+                  <button class="btn-small green accent-4 center">
+                     <Link to='/signup' class="white-text">Sign Up</Link>
+                  </button>
+               </section>
+
             </div>
          )
       }
    }
 }
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = ({ user }) => {
    return { user }
 }
 
-export default connect(mapStateToProps, {loginUser})(UserLogin)
+export default connect(mapStateToProps, { loginUser })(UserLogin)
+
+
