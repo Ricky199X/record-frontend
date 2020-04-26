@@ -75,6 +75,18 @@ label.white-text {
    padding: 30px;
 }
 
+
+/* ------- Albums --------- */
+
+.album-cover {
+   border: 0.5rem outset green;
+  border-radius: 1px;
+  font: bold 1rem sans-serif;
+  margin: 2rem;
+  padding: 1rem;
+  outline-offset: 0.5rem;
+}
+
 /* label color */
 /* .input-field label {
    color: #000;
