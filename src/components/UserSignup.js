@@ -50,31 +50,30 @@ class UserSignup extends React.Component {
                <section class="section form-section">
                   <div class="row">
                      <form class="col s12" onSubmit={this.handleSubmit} >
-                        <label class="black-text">Username:</label>
+                        <label class="white-text">Username:</label>
 
 
-                        <input class="black-text"
+                        <input class="white-text"
                            onChange={this.handleFormChange}
                            type='text' name='username'
-                           placeholder='Enter your Username'
                            value={this.state.username}
                         />
 
-                        <label class="black-text">Email Address:</label>
+                        <label class="white-text">Email Address:</label>
                         <input
+                           class="white-text"
                            onChange={this.handleFormChange}
                            type='text'
                            name='email'
-                           placeholder='Email address'
                            value={this.state.email}
                         />
 
-                        <label class="black-text">Password:</label>
+                        <label class="white-text">Password:</label>
                         <input
+                           class="white-text"
                            onChange={this.handleFormChange}
                            type='password'
                            name='password'
-                           placeholder='Enter password'
                            value={this.state.password}
                         />
                      </form>

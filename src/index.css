@@ -1,5 +1,6 @@
 body {
-   background-image: url("../src/assets/vintage-music-white-sound-1791.jpg");
+   /* background-image: url("../src/assets/vintage-music-white-sound-1791.jpg"); */
+   background-color: black;
    background-attachment: fixed;
    background-repeat: no-repeat;
    font-family: 'Didact Gothic', 'sans-serif';
@@ -35,9 +36,9 @@ label.black-text {
    font-size: 1rem;
 }
 
-input {
-   
-}
+/* input {
+
+} */
 
 /* label color */
 /* .input-field label {
@@ -48,8 +49,8 @@ input {
    color: #000;
  } */
  /* label underline focus color */
- /* .input-field input[type=text]:focus {
-   border-bottom: 1px solid #000;
+ /* input[type=text]:focus {
+   border-bottom: 1px solid rgb(25, 189, 25);
    box-shadow: 0 1px 0 0 #000;
  } */
 
