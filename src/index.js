@@ -6,14 +6,16 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
 import './index.css'
+import 'materialize-css/dist/css/materialize.min.css'
+
 
 
 // set up Redux devtools
-const composeEnhancer = typeof window === 'object' && 
-window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? 
+const composeEnhancer = typeof window === 'object' &&
+   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
 
-}) : compose;
+   }) : compose;
 
 const enhancer = composeEnhancer(applyMiddleware(thunk))
 
@@ -21,10 +23,10 @@ const enhancer = composeEnhancer(applyMiddleware(thunk))
 const store = createStore(rootReducer, enhancer)
 
 ReactDOM.render(
-   <Provider store={store}> 
+   <Provider store={store}>
       <App />
    </Provider>
-, 
-document.getElementById('root'));
+   ,
+   document.getElementById('root'));
 
 
