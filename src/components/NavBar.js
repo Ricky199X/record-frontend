@@ -9,8 +9,8 @@ const NavBar = (props) => {
       (
          <nav class="black">
             <div className="nav-wrapper container" >
-               <Link to='/' className="brand-logo">Record Collector</Link>
-               <ul className="right">
+               <Link to='/' class="brand-logo left-align">Record Collector</Link>
+               <ul id="nav-mobile" class="right hide-on-small-and-down ">
                   <li><Link to='/signup'>Sign Up</Link></li>
                   <li><Link to='/login'>Login</Link></li>
                </ul>
@@ -21,8 +21,8 @@ const NavBar = (props) => {
       (
          <nav class="black">
             <div className="nav-wrapper container">
-               <Link to='#' className="brand-logo">Record Collector</Link>
-               <ul className="right">
+               <Link to='#' class="brand-logo left-align">Record Collector</Link>
+               <ul id="nav-mobile" class="right hide-on-small-and-down ">
                   <li><Link to="/dashboard">Dashboard</Link></li>
                   <li><Link to="/albums">Albums</Link></li>
                   <li><Link to='/logout'>Logout</Link></li>
