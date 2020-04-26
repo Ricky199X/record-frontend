@@ -16,9 +16,9 @@ const UserAlbums = (props) => {
             <Link to={`users/${userId}/user_albums/${userAlbum.id}`} key={Math.random()}>
                <Album
                   name={userAlbum.name}
-                  img={<img alt={userAlbum.id} src={userAlbum.cover_url}  />}
-                  src={userAlbum.cover_url} 
-                  key={userAlbum.name} 
+                  img={<img alt={userAlbum.id} src={userAlbum.cover_url} />}
+                  src={userAlbum.cover_url}
+                  key={userAlbum.name}
                />
             </Link>
          )
@@ -27,16 +27,19 @@ const UserAlbums = (props) => {
 
 
    return (
-      <div>
-         <h5>See your album collection below!</h5><br></br>
-         {userAlbums ? renderUserAlbums(userAlbums, userId) : null}
+      <div class="user-dashboard-container">
+         <h5 class="white-text center">See your album collection below!</h5>
+
+         <div class="user-albums-container">
+            {userAlbums ? renderUserAlbums(userAlbums, userId) : null}
+         </div>
       </div>
    )
 
 }
 
-const mapStateToProps = ({user}) => {
-   return {user}
-}  
+const mapStateToProps = ({ user }) => {
+   return { user }
+}
 
 export default connect(mapStateToProps)(UserAlbums)

@@ -98,12 +98,6 @@ class UserLogin extends React.Component {
                   </button>
                </section>
 
-               <section class="section button-section center">
-                  <button class="btn-small green accent-4 center">
-                     <Link to='/signup' class="white-text">Sign Up</Link>
-                  </button>
-               </section>
-
             </div>
          )
       }

@@ -3,11 +3,11 @@
 import React from 'react'
 
 const Album = (props) => {
-   
+
    return (
       <div>
          {props.img}
-         <h5>Likes: {props.likes}</h5>
+         <h5 class="grey-text lighten-1">Likes: {props.likes}</h5>
       </div>
 
    )
