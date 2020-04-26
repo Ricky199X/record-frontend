@@ -47,9 +47,18 @@ class UserSignup extends React.Component {
          return (
             <div class="page-container">
 
+               <section class="section message-section center">
+                  <div class="welcome-message">
+                     <h5 class="white-text">
+                        Welcome to the party. Please sign up below.
+                     </h5>
+                  </div>
+               </section>
+
+
                <section class="section form-section">
                   <div class="row">
-                     <form class="col s12" onSubmit={this.handleSubmit} >
+                     <form class="col s12 l12" onSubmit={this.handleSubmit} >
                         <label class="white-text">Username:</label>
 
 
@@ -80,11 +89,14 @@ class UserSignup extends React.Component {
                   </div>
                </section>
 
+               {/* Submit Button */}
+               <section class="section button-section center">
+                  <button class="btn-large green accent-4"
+                     onClick={this.handleSubmit}>
+                     Sign Up!
+                  </button>
+               </section>
 
-               <button class="btn-large green accent-4"
-                  onClick={this.handleSubmit}>
-                  Sign Up!
-               </button>
             </div>
          )
       }

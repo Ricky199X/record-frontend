@@ -27,7 +27,15 @@ a {
 }
 
 .section.form-section {
-   padding: 6rem;
+   padding: 50px;
+}
+
+.section.message-section {
+   padding: 1rem;
+}
+
+.section.button-section {
+   padding: 1rem;
 }
 
 /* form css */
