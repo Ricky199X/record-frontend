@@ -24,3 +24,7 @@ a {
 .btn-large {
    margin-left: 50px;
 }
+
+.section.form-section {
+   padding: 6rem;
+}

@@ -19,7 +19,7 @@ const NavBar = (props) => {
       )
       :
       (
-         <nav>
+         <nav class="black">
             <div className="nav-wrapper container">
                <Link to='#' className="brand-logo">Record Collector</Link>
                <ul className="right">

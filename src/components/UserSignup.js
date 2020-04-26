@@ -7,12 +7,12 @@ import { Redirect } from 'react-router-dom'
 class UserSignup extends React.Component {
    constructor(props) {
       super(props);
-  
+
       this.state = {
-        username: "",
-        email: "",
-        password: "",
-        shouldRedirect: false
+         username: "",
+         email: "",
+         password: "",
+         shouldRedirect: false
       };
    }
 
@@ -39,50 +39,62 @@ class UserSignup extends React.Component {
       event.preventDefault()
       this.props.createUser(this.state)
    }
-   
+
    render() {
       if (this.state.shouldRedirect) {
-         return <Redirect to='/dashboard'/>
+         return <Redirect to='/dashboard' />
       } else {
-      return (
-         <div>
-            <form onSubmit={this.handleSubmit} >
-               <label>Username:</label>
-               <input 
-                  onChange={this.handleFormChange} 
-                  type='text' name='username' 
-                  placeholder='Enter your Username' 
-                  value={this.state.username}
-               />
+         return (
+            <div class="page-container">
 
-               <label>Email Address:</label>
-               <input 
-                  onChange={this.handleFormChange} 
-                  type='text' 
-                  name='email' 
-                  placeholder='Email address' 
-                  value={this.state.email}
-               />
+               <section class="section form-section">
+                  <div class="row">
+                     <form class="col s12"
+                        onSubmit={this.handleSubmit} >
+                        <label>Username:</label>
 
-               <label>Password:</label>
-               <input 
-                  onChange={this.handleFormChange} 
-                  type='password' 
-                  name='password' 
-                  placeholder='Enter password' 
-                  value={this.state.password}
-               />
-            </form> 
 
-            <button onClick={this.handleSubmit}>Sign Up!</button>
-         </div>
+                        <input
+                           onChange={this.handleFormChange}
+                           type='text' name='username'
+                           placeholder='Enter your Username'
+                           value={this.state.username}
+                        />
+
+                        <label>Email Address:</label>
+                        <input
+                           onChange={this.handleFormChange}
+                           type='text'
+                           name='email'
+                           placeholder='Email address'
+                           value={this.state.email}
+                        />
+
+                        <label>Password:</label>
+                        <input
+                           onChange={this.handleFormChange}
+                           type='password'
+                           name='password'
+                           placeholder='Enter password'
+                           value={this.state.password}
+                        />
+                     </form>
+                  </div>
+               </section>
+
+
+               <button class="btn-large green accent-4"
+                  onClick={this.handleSubmit}>
+                  Sign Up!
+               </button>
+            </div>
          )
       }
    }
 }
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = ({ user }) => {
    return { user }
 }
 
-export default connect(mapStateToProps, {createUser})(UserSignup)
+export default connect(mapStateToProps, { createUser })(UserSignup)

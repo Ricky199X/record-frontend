@@ -7,11 +7,11 @@ const Home = () => {
    return (
       <div class="homepage-links-container center">
 
-         <button class="btn-large">
+         <button class="btn-large green accent-4">
             <Link to='/signup' class="white-text">Sign Up</Link>
          </button>
 
-         <button class="btn-large">
+         <button class="btn-large green accent-4">
             <Link to='/login' class="white-text">Log In</Link>
          </button>
 
