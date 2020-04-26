@@ -5,10 +5,20 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
    return (
-      <div>
-         <Link to='/login'>Log In</Link>
-         <br></br>
-         <Link to='/signup'>Sign Up</Link>
+      <div class="homepage-container">
+         <div class="homepage-links-container">
+
+            <button class="btn-large">
+               <Link to='/signup'>Sign Up</Link>
+            </button>
+
+
+
+            <button class="btn-large">
+               <Link to='/login'>Log In</Link>
+            </button>
+
+         </div>
       </div>
    )
 }
