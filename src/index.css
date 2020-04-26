@@ -8,9 +8,7 @@ body {
 }
 
 img {
-   margin-left: auto;
-   margin-top: auto;
-   text-align: center;
+   height: 400px
 }
 
 a {
@@ -19,7 +17,7 @@ a {
 }
 
 .homepage-links-container {
-   padding: 210px;
+   padding: 10px;
 }
 
 .btn-large {
