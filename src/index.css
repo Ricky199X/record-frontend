@@ -75,17 +75,28 @@ label.white-text {
    padding: 30px;
 }
 
+/* -------- Albums Page ----------- */
+
+.all-albums-container {
+   padding: 60px;
+}
+
+.albums-container {
+   height: 100%;
+   padding: 30px;
+}
+
 
 /* ------- Albums --------- */
 
-.album-cover {
+/* .album-cover {
    border: 0.5rem outset green;
   border-radius: 1px;
   font: bold 1rem sans-serif;
   margin: 2rem;
   padding: 1rem;
   outline-offset: 0.5rem;
-}
+} */
 
 /* label color */
 /* .input-field label {

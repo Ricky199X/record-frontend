@@ -6,14 +6,15 @@ import Albums from '../components/Albums'
 
 class AlbumsContainer extends React.Component {
 
-   
+
 
    renderAlbumThumbnails = () => {
       const albums = this.props.albums.data
+
       return albums.map(album => {
          return (
-            <div key={Math.random()}>
-               <Albums album={album}/>
+            <div class="album-image-container" key={Math.random()}>
+               <Albums album={album} />
             </div>
          )
       })
@@ -33,7 +34,7 @@ class AlbumsContainer extends React.Component {
 
 }
 
-const mapStateToProps = ({albums, user}) => {
+const mapStateToProps = ({ albums, user }) => {
    return { albums, user }
 }
 

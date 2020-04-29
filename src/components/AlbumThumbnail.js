@@ -2,22 +2,16 @@
 
 import React from 'react'
 
-const Album = (props) => {
+const AlbumThumbnail = (props) => {
 
    return (
       <div class="album-border">
-         <div class="album-cover">
-            {props.img}
-
-         </div>
-
+         {props.img}
          <h5 class="grey-text lighten-1">Likes: {props.likes}</h5>
       </div>
-
-
 
    )
 
 }
 
-export default Album
+export default AlbumThumbnail

@@ -1,6 +1,6 @@
 // Presentational Component - gets the individual album passed down 
 import React from 'react'
-import Album from './Album'
+import AlbumThumbnail from './AlbumThumbnail'
 import { Link } from 'react-router-dom'
 
 // will render all albums in db
@@ -17,23 +17,28 @@ class Albums extends React.Component {
          likes: this.state.likes + 1
       })
    }
- 
+
+   renderAlbums = (album) => {
+      return (
+         <Link to={`/albums/${album.album.id}`} key={Math.random()}>
+            <AlbumThumbnail
+               name={album.album.attributes.name}
+               img={<img alt={album.album.id} src={album.album.attributes.cover_url} />}
+               src={album.album.attributes.cover_url}
+               likes={this.state.likes}
+               key={album.album.attributes.name}
+            />
+         </Link>
+      )
+   }
+
+
    render() {
       return (
-         <div className="row">
-            <div className="col s12">
-               <Link to={`/albums/${this.props.album.id}`} key={Math.random()}>
-               <Album 
-                  name={this.props.album.attributes.name}
-                  img={<img alt={this.props.album.id} src={this.props.album.attributes.cover_url}  />}
-                  src={this.props.album.attributes.cover_url} 
-                  likes={this.state.likes}
-                  key={this.props.album.attributes.name} 
-               />
-               </Link>
-               <button className="btn waves-effect waves-light" onClick={this.handleLike}>Like Album</button>
-            </div>
+         <div class="all-albums-container">
+            {this.props ? this.renderAlbums(this.props) : null}
          </div>
+
       )
    }
 }
