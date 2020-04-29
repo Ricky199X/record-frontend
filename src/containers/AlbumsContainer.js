@@ -13,9 +13,7 @@ class AlbumsContainer extends React.Component {
 
       return albums.map(album => {
          return (
-            <div class="album-image-container" key={Math.random()}>
-               <Albums album={album} />
-            </div>
+            <Albums album={album} />
          )
       })
    }

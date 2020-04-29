@@ -20,6 +20,7 @@ class Albums extends React.Component {
 
    renderAlbums = (album) => {
       return (
+
          <Link to={`/albums/${album.album.id}`} key={Math.random()}>
             <AlbumThumbnail
                name={album.album.attributes.name}
@@ -29,13 +30,15 @@ class Albums extends React.Component {
                key={album.album.attributes.name}
             />
          </Link>
+
+
       )
    }
 
 
    render() {
       return (
-         <div class="all-albums-container">
+         <div>
             {this.props ? this.renderAlbums(this.props) : null}
          </div>
 

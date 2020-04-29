@@ -75,15 +75,24 @@ label.white-text {
    padding: 30px;
 }
 
+.album-card {
+   background-color: blanchedalmond;
+   height: 350px;
+   width: 300px;
+   /* margin: 50px; */
+ 
+}
+
 /* -------- Albums Page ----------- */
 
 .all-albums-container {
    padding: 60px;
 }
 
-.albums-container {
+.card {
    height: 100%;
    padding: 30px;
+  
 }
 
 
