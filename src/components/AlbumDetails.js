@@ -13,11 +13,11 @@ class AlbumDetails extends React.Component {
       let currentUserId = this.props.user.data.id
 
       return (
-         <div class="album-container">
+         <div class="album-container center ">
             <div class="row">
                <div class="col l12">
                   {/* Album Artwork + Basic Info*/}
-                  <section class="album-artwork col l6 white-text center">
+                  <section class="album-artwork col l6 white-text flow-text">
                      <img alt={album.attributes.name} src={album.attributes.cover_url} width="400" height="400" />
                      <h5>Artist: {album.attributes.artist.name}</h5>
                      <h5>Album Name: {album.attributes.name}</h5>
@@ -36,8 +36,8 @@ class AlbumDetails extends React.Component {
             {/* add album button */}
             <div class="row">
                <div class="col l12">
-                  <section class="add-album-btn">
-                     <button className="btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleAddUserAlbum(album, currentUserId)}>
+                  <section class="add-album-btn center">
+                     <button class="btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleAddUserAlbum(album, currentUserId)}>
                         Add Album
                      </button>
                   </section>
@@ -51,13 +51,14 @@ class AlbumDetails extends React.Component {
    renderSongsContainer = (album) => {
       let songs = album.attributes.songs
       // map thru album.attributes.songs
-      return songs.map(song => {
+      return songs.map((song, i) => {
+         console.log(songs)
          return <div class="track" key={Math.random()}>
-            <ol>
+            <ul>
                <h4>
-                  <li id={song.name}>{song.name}</li>
+                  <li id={song.name}>{i + 1}. {song.name}</li>
                </h4>
-            </ol>
+            </ul>
          </div>
       })
    }

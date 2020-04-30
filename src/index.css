@@ -99,10 +99,22 @@ label.white-text {
    padding-left: 5rem;
 }
 
-.track {
-   padding: 5px;
+.album-artwork {
+   padding: 5px
 }
 
+.track {
+   padding: 5px;
+   margin-left: -20rem
+}
+
+.add-album-btn {
+   padding: 40px
+}
+
+button {
+   height: 20px
+}
 
 /* ------- Albums --------- */
 
