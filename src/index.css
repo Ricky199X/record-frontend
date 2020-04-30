@@ -1,6 +1,6 @@
 body {
    /* background-image: url("../src/assets/vintage-music-white-sound-1791.jpg"); */
-   background-color: blue;
+   background-color: black;
    background-attachment: fixed;
    background-repeat: no-repeat;
    font-family: 'Didact Gothic', 'sans-serif';
@@ -109,11 +109,12 @@ label.white-text {
 }
 
 .add-album-btn {
-   padding: 40px
+   padding: 20px
 }
 
-button {
-   height: 20px
+.like-album-btn {
+   padding: 20px;
+   margin-left: -20rem
 }
 
 /* ------- Albums --------- */

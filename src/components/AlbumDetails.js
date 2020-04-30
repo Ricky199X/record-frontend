@@ -5,7 +5,19 @@ import { addUserAlbum } from '../actions/userActions'
 
 class AlbumDetails extends React.Component {
 
+   state = {
+      likes: 0
+   }
 
+   handleLike = () => {
+      this.setState({
+         likes: this.state.likes + 1
+      })
+   }
+
+   componentDidMount() {
+      console.log(this.state)
+   }
    // function to dynamically find the album 
    renderAlbum = (albums, albumId) => {
       // console.log(albums)
@@ -24,6 +36,7 @@ class AlbumDetails extends React.Component {
                      <h5>Release Date: {album.attributes.release_date}</h5>
                      <h5>Record Label: {album.attributes.label}</h5>
                      <h5>Popularity: {album.attributes.popularity}</h5>
+                     <h5>Like: {this.state.likes}</h5>
                   </section>
 
                   {/* Tracklisting + Add Album Button */}
@@ -35,15 +48,23 @@ class AlbumDetails extends React.Component {
 
             {/* add album button */}
             <div class="row">
-               <div class="col l12">
+               <div class="col l6">
                   <section class="add-album-btn center">
-                     <button class="btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleAddUserAlbum(album, currentUserId)}>
+                     <button class="btn waves-effect waves-light green accent-4" type="submit" name="action" onClick={() => this.handleAddUserAlbum(album, currentUserId)}>
                         Add Album
                      </button>
                   </section>
                </div>
+
+               <div class="col l6">
+                  <section class="like-album-btn center">
+                     <button class="btn waves-effect waves-light green accent-4" name="action" onClick={() => this.handleLike()}>
+                        Like Album
+                     </button>
+                  </section>
+               </div>
             </div>
-         </div>
+         </div >
       )
    }
 
@@ -52,7 +73,6 @@ class AlbumDetails extends React.Component {
       let songs = album.attributes.songs
       // map thru album.attributes.songs
       return songs.map((song, i) => {
-         console.log(songs)
          return <div class="track" key={Math.random()}>
             <ul>
                <h4>
@@ -74,7 +94,6 @@ class AlbumDetails extends React.Component {
       let albumId = this.props.match.params.id
 
       return !this.props.user.loggedIn ?
-         // console.log(this.props)
          (
             <Redirect to='/dashboard' />
          )

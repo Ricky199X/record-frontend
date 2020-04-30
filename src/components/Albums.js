@@ -8,15 +8,7 @@ import { Link } from 'react-router-dom'
 
 class Albums extends React.Component {
 
-   state = {
-      likes: 0
-   }
 
-   handleLike = () => {
-      this.setState({
-         likes: this.state.likes + 1
-      })
-   }
 
    renderAlbums = (album) => {
       return (
@@ -26,7 +18,7 @@ class Albums extends React.Component {
                name={album.album.attributes.name}
                img={<img alt={album.album.id} src={album.album.attributes.cover_url} />}
                src={album.album.attributes.cover_url}
-               likes={this.state.likes}
+               // likes={this.state.likes}
                key={album.album.attributes.name}
             />
          </Link>
