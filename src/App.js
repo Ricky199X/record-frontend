@@ -38,26 +38,25 @@ class App extends React.Component {
     return (
       <Router>
         <div class="app-container">
-          <div class="page-container">
-            <NavBar userLoginStatus={userLoginStatus} currentUserName={currentUserName} />
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/login' component={UserLogin} />
-              <Route exact path='/signup' component={UserSignup} />
-              <Route exact path='/dashboard' component={Dashboard} />
-              <Route exact path='/albums' component={AlbumsContainer} />
+          <NavBar userLoginStatus={userLoginStatus} currentUserName={currentUserName} />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/login' component={UserLogin} />
+            <Route exact path='/signup' component={UserSignup} />
+            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/albums' component={AlbumsContainer} />
 
-              <Route path='/albums/:id'>
-                <AlbumDetails />
-              </Route>
+            <Route path='/albums/:id'>
+              <AlbumDetails />
+            </Route>
 
-              <Route path='/users/:id/user_albums/:id'>
-                <UserAlbumDetails />
-              </Route>
+            <Route path='/users/:id/user_albums/:id'>
+              <UserAlbumDetails />
+            </Route>
 
-              <Route exact path='/logout' component={LogoutView} />
-            </Switch>
-          </div>
+            <Route exact path='/logout' component={LogoutView} />
+          </Switch>
+
         </div>
       </Router >
     );

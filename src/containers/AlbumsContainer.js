@@ -6,8 +6,6 @@ import Albums from '../components/Albums'
 
 class AlbumsContainer extends React.Component {
 
-
-
    renderAlbumThumbnails = () => {
       const albums = this.props.albums.data
 
@@ -25,6 +23,7 @@ class AlbumsContainer extends React.Component {
          )
       } else {
          return (
+
             this.renderAlbumThumbnails()
          )
       }

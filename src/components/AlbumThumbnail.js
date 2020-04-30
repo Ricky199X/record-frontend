@@ -6,7 +6,7 @@ const AlbumThumbnail = (props) => {
 
    return (
 
-      <div class="card">
+      <div class="album-card">
          {props.img}
          <h5 class="grey-text lighten-1">Likes: {props.likes}</h5>
       </div>

@@ -1,6 +1,6 @@
 body {
    /* background-image: url("../src/assets/vintage-music-white-sound-1791.jpg"); */
-   background-color: black;
+   background-color: blue;
    background-attachment: fixed;
    background-repeat: no-repeat;
    font-family: 'Didact Gothic', 'sans-serif';
@@ -92,7 +92,15 @@ label.white-text {
 .card {
    height: 100%;
    padding: 30px;
-  
+}
+
+.album-container {
+   padding-top: 5rem;
+   padding-left: 5rem;
+}
+
+.track {
+   padding: 5px;
 }
 
 
