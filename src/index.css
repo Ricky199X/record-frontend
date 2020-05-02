@@ -8,10 +8,10 @@ body {
    height: 100%;
 }
 
-img {
+/* img {
    height: 100%;
    width: 100%
-}
+} */
 
 a {
    font-size: large;
@@ -93,6 +93,10 @@ label.white-text {
    width: 400px;
    padding: 0px
 }
+
+/* .card-action {
+   /* height: 10px; */
+/* } */
 
 /* -------- Albums Page ----------- */
 

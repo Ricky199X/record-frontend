@@ -17,8 +17,8 @@ const AlbumThumbnail = (props) => {
 
       <div class="row">
          <div class="col s12 m7 l4">
-            <div class="card medium">
-               <div class="card-content">
+            <div class="card ">
+               <div class="card-content center">
                   {props.img}
                </div>
                <div class="card-action green accent-4">

@@ -30,7 +30,7 @@ class AlbumDetails extends React.Component {
                <div class="col l12">
                   {/* Album Artwork + Basic Info*/}
                   <section class="album-artwork col l6 white-text flow-text">
-                     <img alt={album.attributes.name} src={album.attributes.cover_url} />
+                     <img alt={album.attributes.name} src={album.attributes.cover_url} width="300" height="300" />
                      <h5>Artist: {album.attributes.artist.name}</h5>
                      <h5>Album Name: {album.attributes.name}</h5>
                      <h5>Release Date: {album.attributes.release_date}</h5>
