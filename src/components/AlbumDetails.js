@@ -36,7 +36,7 @@ class AlbumDetails extends React.Component {
                      <h5>Release Date: {album.attributes.release_date}</h5>
                      <h5>Record Label: {album.attributes.label}</h5>
                      <h5>Popularity: {album.attributes.popularity}</h5>
-                     <h5>Like: {this.state.likes}</h5>
+                     <h5>Likes: {this.state.likes}</h5>
                   </section>
 
                   {/* Tracklisting + Add Album Button */}
