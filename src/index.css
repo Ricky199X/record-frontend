@@ -9,7 +9,8 @@ body {
 }
 
 img {
-   border: 4mm ridge rgba(170, 50, 220, .6);
+   height: 100%;
+   width: 100%
 }
 
 a {
@@ -76,11 +77,21 @@ label.white-text {
 }
 
 .album-card {
-   background-color: blanchedalmond;
-   height: 350px;
+   background-color: rgb(87, 208, 87);
+   height: 100%;
    width: 300px;
    /* margin: 50px; */
  
+}
+
+.card.card-content {
+   padding: 0px;
+}
+
+.card.medium {
+
+   width: 400px;
+   padding: 0px
 }
 
 /* -------- Albums Page ----------- */
@@ -89,10 +100,10 @@ label.white-text {
    padding: 60px;
 }
 
-.card {
+/* .album-card {
    height: 100%;
-   padding: 30px;
-}
+   max-width: fit-content;
+} */
 
 .album-container {
    padding-top: 5rem;
