@@ -30,7 +30,7 @@ class Albums extends React.Component {
 
    render() {
       return (
-         <div>
+         <div class="album-container center">
             {this.props ? this.renderAlbums(this.props) : null}
          </div>
 

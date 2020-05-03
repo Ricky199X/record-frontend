@@ -76,13 +76,6 @@ label.white-text {
    padding: 30px;
 }
 
-.album-card {
-   background-color: rgb(87, 208, 87);
-   height: 100%;
-   width: 300px;
-   /* margin: 50px; */
- 
-}
 
 .card.card-content {
    padding: 0px;
@@ -94,9 +87,6 @@ label.white-text {
    padding: 0px
 }
 
-/* .card-action {
-   /* height: 10px; */
-/* } */
 
 /* -------- Albums Page ----------- */
 
@@ -104,18 +94,14 @@ label.white-text {
    padding: 60px;
 }
 
-/* .album-card {
-   height: 100%;
-   max-width: fit-content;
-} */
-
 .album-container {
    padding-top: 5rem;
    padding-left: 5rem;
 }
 
 .album-artwork {
-   padding: 5px
+   padding: 5px;
+   text-align: flex;
 }
 
 .track {
@@ -132,28 +118,19 @@ label.white-text {
    margin-left: -20rem
 }
 
-/* ------- Albums --------- */
+.album-card {
+   display:;
+   background-color: rgb(87, 208, 87);
+   height: 100%;
+   width: 300px;
+}
 
-/* .album-cover {
-   border: 0.5rem outset green;
-  border-radius: 1px;
-  font: bold 1rem sans-serif;
-  margin: 2rem;
-  padding: 1rem;
-  outline-offset: 0.5rem;
-} */
+.likes-section {
+   background-color: blue;
+   /* padding: 20px */
+}
 
-/* label color */
-/* .input-field label {
-   color: #000;
- }
- /* label focus color */
- /* .input-field input[type=text]:focus + label {
-   color: #000;
- } */
- /* label underline focus color */
- /* input[type=text]:focus {
-   border-bottom: 1px solid rgb(25, 189, 25);
-   box-shadow: 0 1px 0 0 #000;
- } */
+.album-img {
+   height: 100%
+}
 

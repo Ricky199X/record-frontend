@@ -24,7 +24,7 @@ class UserAlbumDetails extends React.Component {
       let userId = this.props.user.data.id
 
       return (
-         <div>
+         <div class="album-container center">
             {userAlbums ? this.renderUserAlbum(userAlbums, albumId) : null}
          </div>
       )

@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import UserAlbums from './UserAlbums'
 
 class Dashboard extends React.Component {
-   
+
    render() {
-      
+
       const currentUserId = this.props.user.data.id
       const currentUserAlbums = this.props.user.user_albums
       const isLoggedIn = this.props.user.loggedIn
@@ -16,22 +16,22 @@ class Dashboard extends React.Component {
       // UserAlbums component is responsible for handling Rendering of user album thumbnails.
 
       return !isLoggedIn ?
-      (
-         <div>
-            <h1>Loading!</h1>
-         </div>
-      )
-      :
-      (
-         <div>
-            <UserAlbums albums={currentUserAlbums} currentUserId={currentUserId}/>
-         </div>
-      )
-   }  
+         (
+            <div>
+               <h1>Loading!</h1>
+            </div>
+         )
+         :
+         (
+            <div>
+               <UserAlbums albums={currentUserAlbums} currentUserId={currentUserId} />
+            </div>
+         )
+   }
 }
 
 // We acces the store directly and destructure the user listed in state here, giving the component access to the info in state as props.
-const mapStateToProps = ( { user } ) => {
+const mapStateToProps = ({ user }) => {
    return { user }
 }
 
